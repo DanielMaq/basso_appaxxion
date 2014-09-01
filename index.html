@@ -1,0 +1,130 @@
+<html>
+
+<head>
+    <title>AXION</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <style>
+        html, body{
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+    </style>
+    <script src="js/jquery-1.9.0.min.js"></script>
+    <script src="js/jquery-ui-1.9.2.min.js"></script>
+    <!--script src="js/slimscroll.js"></script>-->
+    <script src="http://maps.googleapis.com/maps/api/js?v=3.6&language=en&key=AIzaSyDfs88uaYQmu_fU2PMdDM90BqdMn5ZWeh8&sensor=false" ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+
+
+    <div id="container" style="overflow: hidden">
+
+        <header>
+            <div class="header-content">
+                <a href="#" class="logo"><img src="img/logo.png" /></a>
+
+                <ul class="menu">
+                    <li><a href="#">Buscador de EESS</a></li>
+                    <li><a href="#">Acerca de AXION</a></li>
+                    <li><a href="#">Promociones</a></li>
+                    <!--<li><a href="#">DESCARGÁ EL BUSCADOR</a></li>-->
+                </ul>
+
+                <a href="#" class="menu-btn"><img src="img/menu.png" /></a>
+            </div>
+
+        </header>
+
+        <div class="detail-bg">
+
+        </div>
+        <div class="detail ">
+            <div class="mousescroll">
+
+            </div>
+        </div>
+
+        <div id="googleMap" style="width:320px;height:485px;"></div>
+
+
+
+        <footer>
+
+
+            <!-- <div class="menu-filtro">
+                <div>Uy.</div>
+                <div>Py.</div>
+                <div>Arg.</div>
+            </div> -->
+
+
+
+            <div class="sec1">
+                <div class="footer-content">
+
+
+
+                    <div class="menu-pais">
+                        <div>Uruguay</div>
+                        <div>Paraguay</div>
+                        <div class="selected">Argentina</div>
+                    </div>
+
+                    <div class="pais">Argentina</div>
+                    <div class="geo">
+                        <div class="tooltip ">Mi Ubicación</div>
+                    </div>
+                    <div class="map">
+                        <div class="tooltip ">Cómo llegar</div>
+                    </div>
+                    <div class="dir">
+                        <input id="txBusqueda" />
+                        <input id="txDesde" placeholder="Desde"/>
+                        <input id="txHasta" placeholder="Hasta" />
+                    </div>
+                    <div class="lupa"></div>
+                    <div class="filtro">
+                        <div class="tooltip ">Filtro</div>
+                    </div>
+                </div>
+            </div>
+            <div class="sec2">
+                <div class="footer-content">
+                    <!--<img src="img/logo-footer.png" />-->
+                    <span>Axion Energy es marca registrada. Todos los derechos reservados. Copyright 2014. Términos y Condiciones - Política de Privacidad</span>
+                    <div class="social">
+
+                        <a href="#" class="in"><img src="img/in.png" /></a>
+                        <a href="#" class="yt"><img src="img/youtube.png" /></a>
+                        <a href="#" class="f1"><img src="img/flag1.png" /></a>
+                        <a href="#" class="f2"><img src="img/flag2.png" /></a>
+                        <a href="#" class="f3"><img src="img/flag3.png" /></a>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+
+
+    <!--<div class="map-info" style="display: none">
+        <div class="infobox" onclick="infoClick(this,0)" style="opacity: 0.9;
+width: 262px;height: 53px;overflow: hidden;position: relative ;background-image:url('img/buble.png');background-size: 262px 53px;">
+            <input id="stid" type="hidden" value="" />
+            <h2 style="margin: 0;color: #fff; font-size: 14px; position: absolute;left: 14px;top: 6px;  width: 225px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">17 st</h2>
+            <h3 style="margin: 0;color: #fff; font-size: 12px;  position: absolute;left: 14px;top: 23px; width: 124px;font-weight: normal">13 bikes | 12 doc</h3>
+
+        </div>
+    </div>-->
+    <script src="js/data.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

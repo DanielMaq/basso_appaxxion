@@ -1,0 +1,114 @@
+
+/* iPads (portrait and landscape)  ----------- */
+@media only screen and (max-width : 1024px){
+    div.social .f1{ display:none}
+    div.social .f2{ display:none}
+    div.social .f3{ display:none}
+
+
+
+    footer{
+        height: 58px;
+    }
+    .footer-content{
+        width: 100%;
+    }
+    .footer-content ul{
+        display: none;
+    }
+    footer .sec2{
+        height: 84px ;
+    }
+
+    footer .sec2 .footer-content img{
+        margin-left: 17px;
+        margin-top: 20px;
+        width: 77px;
+    }
+    .sec1 .pais{
+        margin-left: 0;
+        width: 20%;
+    }
+    .sec1 .geo{
+        width: 20%;
+    }
+    .sec1 .map{
+        width: 20%;
+    }
+    .sec1 .dir{
+        display:none
+    }
+        .sec1 .dir input{
+
+        }
+    .sec1 .lupa{
+        width: 20%;
+    }
+    .sec1 .filtro{
+        width: 20%;
+    }
+
+    div.social{
+        float: right;
+        width: 206px;
+    }
+
+    header{
+        height: 61px;
+    }
+    .header-content{
+        height: 61px;
+        width: 100%;
+        background-size: 248px 100%;
+    }
+    .header-content .logo{
+        left: 14px;
+    }
+    .header-content .logo  img{
+        width: 108px;
+    }
+
+    .header-content .menu{
+        top: 61px;
+        left: 0px;
+        width: 100%;
+        margin: 0;
+        background-color: #9E1F64;
+        padding-left: 0px;
+    }
+
+    .header-content .menu li{
+        width: 100%;
+        /*padding: 20px;*/
+        text-align: center;
+
+        border-top: 1px solid #941759;
+    }
+
+    .header-content .menu li a{
+        width: 100%;
+        display: block;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .menu-btn{
+        background-image: url(../img/menu.png);
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        display: block;
+    }
+    .header-content .menu {
+        overflow: hidden;
+        height: 0px;
+    }
+
+    .menu-pais{
+        margin-left: 0px;
+        width: 20%;
+    }
+    div.detail-bg{
+        display: none;
+    }
+}
