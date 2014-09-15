@@ -18,16 +18,16 @@ String.prototype.contains = function(it) {
 
 
 var map;
-var geocoder;
+var geocoder= new google.maps.Geocoder();
 var directionsDisplay;
 var directionsService;
 /*var currentMarkerId;*/
 
 function initializeMap() {
-    geocoder = new google.maps.Geocoder();
+
     directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true});
     directionsService = new google.maps.DirectionsService();
-    var pos1 = new google.maps.LatLng(25.7836571, -80.13633);
+    var pos1 = new google.maps.LatLng(-34.639507,-58.4910882 );
     var myStyles =[
         {
             featureType: "poi",
@@ -41,7 +41,7 @@ function initializeMap() {
     var mapProp = {
         center: pos1,
         zoom:14,
-        zoomControl:false,
+        zoomControl:true,
         /* streetViewControl:false,*/
         /*mapTypeControlOptions: { mapTypeIds: []},*/
         mapTypeId:google.maps.MapTypeId.ROADMAP  /*,
@@ -59,8 +59,8 @@ function initializeMap() {
 
 google.maps.event.addDomListener(window, 'load', initializeMap);
 
-var myIconAxion = new google.maps.MarkerImage( 'img/marker_axion.png', null, null, null, new google.maps.Size(33,50));
-var myIconEsso = new google.maps.MarkerImage( 'img/marker_esso.png', null, null, null, new google.maps.Size(33,50));
+var myIconAxion = new google.maps.MarkerImage( 'img/marker_axion.png', null, null, null, new google.maps.Size(33,34));
+var myIconEsso = new google.maps.MarkerImage( 'img/marker_esso.png', null, null, null, new google.maps.Size(44,37));
 
 var myIconGeo = new google.maps.MarkerImage( 'img/geoloc.png', null, null,new google.maps.Point(57, 57), new google.maps.Size(114,114));
 
@@ -93,19 +93,20 @@ function dibujarEstaciones(){
 
         var icon;
         if(Estaciones[i].tipo=='esso'){
-            icon=myIcon;
-        }else{
             icon=myIconEsso;
+        }else{
+            icon=myIconAxion;
         }
 
         Estaciones[i].marker = new google.maps.Marker({
             position: new google.maps.LatLng(Estaciones[i].lat, Estaciones[i].lon),
             map: map, icon:icon
         });
+        Estaciones[i].marker.idEstacion=i;
 
         google.maps.event.addListener(Estaciones[i].marker, 'click', function() {
-            /*var theid=this.theid;
-             showDetail(theid);*/
+             //var theid=this.theid;
+             showDetail(this.idEstacion);
         });
     }
 
@@ -116,8 +117,8 @@ function filtrarEstaciones(){
         Estaciones[i].visible=false;
     }
     for(var i=0;i<5;i++){ //CantEstaciones
-        $.each(filtros, function(index, value) {
-            if((Estaciones[i].propiedades[index] && value && true ) || Estaciones[i].visible){
+        $.each(filtros, function(index, filtro) {
+            if((Estaciones[i].propiedades[index] && filtro.valor && true ) || Estaciones[i].visible){
                 Estaciones[i].marker.setMap(map);
                 Estaciones[i].visible=true;
             }else{
@@ -172,12 +173,13 @@ function geoloc(callback){
             centerMap(new google.maps.LatLng(globalLat,globalLon));
 
             PositionToDir(new google.maps.LatLng(globalLat,globalLon),function(dir){
+                estacionesAleatorias();
+                dibujarEstaciones();
                 globalPositionStr=dir;
                 callback();
             });
 
-            estacionesAleatorias();
-            dibujarEstaciones();
+
 
         },function onError(error) {
             //console.log(error)
@@ -189,6 +191,8 @@ function geoloc(callback){
 /////////////////////////////////////////////////////////////////////////////
 
 //var routeMarkerArray = [];
+
+var mostrandoRuta=false;
 
 function calcRoute(start,end) {
 
@@ -202,25 +206,29 @@ function calcRoute(start,end) {
         travelMode: google.maps.TravelMode.DRIVING
     };
 
-    var currentZoom=map.getZoom();
+    //var currentZoom=map.getZoom();
     directionsService.route(request, function(response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setMap(map);
             directionsDisplay.setDirections(response);
 
-            map.setZoom(currentZoom);
+           //map.setZoom(currentZoom);
+            mostrandoRuta=true;
+            cargarPasos(response.routes[0].legs[0])
         }
     });
 
 }
 function limpiarRuta(){
     directionsDisplay.setMap(null);
+    mostrandoRuta=false;
+    pasosOcultar();
 }
-/*function routeFromGeoToStation(stationId){
+function routeFromGeoToStation(stationId){
     var directionFrom =geoMarker.getPosition() ; // new google.maps.LatLng(p[2],p[3]);
-    var directionTo = getMarker(stationId).getPosition();
+    var directionTo = Estaciones[stationId].marker.getPosition(); //getMarker(stationId).getPosition();
     calcRoute(directionFrom,directionTo);
-}*/
+}
 
 function PositionToDir(latlng,callback){
     geocoder.geocode({'latLng': latlng}, function(results, status) {
@@ -305,9 +313,9 @@ function resizeMap(){
 
 
     ////////////////////////////////////////////////////////////////////////////
-    $('div.detail-bg').height(document.body.clientHeight-228);
+    $('div.detail-bg').height(document.body.clientHeight-175);
 
-    /*$('div.detail').height(document.body.clientHeight-303);
+     /* $('div.detail').height(document.body.clientHeight-303);
     var h=$('div.detail').height();
     if(h>480){
         $('div.detail').css('top',75+((h-480)/2)+'px');
@@ -320,15 +328,20 @@ function resizeMap(){
 
     if(document.body.clientWidth>1024){
         $.each(Paises, function(index, value) {
-            $($('.menu-pais').children()[index]).html(value.nombre)
+
+            $($('.menu-pais').children()[index]).html('<img src="'+value.icon+'" />'+value.nombre)
         });
+        $('.sec1 .pais ').html('<img src="'+$('img',$('.menu-pais div.selected')).attr('src')+'" />' /*+ $('.menu-pais div.selected').html()*/ );
+        //$('.sec1 .pais img').show();
     }else{
         $.each(Paises, function(index, value) {
             $($('.menu-pais').children()[index]).html(value.abreviatura)
         });
-    };
-    $('.sec1 .pais').html($('.menu-pais div.selected').html());
+        $('.sec1 .pais').html($('.menu-pais div.selected').html());
 
+    };
+
+    //$('.sec1 .pais img').attr('src',$('img',this).attr('src'));
     ///////////////////////////////////////////////////////////////////////////
 
 }

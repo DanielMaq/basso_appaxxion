@@ -1,15 +1,15 @@
 var Paises={
     0:{
-        nombre:'Argentina', abreviatura:'Arg.', lat:-34.639507, lon: -58.4910882
+        nombre:'Argentina', abreviatura:'Arg.', lat:-34.639507, lon: -58.4910882, icon:'img/flag-arg.png'
     },
     1:{
-        nombre:'Paraguay', abreviatura:'Par.', lat:-25.3062274, lon: -57.5957806
+        nombre:'Paraguay', abreviatura:'Par.', lat:-25.3062274, lon: -57.5957806, icon:'img/flag-par.png'
     },
     2:{
-        nombre:'Uruguay', abreviatura:'Uru.', lat:-34.8767092, lon: -56.1424982
+        nombre:'Uruguay', abreviatura:'Uru.', lat:-34.8767092, lon: -56.1424982, icon:'img/flag-uru.png'
     },
     3:{
-        nombre:'Bolivia', abreviatura:'Bol.', lat:-17.7865961, lon: -63.1783028
+        nombre:'Bolivia', abreviatura:'Bol.', lat:-17.7865961, lon: -63.1783028, icon:'img/flag-bol.png'
     }
 }
 var paisActual='Argentina';
@@ -19,7 +19,11 @@ function cargarPaises(){
     var i=0;
 
     $.each(Paises, function(index, value) {
-        res+= '<div data-value="'+value.nombre+'">'+value.nombre+'</div>';
+        if(i==0)
+
+            res+= '<div class="selected" data-value="'+value.nombre+'"> <img src="'+value.icon+'" />'+value.nombre+'</div>';
+        else
+            res+= '<div data-value="'+value.nombre+'"> <img src="'+value.icon+'" />'+value.nombre+'</div>';
         i++;
     });
 
@@ -28,12 +32,13 @@ function cargarPaises(){
         .css('height',(i*59)+'px');
 
     $('.menu-pais div').click(function(){
+
+
+
         $('.menu-pais div').removeClass('selected');
         $(this).addClass('selected');
-        $('.sec1 .pais').html($(this).html());
+        $('.sec1 .pais img').attr('src',$('img',this).attr('src'));
         paisActual = $(this).attr('data-value');
-
-
 
         //Regirigir mapa
         for (var i=0; i<4; i++){
@@ -42,7 +47,6 @@ function cargarPaises(){
             }
 
         }
-
 
     });
 
@@ -54,66 +58,185 @@ function cargarPaises(){
 var Estaciones={
     0:{
         nombre:'Estacion 1',
+
+        direccion1: 'Scalabrini Ortiz 2478. Palermo.',
+        direccion2: 'Capital Federal. Argentina',
+        estado:'Abierta',
+        distancia:'4.5 km',
+        telf:'+54 114760-3547',
+        web:'www.estacionaxion.com.ar',
+        combustibles:['Diesel Premium','Diesel','Super'] ,
+        servicios:['abierto24hs','tc','premium','gnc','tiendas','card','oil','wifi'],
+        promociones:{
+
+        },
         lat:0,
         lon:0,
         tipo:'axion',
         propiedades:{
-            abierto24hs:true,
-            gnc:true
+            'abierto24hs' :true,
+            'tiendas':true,
+            'cajero':true,
+            'tc' :true,
+            'card' :true,
+            'wifi' :true,
+            'premium' :true,
+            'oil':true,
+            'promociones' :true,
+            'gnc':true
         },
         visible:false
     },
+
+
     1:{
         nombre:'Estacion 1',
+
+        direccion1: 'Scalabrini Ortiz 2478. Palermo.',
+        direccion2: 'Capital Federal. Argentina',
+        estado:'Abierta',
+        distancia:'4.5 km',
+        telf:'+54 114760-3547',
+        web:'www.estacionaxion.com.ar',
+        combustibles:['Diesel Premium','Diesel','Super'] ,
+        servicios:['abierto24hs','tc','premium','gnc','tiendas','card','oil','wifi'],
+        promociones:{
+
+        },
+
         lat:0,
         lon:0,
         tipo:'esso',
         propiedades:{
-            abierto24hs:false,
-            gnc:true
+            'abierto24hs' :true,
+            'tiendas':true,
+            'cajero':true,
+            'tc' :true,
+            'card' :true,
+            'wifi' :true,
+            'premium' :true,
+            'oil':true,
+            'promociones' :true,
+            'gnc':false
         },
         visible:false
     },
     2:{
         nombre:'Estacion 1',
+
+        direccion1: 'Scalabrini Ortiz 2478. Palermo.',
+        direccion2: 'Capital Federal. Argentina',
+        estado:'Abierta',
+        distancia:'4.5 km',
+        telf:'+54 114760-3547',
+        web:'www.estacionaxion.com.ar',
+        combustibles:['Diesel Premium','Diesel','Super'] ,
+        servicios:['abierto24hs','tc','premium','gnc','tiendas','card','oil','wifi'],
+        promociones:{
+
+        },
+
+
         lat:0,
         lon:0,
         tipo:'axion',
         propiedades:{
-            abierto24hs:false,
-            gnc:true
+            'abierto24hs' :true,
+            'tiendas':false,
+            'cajero':true,
+            'tc' :true,
+            'card' :false,
+            'wifi' :true,
+            'premium' :false,
+            'oil':true,
+            'promociones' :true,
+            'gnc':true
         },
         visible:false
     },
     3:{
         nombre:'Estacion 1',
+
+        direccion1: 'Scalabrini Ortiz 2478. Palermo.',
+        direccion2: 'Capital Federal. Argentina',
+        estado:'Abierta',
+        distancia:'4.5 km',
+        telf:'+54 114760-3547',
+        web:'www.estacionaxion.com.ar',
+        combustibles:['Diesel Premium','Diesel','Super'] ,
+        servicios:['abierto24hs','tc','premium','gnc','tiendas','card','oil','wifi'],
+        promociones:{
+
+        },
+
+
         lat:0,
         lon:0,
         tipo:'esso',
         propiedades:{
-            abierto24hs:true,
-            gnc:true
+            'abierto24hs' :false,
+            'tiendas':false,
+            'cajero':true,
+            'tc' :true,
+            'card' :true,
+            'wifi' :false,
+            'premium' :true,
+            'oil':true,
+            'promociones' :false,
+            'gnc':true
         },
         visible:false
     },
     4:{
         nombre:'Estacion 1',
+
+
+        direccion1: 'Scalabrini Ortiz 2478. Palermo.',
+        direccion2: 'Capital Federal. Argentina',
+        estado:'Abierta',
+        distancia:'4.5 km',
+        telf:'+54 114760-3547',
+        web:'www.estacionaxion.com.ar',
+        combustibles:['Diesel Premium','Diesel','Super'] ,
+        servicios:['abierto24hs','tc','premium','gnc','tiendas','card','oil','wifi'],
+        promociones:{
+
+        },
+
+
         lat:0,
         lon:0,
         tipo:'axion',
         propiedades:{
-            abierto24hs:true,
-            gnc:false
+            'abierto24hs' :true,
+            'tiendas':true,
+            'cajero':false,
+            'tc' :true,
+            'card' :false,
+            'wifi' :true,
+            'premium' :true,
+            'oil':true,
+            'promociones' :true,
+            'gnc':true
         },
         visible:false
     }
 
 };
 
-var filtros={
-    'abierto24hs':true,
-    'gnc':false
-}
+var filtros = {
+    'abierto24hs' :{valor:true, icon:'img/f-24hs.png',icon2:'img/dt-24hs.png',nombre:'Abierto 24 hs.',tipo:'servicio'},
+    'tiendas':{valor:true, icon:'img/f-tienda.png',icon2:'img/dt-tienda.png',nombre:'Tiendas de Conv.',tipo:'servicio'},
+    'cajero':{valor:true, icon:'img/f-cajero.png',icon2:'img/dt-cajero.png',nombre:'Cajero Automático',tipo:'servicio'},
+    'tc' :{valor:true, icon:'img/f-tc.png',icon2:'img/dt-tc.png',nombre:'Tarjeta de Crédito',tipo:'servicio'},
+    'card' :{valor:true, icon:'img/f-card.png',icon2:'img/dt-card.png',nombre:'AXION card',tipo:'servicio'},
+    'wifi' :{valor:true, icon:'img/f-wifi.png',icon2:'img/dt-wifi.png',nombre:'Wi-Fi',tipo:'servicio'},
+    'premium' :{valor:true, icon:'img/f-combustible.png',icon2:'img/combustible.png',nombre:'Diesel Premium',tipo:'combustible'},
+    'oil' :{valor:true, icon:'img/f-oil.png',icon2:'img/dt-oil.png',nombre:'Mobil Oil Express',tipo:'servicio'},
+    'promociones' :{valor:true, icon:'img/f-promocion.png',icon2:'',nombre:'Promociones',tipo:''},
+    'gnc' :{valor:true, icon:'img/f-combustible.png',icon2:'img/combustible.png',nombre:'GNC',tipo:'combustible'}
+};
+
 
 
 
@@ -121,7 +244,7 @@ var globalX,globalY;
 
 var globalLat,globalLon;
 
-var globalPositionStr="Ubicacion inicial (texto de prueba)";
+var globalPositionStr="";
 var globalModoBusqueda=1;
 
 function estacionesAleatorias(){

@@ -20,7 +20,7 @@ header{
     margin:0 auto;
     position: relative;
     background-image: url(../img/header.png);
-    height: 75px;
+    height: 74px;
     background-repeat: no-repeat;
     background-color: #9E1F63;
 
@@ -34,28 +34,56 @@ header{
     position: absolute;
     list-style: none;
     left: 212px;
-    top: 16px;
+    top: 0px;
     z-index: 9999;
+    padding: 0px 31px;
+    margin: 0;
 }
+.header-content .descargas{
+    background-image: url('../img/header-icons.png');
+
+    position: absolute;
+    right: 0px;
+    width: 256px;
+    height: 74px;
+
+}
+.descargas a{ position: absolute; width: 28px; height: 28px;top: 23px;}
+.descargas .link-android{right: 136px;}
+.descargas .link-ios{ right: 103px; }
+.descargas .link-linkedin{ right: 43px;}
+.descargas .link-youtube{ right: 7px; }
+
 .menu li{
     float: left;
-    margin-right: 43px;
+    margin-right: 0px;
+    height: 74px;
+    line-height: 74px;
+    /* width: 163px; */
+    text-align: center;
+
 }
+.menu li.selected, .menu li:hover{
+    background-color: #AA3272;
+}
+
 .menu li a{
     color: #ECD2E0;
     text-decoration: none;
     font-family: "Arial";
     font-size: 14px;
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
 }
-
 
 footer{
     position: fixed;
     bottom: 0px;
     width: 100%;
-    height: 101px;
+    /*height: 101px;*/
     z-index: 9997;
-
+    background-color:#F2F2F2;
 }
 
 .tooltip{
@@ -79,8 +107,8 @@ footer .sec1{
 
 }
 footer .sec2{
-    height: 124px;
-    background-color:#F2F2F2;
+    /*height: 124px;*/
+
 }
 
 .footer-content{
@@ -98,7 +126,7 @@ footer .sec2 span{
     color: #939393;
     padding-top: 14px;
     padding-left: 82px;
-    font-size: 10.5px;
+    font-size: 10px;
 }
 div.social a{
     position: absolute;
@@ -113,8 +141,8 @@ div.social{
 
 }
 
-div.social .in{ right: 221px; }
-div.social .yt{ right: 186px;}
+div.social .in{ right: 234px; }
+div.social .yt{ right: 201px;}
 div.social .f1{ right: 151px;}
 div.social .f2{ right: 117px;}
 div.social .f3{ right: 81px;}
@@ -133,21 +161,30 @@ div.social a.in img,div.social a.yt img{  margin-top: 10px }
     cursor: pointer;
 
     margin-left: 0px;
-    width: 144px;
+    width: 72px;
 
     font-family: Arial;
     color: #D199B6;
-    text-align: center;
-    padding-top: 23px;
+    text-align: left;
+
     box-sizing: border-box;
+
+
+    padding-top: 18px;
+    padding-left: 12px;
+
 
 }
 .sec1 .pais.abierto{
     background-image: url(../img/pais-sel.png);
-    background-color:#71043E ;
+    background-color:#861D55 ;
 }
-.sec1 .pais:hover , .sec1 .geo:hover , .sec1 .map:hover , .sec1 .lupa:hover , .sec1 .filtro:hover  {
-    background-color:#71043E ;
+.sec1 .filtro.abierto{
+    background-color:#861D55 ;
+}
+
+.sec1 .pais:hover , .sec1 .geo:hover , .sec1 .map:hover , .sec1 .lupa:hover , .sec1 .filtro:hover, .sec1 .printer:hover  {
+    background-color:#861D55 ;
 }
 
 
@@ -156,13 +193,22 @@ div.social a.in img,div.social a.yt img{  margin-top: 10px }
 .sec1 .geo:hover div, .sec1 .map:hover div, .sec1 .filtro:hover div {display:block !important;}
 
 
-
+.sec1 .printer{
+    background-image: url(../img/printer.png);
+    height: 58px;
+    width: 76px;
+    float: left;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    cursor: pointer;
+    position: relative;
+}
 
 
 .sec1 .geo{
     background-image: url(../img/geo.png);
     height: 58px;
-    width: 82px;
+    width: 80px;
     float: left;
     background-repeat: no-repeat;
     background-position: 50%;
@@ -171,7 +217,7 @@ div.social a.in img,div.social a.yt img{  margin-top: 10px }
 }
 .sec1 .map{
     background-image: url(../img/route.png);
-    width: 82px;
+    width: 80px;
     height: 58px;
     float: left;
     background-repeat: no-repeat;
@@ -242,29 +288,38 @@ div.social a.in img,div.social a.yt img{  margin-top: 10px }
     height: 177px;
     float: left;
     margin-top: -177px;
-    width: 144px;
+    width: 73px;
     background-color: #81144E;
     margin-left: 0px;
     opacity: 0.98;
     display: none;
+
 }
 .menu-pais div{
     height: 59px;
     font-family: Arial;
-    color: #D199B6;
-    text-align: center;
-    padding-top: 21px;
+    color: #ddd;
+    text-align: left;
+    padding-top: 34px;
     box-sizing: border-box;
     border-bottom: 1px solid #6B0A3D;
     cursor: pointer;
+    position: relative;
+    font-size: 11px;
+    padding-left: 12px;
+}
+.menu-pais img{
+    left: 12px;
+    position: absolute;
+    top: 10px;
 }
 .sec1 .menu-pais div:hover {
-    background-color:#71043E ;
+    background-color:#861D55 ;
 }
 
 div.detail-bg{
     position: absolute;
-    top: 75px;
+    top: 74px;
     width: 100%;
     background-color: black;
     height: 340px;
@@ -272,30 +327,513 @@ div.detail-bg{
     opacity: 0.4;
     display: none;
 }
-div.detail{
+
+
+/*///////////////////////// FILTROS  /////////////////////////////*/
+
+.bloque-filtro{
     position: absolute;
-    width: 324px;
-    height: 460px;
-    top:75px;
-    background-image: url(../img/demo.png);
+    background-color: #861D55;
+    bottom: 0px;
+    width: 990px;
+    color: #fff;
+    font-family: Arial;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding-top: 32px;
+    padding-bottom: 23px;
+    padding-left: 97px;
+    padding-right: 97px;
+    display: none;
+
+
+}
+
+.bf-titulo{
+    text-align: center;
+    position: relative;
+    font-size: 29px;
+    height: 70px;
+
+}
+
+
+.bf-todos {
+    position: absolute;
+    top: 6px;
+    right: 27px;
+
+    background-image: url(../img/checked.png);
+    background-repeat: no-repeat;
+    background-position: 100%;
+    cursor: pointer;
+    font-size: 14px;
+    width: 111px;
+    height: 25px;
+    line-height: 24px
+}
+
+.bf-items div {
+    float: left;
+    box-sizing: border-box;
+    border-bottom: 1px solid #B27094;
+    padding: 5px 0px;
+    margin-right: 26px;
+    margin-left: 26px;
+    width: 213px;
+    vertical-align: middle;
+    line-height: 46px;
+    position: relative;
+    padding-left: 50px;
+    background-image:url(../img/checked.png);
+    background-repeat: no-repeat;
+    background-position: 100%;
+    cursor: pointer;
+}
+
+.bf-items div img{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 8px;
+    left: 1px;
+}
+
+.bloque-filtro a.ok{
+    clear: both;
+    float: left;
+    border: 2px solid #fff;
+    padding: 9px 0px;
+    width: 131px;
+    text-align: center;
+    font-size: 12px;
+    margin-left: 295px;
+    margin-top: 18px;
+    color: #fff;
+    text-decoration: none;
+}
+.bloque-filtro a.ok:hover{
+
+    color: #861D55;
+    background-color: #fff;
+}
+.bloque-filtro a.cancel{
+    float: left;
+    padding: 9px 0px;
+    width: 131px;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+/*//////////////////    DETAIL       ///////////////////////////*/
+/*
+<div class="detail ">
+            <div >
+                <div class="titulo1">Title 1</div>
+                <div class="titulo2">Title 2</div>
+                <img class="tipo" />
+                <a href="#" class="cerrar"></a>
+                <div class="estado">Abierta</div>
+                <div class="distancia">Distancia: 4,5 km</div>
+                <div class="tel">Tel. +54 114760-3547</div>
+                <div class="web">www.estacion.com.ar</div>
+                <div class="combustibles">
+
+                </div>
+                <div class="servicios">
+
+                </div>
+                <div class="promocion">
+
+                </div>
+            </div>
+        </div>
+
+        */
+
+.detail{
+    position: absolute;
+
+    background-color: #fff;
+    background-image: url(../img/modal-header.png);
+    background-repeat: no-repeat;
     z-index: 9998;
     display:none;
     overflow: auto;
+    width: 740px;
+    left: 50%;
+    margin-left: -370px;
+    height: 442px;
+    top: 88px;
+}
+.detail .titulo1{
+
+    color: #fff;
+    font-family: Arial;
+    font-size: 17px;
+    position: absolute;
+    left: 37px;
+    top: 26px;
+
+}
+.detail .titulo2{
+
+    color: #fff;
+    font-family: Arial;
+    font-size: 17px;
+    position: absolute;
+    left: 37px;
+    top: 45px;
+
+}
+.detail .tipo{
+
+    position: absolute;
+    right: 68px;
+
+    top: 18px;
+    width: 64px;
+    height: 82px;
+}
+.detail .cerrar{
+
+    position: absolute;
+    right: 11px;
+    top: 13px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+
+}
+.detail .estado{
+
+    position: absolute;
+    top: 105px;
+    left: 37px;
+    color: #028B33;
+    font-family: Arial;
+    font-size: 24px;
+
+}
+.detail .distancia{
+
+    position: absolute;
+    top: 132px;  left: 37px;
+    color: #888;  font-family: Arial;
+    font-size: 15px;
+
+}
+.detail .tel{
+
+    position: absolute;
+    top: 114px;
+    left: 213px;  color: #ABABAB;  font-family: Arial;  font-size: 15px;
+
+}
+.detail .web{
+
+    position: absolute;
+    top: 131px;
+    left: 213px;  color: #ABABAB;  font-family: Arial;  font-size: 15px;
+    font-weight: bold;
+
+}
+.detail .combustibles{
+
+    position: absolute;
+    top: 180px;
+    width: 155px;
+    left: 31px;
+    padding: 0px 10px;
+    box-sizing: border-box;
 }
 
-/**************************************/
-
-div#chatlist {
-    width: 50px;
-    height: 140px;
-    border: 1px solid black;
+.detail .servicios{
+    position: absolute;  top: 180px;
+    left: 211px;
+    box-sizing: border-box;
+    width: 364px;
+    padding: 0px 0px;
 }
-div.mousescroll {
+/* <div><img src="img/01.png" /><span>Abierto 24hs</span></div>*/
+
+.detail .group div{
+    float: left;
+    width: 67px;
+    height: 92px;
+}
+.detail .group div img{
+    width: 48px;
+    height: 48px;
+    float: left;
+}
+.detail .group div span{
+    font-family: arial;
+    font-size: 12px;
+    color: #777;
+    clear: both;
+    float: left;
+    text-shadow: 1px 1px #eee;
+}
+.detail .servicios.group div{
+    margin-right: 21px;
+    width: 70px;
+}
+
+.detail .promocion{
+
+    position: absolute;  top: 180px;
+    width: 148px;
+    left: 570px;
+
+}
+.detail .comollegar{
+    background-color: #9E1F64;
+    font-family: Arial;
+    padding: 9px 34px;
+    position: absolute;
+    bottom: 26px;
+    color: #fff;
+    font-size: 12px;
+    border: 2px solid #9E1F64;
+    left: 298px;
+    text-decoration: none;
+}
+
+.detail .comollegar:hover{
+    color: #9E1F64;
+    background-color: #fff;
+}
+
+
+.pasos{
+    position: absolute;
+    left: 90px;
+    top: 84px;
+    z-index: 9990;
+    background-color: #fff;
+    width: 361px;
+
+    overflow: hidden;
+    display: none;
+}
+.pasos .encabezado img{
+    position: absolute;
+    top: 19px;
+    left: 12px;
+}
+.pasos .encabezado{
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+    padding: 19px;
+    box-sizing: border-box;
+    cursor:pointer;
+    background-image: url(../img/arrow-up.png);
+    background-repeat: no-repeat;
+    background-position: 96% 22px;
+}
+.pasos .encabezado.closed{
+    background-image: url(../img/arrow-down.png);
+}
+
+.pasos .titulo{
+    color: #9C1F63;
+    font-family: Arial;
+    font-size: 17px;
+    padding-right: 22px;
+    padding-left: 22px;
+}
+.pasos .recorrido{
+    color: #999;
+    font-family: Arial;
+    font-size: 15px;
+    padding-left: 22px;
+    padding-top: 3px;
+}
+.pasos .lista{
+    padding: 17px 10px 10px 10px;
+
+}
+.pasos .item{
+    padding-top: 0px;
+    padding-bottom: 8px;
     overflow: hidden;
 }
-div.mousescroll:hover {
-    overflow-y: scroll;
+.pasos .item img{
+    width: 18px;
+    height: 18px;
+    float: left;
 }
 
-.slimScrollDiv {
+.pasos .item span{
+    float: left;
+    font-family: Arial;
+    font-size: 15px;
+    color: #444;
+    margin-left: 11px;
+    margin-right: 8px;
 }
+
+.pasos .item > div{
+    font-family: Arial;
+    font-size: 15px;
+    color: #444;
+    text-shadow: 1px 1px #eee;
+    width: 265PX;
+    float: left;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 12px;
+}
+.pasos .item:last-child > div{
+    border-bottom: none;
+    padding-bottom: 0px;
+}
+
+
+.pasos .pie{
+    border-top: 1px solid #ccc;
+    padding: 18px 12px;
+    position: relative;
+}
+.pasos .pie .titulo{
+    padding-left: 29px;
+    padding-right: 36px;
+}
+.pasos .pie .img1{
+    position: absolute;
+}
+
+.pasos .pie .printer{
+    position: absolute;
+    right: 14px;
+    top: 15px;
+    cursor: pointer;
+}
+
+.slimScrollDiv{
+    background-image: url(../img/bg-1.png);
+    background-repeat: no-repeat;
+    background-size: 6px 100%;
+    background-position: 100% 0%;
+
+}
+
+
+
+
+
+
+/***********************************************************************************************************/
+
+
+
+
+
+
+
+.promociones{
+    position: absolute;
+
+    background-color: #fff;
+    background-image: url(../img/modal-header.png);
+    background-repeat: no-repeat;
+    z-index: 9998;
+    display:none;
+    overflow: auto;
+    width: 740px;
+    left: 50%;
+    margin-left: -370px;
+    height: 442px;
+    top: 88px;
+}
+.promociones .titulo1{
+    color: #fff;
+    font-family: Arial;
+    font-size: 30px;
+    position: absolute;
+    left: 52px;
+    top: 26px;
+    font-weight: lighter;
+}
+.promociones .cerrar{
+
+    position: absolute;
+    right: 11px;
+    top: 13px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+
+}
+
+.promociones > div{height: 84px;}
+
+
+
+
+
+.promociones .seccion1{
+    overflow: hidden;
+    /* border-top: 1px solid #EAE6E5; */
+    padding-top: 35px;
+    padding-bottom: 31px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+}
+.promociones .g50{
+    width: 50%;
+    float: left;
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+.promociones .main-image{
+    min-height: 460px;
+    background-image: url(../img/acerca.jpg);
+    background-position: 50%;
+    /*background-size: 174%;*/
+}
+
+.promociones .title{
+    font-family: Arial;
+    font-size: 17px;
+    color: #464765;
+    text-shadow: 1px 1px #eee;
+    padding-top: 13px;
+    font-weight: bold;
+}
+.promociones .text{
+    font-family: Arial;
+    font-size: 12px;
+    color: #777;
+    text-shadow: 1px 1px #ddd;
+    padding-bottom: 2px;
+    padding-top: 7px;
+}
+.promociones .masinfo{
+    padding-top: 0px;
+    padding-bottom: 13px;
+    font-size: 13px;
+    color: #999;
+
+}
+.promociones .masinfo a{
+    color: #A32C6C;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.promociones .imagen{
+    margin-right: 11px;
+    float: left;
+    width: 107;
+}
+

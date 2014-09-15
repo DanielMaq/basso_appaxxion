@@ -1,0 +1,84 @@
+.content{
+    width:990px;
+    margin:0 auto;
+}
+footer{
+    position: relative ;
+}
+.seccion1, .seccion2, .seccion3{
+    overflow: hidden;
+
+    border-top:1px solid #EAE6E5;
+
+
+    padding-top: 35px;
+    padding-bottom: 31px;
+
+}
+.g50{
+    width:50%;
+    float:left;
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+.seccion1{
+    background-color: #F2F2F2;
+}
+.main-image{
+    min-height: 460px;
+    background-image: url(../img/acerca.jpg);
+    background-position: 50%;
+    /*background-size: 174%;*/
+}
+
+.title{
+    font-family: Arial;
+    font-size: 24px;
+    color: #2C2C4E;
+    text-shadow: 1px 1px #eee;
+    padding-top: 29px;
+}
+.text{
+    font-family: Arial;
+    font-size: 16px;
+    color: #777;
+    text-shadow: 1px 1px #ddd;
+    padding-bottom: 20px;
+    padding-top: 7px;
+}
+.masinfo{
+    padding-top: 0px;
+    padding-bottom: 13px;
+    font-size: 13px;
+    color: #999;
+
+}
+.masinfo a{
+    color: #A32C6C;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.imagen{
+    margin-right: 11px;
+    float: left;
+}
+
+.titulo1{
+    font-family: Arial;
+    font-size: 34px;
+    color: #2A2C52;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.titulo2{
+    font-family: Arial;
+    font-size: 15px;
+    color: #727272;  text-align: center;
+    padding-top: 4px;
+    text-shadow: 1px 1px #eee;
+    padding-bottom: 35px;
+}
