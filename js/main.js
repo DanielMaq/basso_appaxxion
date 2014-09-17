@@ -4,23 +4,7 @@
 
 $(document).ready(function(){
 
-    $("body").mousemove(function (e){
-        globalX = e.pageX;
-        globalY = e.pageY;
-    });
-
-    $('.menu-btn').click(function(e){
-        ocultarMenu2();
-        ocultarMenu3();
-
-        if($('ul.menu').hasClass('abierto')){
-            ocultarMenu1();
-        }else{
-            $('ul.menu').animate({height:'136px'})
-                .addClass('abierto');
-        }
-        e.stopPropagation();
-    });
+    eventosGenerales()
 
     eventosDetail();
 
@@ -32,7 +16,7 @@ $(document).ready(function(){
 
     eventosPasos();
 
-    eventosPromociones()
+    eventosPromociones();
 
     setTimeout(function(){
         geoloc(function(){
@@ -40,16 +24,14 @@ $(document).ready(function(){
         });
     },1500);
 
-    $(document).click(function(){
-        ocultarMenu1();
-        ocultarMenu2();
-        ocultarMenu3();
 
-    });
 
     resizeMap();
 
-    setTimeout(function(){
-        showPromocionesInicial();
-    },2000);
+    if(document.body.clientWidth>1024){
+        setTimeout(function(){
+            showPromocionesInicial();
+        },2000);
+    }
+
 });

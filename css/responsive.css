@@ -7,8 +7,9 @@
 
     .descargas{display:none}
 
+
     footer{
-        height: 58px;
+      height:58px;
     }
     .footer-content{
         width: 100%;
@@ -28,6 +29,10 @@
     .sec1 .pais{
         margin-left: 0;
         width: 20%;
+        background-image: none !important;
+        text-align: center;
+        padding-top: 21px;
+        padding-left: 0px;
     }
     .sec1 .geo{
         width: 20%;
@@ -110,7 +115,104 @@
         margin-left: 0px;
         width: 20%;
     }
+    .menu-pais div{
+        text-align: center;
+        font-size: 17px;
+        padding-top: 21px;
+        padding-left: 0px;
+    }
+
+
+    .printer{
+        display:none;
+    }
+
+    /* DIALOGS */
     div.detail-bg{
-        display: none;
+        display: none !important;
+    }
+    .detail{
+        width: 100%;
+        left: 0%;
+        margin-left: 0;
+        top: 61px;
+        background-image:none;
+
+    }
+    .detail > div{
+        background-image: url(../img/detail-header-mobile.png);
+        background-size: 100% 103px;
+        height: 103px;
+    }
+    .detail .tipo{
+        top: 92px;
+        right: 50%;
+        margin-right: -32px;
+    }
+    .detail .cerrar{
+        background-image: url(../img/close.png);
+    }
+    .detail .img-background{
+        position: absolute;
+        width: 106px;
+        height: 100px;
+        background-color: #fff;
+        left: 50%;
+        top: 77px;
+        border-radius: 76px;
+        margin-left: -53px;
+    }
+
+    .detail .estado{
+        top: 204px;
+        left: 0px;
+        width: 100%;
+        text-align: center;
+    }
+    .detail .distancia{
+        top: 233px;
+        left: 0px;
+        width: 100%;
+        text-align: center;
+    }
+    .detail .tel{
+        top: 263px;
+        left: 0px;
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+    }
+    .detail .web{
+        top: 282px;
+        left: 0px;
+        width: 100%;
+        text-align: center;
+    }
+    .detail .linea{
+        top: 316px;
+    }
+    .detail .linea2{
+        top: 425px;
+    }
+    .detail .combustibles{
+        top: 331px;
+        width: 100%;
+        left: 0px;
+        padding: 0px 34px;
+    }
+    .detail .combustibles div{
+        width: 25%;
+    }
+    .detail .group div span {
+        width: 90%;
+    }
+
+    .detail .servicios{
+
+        left: 0px;
+        top: 433px;
+        width: 100%;
+        padding: 0px 0px 0px 30px;
+
     }
 }

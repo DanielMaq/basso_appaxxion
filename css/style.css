@@ -1,12 +1,12 @@
 
 body{
 
-    -webkit-touch-callout: none;
+   /* -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;
+    user-select: none; */
 
 }
 
@@ -543,6 +543,12 @@ div.detail-bg{
     left: 213px;  color: #ABABAB;  font-family: Arial;  font-size: 15px;
     font-weight: bold;
 
+}
+.detail .linea{
+    position: absolute;top: 174px;width: 100%;border-top: 1px solid #EFEFEF;height: 0px;
+}
+.detail .linea2{
+    position: absolute;top: 358px;width: 100%;border-top: 1px solid #EFEFEF;height: 0px;
 }
 .detail .combustibles{
 

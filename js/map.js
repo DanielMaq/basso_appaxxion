@@ -313,7 +313,15 @@ function resizeMap(){
 
 
     ////////////////////////////////////////////////////////////////////////////
-    $('div.detail-bg').height(document.body.clientHeight-175);
+    if(document.body.clientWidth>1024){
+        $('div.detail-bg').height(document.body.clientHeight-175);
+        $('div.detail').height(442);
+
+    }else{
+        //$('div.detail-bg').height(0);
+       $('div.detail').height(document.body.clientHeight-61);
+    }
+
 
      /* $('div.detail').height(document.body.clientHeight-303);
     var h=$('div.detail').height();

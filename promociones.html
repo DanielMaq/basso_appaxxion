@@ -16,8 +16,10 @@
     <!--script src="js/slimscroll.js"></script>-->
     <script src="http://maps.googleapis.com/maps/api/js?v=3.6&language=en&key=AIzaSyDfs88uaYQmu_fU2PMdDM90BqdMn5ZWeh8&sensor=false" ></script>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/promociones.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/promociones.css" />
+    <link rel="stylesheet" href="css/promociones-responsive.css" />
+
 </head>
 
 <body>
@@ -46,7 +48,7 @@
     </header>
 
     <div class="titulo1">Promociones</div>
-    <div class="titulo2">Conozca las promociones que tenemos para ofrecerle en nuestras tiendas.<br>Con solo visitarlas usted ya tiene los beneficios incluidos.</div>
+    <div class="titulo2">Conozca las promociones que tenemos para ofrecerle en nuestras tiendas. Con solo visitarlas usted ya tiene los beneficios incluidos.</div>
 
     <div class="seccion1">
         <div class="content">
@@ -55,8 +57,9 @@
                 <div class="title">Desayuno Gratis</div>
                 <div class="text">Con tu carga de $100 o mas te podés llevar un delicioso desayuno gratis.</div>
                 <div class="masinfo">
-                    <a href="#">Ver en el mapa &raquo;</a> &nbsp;|&nbsp;
-                    <a href="#">Ver estaciones adheridas &raquo;</a>
+                    <a href="#">Ver en el mapa <span>&raquo;</span></a>
+                    <span>&nbsp;|&nbsp;</span>
+                    <a href="#">Ver estaciones adheridas <span>&raquo;</span></a>
                 </div>
             </div>
             <div class="g50">
@@ -64,8 +67,9 @@
                 <div class="title">Desayuno Gratis</div>
                 <div class="text">Con tu carga de $100 o mas te podés llevar un delicioso desayuno gratis.</div>
                 <div class="masinfo">
-                    <a href="#">Ver en el mapa &raquo;</a> &nbsp;|&nbsp;
-                    <a href="#">Ver estaciones adheridas &raquo;</a>
+                    <a href="#">Ver en el mapa <span>&raquo;</span></a>
+                    <span>&nbsp;|&nbsp;</span>
+                    <a href="#">Ver estaciones adheridas <span>&raquo;</span></a>
                 </div>
             </div>
         </div>
@@ -79,8 +83,9 @@
                 <div class="title">Desayuno Gratis</div>
                 <div class="text">Con tu carga de $100 o mas te podés llevar un delicioso desayuno gratis.</div>
                 <div class="masinfo">
-                    <a href="#">Ver en el mapa &raquo; </a> &nbsp;|&nbsp;
-                    <a href="#">Ver estaciones adheridas &raquo; </a>
+                    <a href="#">Ver en el mapa <span>&raquo;</span> </a>
+                    <span>&nbsp;|&nbsp;</span>
+                    <a href="#">Ver estaciones adheridas <span>&raquo;</span> </a>
                 </div>
             </div>
             <div class="g50">
@@ -88,8 +93,9 @@
                 <div class="title">Desayuno Gratis</div>
                 <div class="text">Con tu carga de $100 o mas te podés llevar un delicioso desayuno gratis.</div>
                 <div class="masinfo">
-                    <a href="#">Ver en el mapa &raquo; </a> &nbsp;|&nbsp;
-                    <a href="#">Ver estaciones adheridas &raquo; </a>
+                    <a href="#">Ver en el mapa <span>&raquo;</span> </a>
+                    <span>&nbsp;|&nbsp;</span>
+                    <a href="#">Ver estaciones adheridas <span>&raquo;</span> </a>
                 </div>
             </div>
         </div>
@@ -102,8 +108,9 @@
                 <div class="title">Desayuno Gratis</div>
                 <div class="text">Con tu carga de $100 o mas te podés llevar un delicioso desayuno gratis.</div>
                 <div class="masinfo">
-                    <a href="#">Ver en el mapa &raquo;</a> &nbsp;|&nbsp;
-                    <a href="#">Ver estaciones adheridas &raquo;</a>
+                    <a href="#">Ver en el mapa <span>&raquo;</span></a>
+                    <span>&nbsp;|&nbsp;</span>
+                    <a href="#">Ver estaciones adheridas <span>&raquo;</span></a>
                 </div>
             </div>
             <div class="g50">
@@ -111,8 +118,9 @@
                 <div class="title">Desayuno Gratis</div>
                 <div class="text">Con tu carga de $100 o mas te podés llevar un delicioso desayuno gratis.</div>
                 <div class="masinfo">
-                    <a href="#">Ver en el mapa &raquo;</a> &nbsp;|&nbsp;
-                    <a href="#">Ver estaciones adheridas &raquo;</a>
+                    <a href="#">Ver en el mapa <span>&raquo;</span></a>
+                    <span>&nbsp;|&nbsp;</span>
+                    <a href="#">Ver estaciones adheridas <span>&raquo;</span></a>
                 </div>
             </div>
         </div>
@@ -137,9 +145,15 @@
     </footer>
 </div>
 
-<script src="js/misc.js"></script>
-<script src="js/main.js"></script>
+<script src="js/data.js"></script>
 
+<script src="js/misc.js"></script>
+
+<script>
+    $(document).ready(function(){
+        eventosGenerales()
+    })
+</script>
 
 </body>
 </html>

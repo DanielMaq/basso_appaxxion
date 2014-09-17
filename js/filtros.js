@@ -1,7 +1,3 @@
-function ocultarMenu3(){ //Menu filtros
-    $('.bloque-filtro').hide();
-    $('.sec1 .filtro').removeClass('abierto');
-}
 
 function cargarFiltros(){
     var res="";
