@@ -58,10 +58,20 @@ function eventosFiltro(){
 
         if($(this).hasClass('abierto')){
             ocultarMenu3()
+            if(isMobile()){
+                $('#googleMap').show();
+            }
         }else{
-            $('.bloque-filtro').show();
+            $('.bf-container').show();
             $(this).addClass('abierto');
             actualizarFiltros();
+            if(isMobile()){
+                $('#googleMap').hide();
+                $('#container').css('background-color','#861D55');
+
+                pasosCerrar()
+            }
+
         }
         e.stopPropagation();
     });

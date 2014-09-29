@@ -8,13 +8,21 @@ body{
     -ms-user-select: none;
     user-select: none; */
 
+    /*padding-top:74px;*/
 }
 
 header{
     background-image: url(../img/header-bg.png);
-    background-size: 100%;
-}
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+}
+img{
+    border: none;
+}
 .header-content{
     width:990px;
     margin:0 auto;
@@ -23,6 +31,7 @@ header{
     height: 74px;
     background-repeat: no-repeat;
     background-color: #9E1F63;
+
 
 }
 .header-content .logo{
@@ -63,8 +72,11 @@ header{
     text-align: center;
 
 }
-.menu li.selected, .menu li:hover{
-    background-color: #AA3272;
+.menu li.selected{
+    background-color: #AA3272 !important;
+}
+.menu li:hover{
+    background-color: #861D55;
 }
 
 .menu li a{
@@ -215,6 +227,8 @@ div.social a.in img,div.social a.yt img{  margin-top: 10px }
     cursor: pointer;
     position: relative;
 }
+.sec1 .geo .tooltip{width:75px}
+
 .sec1 .map{
     background-image: url(../img/route.png);
     width: 80px;
@@ -224,11 +238,29 @@ div.social a.in img,div.social a.yt img{  margin-top: 10px }
     background-position: 50%;
     cursor: pointer;position: relative;
 }
+.sec1 .map .tooltip{width:70px}
+
 .sec1 .dir{
     width: 522px;
     height: 58px;
     float: left;
+    position: relative;
 }
+
+.sec1 .dir .tooltip{
+    border: none;
+    background-color: #861D55;
+    top: 16px;
+    color: #CD8CAE;
+    left: 25px;
+    padding-left: 2px;
+    font-size: 16px;
+}
+.sec1 .dir .tooltip.hasta{
+    left: 282px;
+}
+
+
 .sec1 .dir input{
 
     font-family: "Arial";
@@ -240,22 +272,22 @@ div.social a.in img,div.social a.yt img{  margin-top: 10px }
     background-color: #861D55;
 
     margin-top: 10px;
-    height: 40px;
-    padding: 16px;
+    height: 22px;
+    padding: 8px 16px;
     margin-left: 9px;
-    width: 503px;
+    width: 468px;
 
     border: 1px solid #79174A;
 
 
 }
 .sec1 .dir input#txDesde {
-    width: 248px;
+    width: 215px;
     display: none;
 }
 
 .sec1 .dir input#txHasta {
-    width: 248px;
+    width: 215px;
     margin-left: 3px;
     display: none;
 }
@@ -344,7 +376,7 @@ div.detail-bg{
     padding-bottom: 23px;
     padding-left: 97px;
     padding-right: 97px;
-    display: none;
+
 
 
 }
@@ -549,6 +581,9 @@ div.detail-bg{
 }
 .detail .linea2{
     position: absolute;top: 358px;width: 100%;border-top: 1px solid #EFEFEF;height: 0px;
+}
+.detail .linea3{
+    display: none;border-top: 1px solid #EFEFEF;height: 0px;
 }
 .detail .combustibles{
 
@@ -840,6 +875,12 @@ div.detail-bg{
 .promociones .imagen{
     margin-right: 11px;
     float: left;
-    width: 107;
+    width: 107px;
 }
-
+.bf-container{
+    display: none;
+    z-index: 9992;
+}
+#googleMap{
+    margin-top: 74px;
+}

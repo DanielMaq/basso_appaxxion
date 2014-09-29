@@ -1,37 +1,37 @@
 
 
 
-
 $(document).ready(function(){
 
-    eventosGenerales()
 
-    eventosDetail();
+        eventosGenerales()
 
-    cargarPaises();
+        eventosDetail();
 
-    eventosBusqueda();
+        cargarPaises();
 
-    eventosFiltro();
+        eventosBusqueda();
 
-    eventosPasos();
+        eventosFiltro();
 
-    eventosPromociones();
+        eventosPasos();
 
-    setTimeout(function(){
-        geoloc(function(){
-            $('#txBusqueda').val(globalPositionStr);
-        });
-    },1500);
+        eventosPromociones();
 
-
-
-    resizeMap();
-
-    if(document.body.clientWidth>1024){
         setTimeout(function(){
-            showPromocionesInicial();
-        },2000);
-    }
+            geoloc();
+        },1500);
+
+
+
+        resizeMap();
+
+        if(document.body.clientWidth>1024){
+            setTimeout(function(){
+                showPromocionesInicial();
+            },2000);
+        }
+
+
 
 });

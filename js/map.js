@@ -1,22 +1,4 @@
 
-
-
-///////////////////////////////////
-
-function rnd(min,max){
-    p = max - min;
-    aleat = Math.random() * p;
-    return min + aleat;
-}
-
-String.prototype.contains = function(it) {
-    return this.indexOf(it) != -1;
-};
-
-////////////////////////////////////////////////
-
-
-
 var map;
 var geocoder= new google.maps.Geocoder();
 var directionsDisplay;
@@ -114,20 +96,33 @@ function dibujarEstaciones(){
 
 function filtrarEstaciones(){
     for(var i=0;i<5;i++){ //CantEstaciones
-        Estaciones[i].visible=false;
+        Estaciones[i].visible=true;
+        //Estaciones[i].marker.setMap(null);
     }
     for(var i=0;i<5;i++){ //CantEstaciones
-        $.each(filtros, function(index, filtro) {
-            if((Estaciones[i].propiedades[index] && filtro.valor && true ) || Estaciones[i].visible){
+        $.each(filtros, function(index, filtro){
+            if(filtro.valor){
+                if(! Estaciones[i].propiedades[index]){
+                    Estaciones[i].visible=false;
+                }
+            }
+            /*if((Estaciones[i].propiedades[index] && filtro.valor  ) || Estaciones[i].visible){
                 Estaciones[i].marker.setMap(map);
                 Estaciones[i].visible=true;
             }else{
                 Estaciones[i].marker.setMap(null);
                 Estaciones[i].visible=false;
-            }
+            }*/
         });
-
         /**/
+    }
+    for(var i=0;i<5;i++){ //CantEstaciones
+        if(Estaciones[i].visible){
+            Estaciones[i].marker.setMap(map);
+        }else{
+            Estaciones[i].marker.setMap(null);
+        }
+        //Estaciones[i].marker.setMap(null);
     }
 }
 /*function getMarker(id){
@@ -164,27 +159,41 @@ function centerMapCurrentLoc(){
     limpiarRuta();
 }
 
-function geoloc(callback){
-    navigator.geolocation.getCurrentPosition(
-        function onSuccess(position) {
-            globalLat = position.coords.latitude;
-            globalLon = position.coords.longitude;
-            actualizarGeolocMarker(new google.maps.LatLng(globalLat,globalLon));
-            centerMap(new google.maps.LatLng(globalLat,globalLon));
+/*function nuevaUbicacionActual(punto){
+    PositionToDir(punto,function(dir){
+        globalPositionStr=dir;
+        $('#txBusqueda').val(globalPositionStr);
+    });
+}*/
 
-            PositionToDir(new google.maps.LatLng(globalLat,globalLon),function(dir){
-                estacionesAleatorias();
-                dibujarEstaciones();
-                globalPositionStr=dir;
-                callback();
-            });
+function geoloc(){
+
+        navigator.geolocation.getCurrentPosition(
+            function onSuccess(position) {
+                globalLat = position.coords.latitude;
+                globalLon = position.coords.longitude;
+
+                var punto=new google.maps.LatLng(globalLat,globalLon)
+                actualizarGeolocMarker(punto);
+                centerMap(punto);
+
+                PositionToDir(punto,function(dir,pais){
+                    estacionesAleatorias();
+                    dibujarEstaciones();
+                    globalPositionStr=dir;
+                    globalPais=pais;
+                    $('#txBusqueda').val(globalPositionStr);
+                    cambiarBandera(pais);
+                });
 
 
 
-        },function onError(error) {
-            //console.log(error)
-        }
-    );
+            },function onError(error) {
+                //console.log(error)
+            }
+        );
+
+
 }
 
 
@@ -233,8 +242,16 @@ function routeFromGeoToStation(stationId){
 function PositionToDir(latlng,callback){
     geocoder.geocode({'latLng': latlng}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
-            if (results[1]) {
-                callback(results[1].formatted_address)
+            console.log(results);
+            if (results[0]) {
+                var address=results[0].formatted_address;
+                var country='';
+                for(var i=0;i<results.length;i++){
+                    if(results[i].types[0]=='country'){
+                        country=results[i].formatted_address;
+                    }
+                }
+                callback(address,country);
             } else {
                 alert('No se encuentra');
             }
@@ -248,6 +265,7 @@ function DirToPosition(dir,callBack){
     var address = paisActual + ', ' + dir;
     geocoder.geocode( {"address":address}, function(results, status){
         if (status == google.maps.GeocoderStatus.OK){
+
             callBack(results[0].geometry.location);
         } else {
             callBack(null);
@@ -301,25 +319,26 @@ function routeFromDirToDir(dir1,dir2){
 /////////////////////////////////////////////////////////////////////////////////
 
 function resizeMap(){
-    $('#container').height(document.body.clientHeight);
+    $('#container').height(window.innerHeight-61);
 
-    if(document.body.clientWidth>1024)
-        $('#googleMap').height(document.body.clientHeight-169);
+    if(!isMobile())
+        $('#googleMap').height(window.innerHeight-174);
     else
-        $('#googleMap').height(document.body.clientHeight-60);
+        $('#googleMap').height(window.innerHeight-120);
 
     $('#container').width(document.body.clientWidth);
     $('#googleMap').width(document.body.clientWidth);
 
 
     ////////////////////////////////////////////////////////////////////////////
-    if(document.body.clientWidth>1024){
-        $('div.detail-bg').height(document.body.clientHeight-175);
-        $('div.detail').height(442);
 
+    if(!isMobile()){
+        $('div.detail-bg').height(window.innerHeight-175);
+        $('div.detail').height(442);
+        $('#googleMap').show();
     }else{
         //$('div.detail-bg').height(0);
-       $('div.detail').height(document.body.clientHeight-61);
+       $('div.detail').height(window.innerHeight-61);
     }
 
 
@@ -334,7 +353,7 @@ function resizeMap(){
 
     //////////////////////////////////////////////
 
-    if(document.body.clientWidth>1024){
+    if(!isMobile()){
         $.each(Paises, function(index, value) {
 
             $($('.menu-pais').children()[index]).html('<img src="'+value.icon+'" />'+value.nombre)

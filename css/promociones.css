@@ -2,8 +2,11 @@
     width:990px;
     margin:0 auto;
 }
+#container {
+    background-color: #fff;
+}
 footer{
-    position: relative ;
+    position: fixed ;
 }
 .seccion1, .seccion2, .seccion3{
     overflow: hidden;
@@ -71,7 +74,7 @@ footer{
     font-size: 34px;
     color: #2A2C52;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 104px;
 }
 
 .titulo2{

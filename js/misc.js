@@ -1,12 +1,28 @@
+function rnd(min,max){
+    p = max - min;
+    aleat = Math.random() * p;
+    return min + aleat;
+}
+
+String.prototype.contains = function(it) {
+    return this.indexOf(it) != -1;
+};
+
+function isMobile(){
+    return document.body.clientWidth<=1024;
+}
+
+
 function ocultarMenu1(){ //Menu header
-    if(document.body.clientWidth<=1024){
+    if(isMobile()){
         $('ul.menu').animate({height:'0px'})
             .removeClass('abierto');
     }
 }
 function ocultarMenu3(){ //Menu filtros
-    $('.bloque-filtro').hide();
+    $('.bf-container').hide();
     $('.sec1 .filtro').removeClass('abierto');
+    $('#googleMap').show();
 }
 
 
@@ -22,6 +38,7 @@ function eventosGenerales(){
     });
 
     $('.menu-btn').click(function(e){
+        //hideDetail();
         ocultarMenu2();
         ocultarMenu3();
 

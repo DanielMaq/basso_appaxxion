@@ -13,7 +13,7 @@ var Paises={
     }
 }
 var paisActual='Argentina';
-
+var paisCambiado=false;
 function cargarPaises(){
     var res="";
     var i=0;
@@ -33,23 +33,49 @@ function cargarPaises(){
 
     $('.menu-pais div').click(function(){
 
+        paisActual = $(this).attr('data-value');
 
 
         $('.menu-pais div').removeClass('selected');
         $(this).addClass('selected');
         $('.sec1 .pais img').attr('src',$('img',this).attr('src'));
-        paisActual = $(this).attr('data-value');
+
 
         //Regirigir mapa
         for (var i=0; i<4; i++){
             if(Paises[i].nombre==paisActual){
-                centerMap(new google.maps.LatLng(Paises[i].lat,Paises[i].lon));
+                var punto=new google.maps.LatLng(Paises[i].lat,Paises[i].lon);
+                centerMap(punto);
+                paisCambiado = true;
+
+                PositionToDir(punto,function(dir,pais){
+                    $('#txDesde,#txHasta').hide().val('');
+                    $('#txBusqueda').show().val(dir);
+                    globalModoBusqueda = 1;
+                });
+
+                ///nuevaUbicacionActual(punto);
+
             }
 
         }
 
     });
 
+}
+
+function cambiarBandera(pais){
+    $('.menu-pais div').each(function(){
+        var p=$(this).attr('data-value');
+        if(p==pais){
+            $('.menu-pais div').removeClass('selected');
+            $(this).addClass('selected');
+            $('.pais img').attr('src',$('img',this).attr('src'));
+            paisActual = pais;
+
+        }
+
+    })
 }
 
 
@@ -245,6 +271,7 @@ var globalX,globalY;
 var globalLat,globalLon;
 
 var globalPositionStr="";
+var globalPais="";
 var globalModoBusqueda=1;
 
 function estacionesAleatorias(){
