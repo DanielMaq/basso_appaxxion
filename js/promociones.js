@@ -1,4 +1,12 @@
-function showPromocionesInicial(){
+function showPromocionesInicial(ocultarChrome){
+    if (typeof ocultarChrome == "undefined") {
+        ocultarChrome = false;
+    }
+
+    if (ocultarChrome) {
+        return;
+    }
+
     $('div.detail-bg').show();
     $('div.promociones').show();
 }

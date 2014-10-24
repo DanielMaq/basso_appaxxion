@@ -318,13 +318,25 @@ function routeFromDirToDir(dir1,dir2){
 
 /////////////////////////////////////////////////////////////////////////////////
 
-function resizeMap(){
-    $('#container').height(window.innerHeight-61);
+function resizeMap(ocultarChrome){
 
-    if(!isMobile())
-        $('#googleMap').height(window.innerHeight-174);
-    else
-        $('#googleMap').height(window.innerHeight-120);
+    if (typeof ocultarChrome == "undefined") {
+        ocultarChrome = false;
+    }
+
+    var alturaContenedor = 61;
+    var alturaMapa = 174;
+    if (isMobile()) {
+        alturaMapa = 120;
+    }
+
+    if (ocultarChrome) {
+        alturaContenedor = 0;
+        alturaMapa = 0;
+    }
+
+    $('#container').height(window.innerHeight-alturaContenedor);
+    $('#googleMap').height(window.innerHeight-alturaMapa);
 
     $('#container').width(document.body.clientWidth);
     $('#googleMap').width(document.body.clientWidth);
