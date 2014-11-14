@@ -7,6 +7,12 @@ var directionsService;
 
 function initializeMap() {
 
+    var ocultarChrome = obtenerQueryString("ocultar_chrome", 0);
+    var mScrollWheel = true;
+    if (ocultarChrome) {
+        mScrollWheel = false;
+    }
+
     directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true});
     directionsService = new google.maps.DirectionsService();
     var pos1 = new google.maps.LatLng(-34.639507,-58.4910882 );
@@ -21,6 +27,7 @@ function initializeMap() {
     ];
 
     var mapProp = {
+        scrollwheel: mScrollWheel,
         center: pos1,
         zoom:14,
         zoomControl:true,
