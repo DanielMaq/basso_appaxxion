@@ -352,7 +352,14 @@ function resizeMap(ocultarChrome){
     ////////////////////////////////////////////////////////////////////////////
 
     if(!isMobile()){
-        $('div.detail-bg').height(window.innerHeight-175);
+
+        var nuevaAlturaDetailBg = window.innerHeight-175;
+        if (ocultarChrome) {
+            nuevaAlturaDetailBg = window.innerHeight;
+            $('div.detail-bg').css("top", "0");
+        }
+
+        $('div.detail-bg').height(nuevaAlturaDetailBg);
         $('div.detail').height(442);
         $('#googleMap').show();
     }else{

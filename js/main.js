@@ -29,6 +29,7 @@ $(document).ready(function(){
             $(".header-content").css("display", "none");
             $(".sec2").css("display", "none");
             $("#googleMap").css("margin-top", 0);
+            $(".bloque-filtro").css("padding-bottom", "90px");
 
         }
 
