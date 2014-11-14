@@ -7,9 +7,6 @@ var Paises={
     },
     2:{
         nombre:'Uruguay', abreviatura:'Uru.', lat:-34.8767092, lon: -56.1424982, icon:'img/flag-uru.png'
-    },
-    3:{
-        nombre:'Bolivia', abreviatura:'Bol.', lat:-17.7865961, lon: -63.1783028, icon:'img/flag-bol.png'
     }
 }
 var paisActual='Argentina';
