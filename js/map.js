@@ -44,6 +44,17 @@ function initializeMap() {
 
     });
 
+
+    $.getJSON("js/estaciones_servicio.txt", function (data) {
+        console.log("cargue las estaciones vamoooos");
+        Estaciones = data;
+        console.log("por cargar las estaciones");
+        procesarEstaciones();
+        console.log(Estaciones);
+        dibujarEstaciones(Estaciones);
+
+    });
+
 }
 
 google.maps.event.addDomListener(window, 'load', initializeMap);
@@ -76,8 +87,11 @@ function newMarker(theid,nombre,Latitude,Longitude){
 
 }*/
 
-function dibujarEstaciones(){
-    for(var i=0;i<5;i++){ //CantEstaciones
+function dibujarEstaciones() {
+    console.log("por dibujar: " + Estaciones.length);
+    console.log(Estaciones);
+
+    for(var i=0;i<Estaciones.length;i++){ //CantEstaciones
         //newMarker(i,Estaciones[i].nombre,Estaciones[i].lat,Estaciones[i].lon)
 
         var icon;
@@ -102,11 +116,11 @@ function dibujarEstaciones(){
 }
 
 function filtrarEstaciones(){
-    for(var i=0;i<5;i++){ //CantEstaciones
+    for(var i=0;i<Estaciones.length;i++){ //CantEstaciones
         Estaciones[i].visible=true;
         //Estaciones[i].marker.setMap(null);
     }
-    for(var i=0;i<5;i++){ //CantEstaciones
+    for(var i=0;i<Estaciones.length;i++){ //CantEstaciones
         $.each(filtros, function(index, filtro){
             if(filtro.valor){
                 if(! Estaciones[i].propiedades[index]){
@@ -123,7 +137,7 @@ function filtrarEstaciones(){
         });
         /**/
     }
-    for(var i=0;i<5;i++){ //CantEstaciones
+    for(var i=0;i<Estaciones.length;i++){ //CantEstaciones
         if(Estaciones[i].visible){
             Estaciones[i].marker.setMap(map);
         }else{
@@ -185,8 +199,7 @@ function geoloc(){
                 centerMap(punto);
 
                 PositionToDir(punto,function(dir,pais){
-                    estacionesAleatorias();
-                    dibujarEstaciones();
+                    //estacionesAleatorias();
                     globalPositionStr=dir;
                     globalPais=pais;
                     $('#txBusqueda').val(globalPositionStr);

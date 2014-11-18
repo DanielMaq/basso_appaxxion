@@ -78,7 +78,9 @@ function cambiarBandera(pais){
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var Estaciones={
+
+/**
+var Estaciones = {
     0:{
         nombre:'Estacion 1',
 
@@ -246,6 +248,9 @@ var Estaciones={
     }
 
 };
+*/
+
+var Estaciones = [];
 
 var filtros = {
     'abierto24hs' :{valor:true, icon:'img/f-24hs.png',icon2:'img/dt-24hs.png',nombre:'Abierto 24 hs.',tipo:'servicio'},
@@ -271,7 +276,8 @@ var globalPositionStr="";
 var globalPais="";
 var globalModoBusqueda=1;
 
-function estacionesAleatorias(){
+function estacionesAleatorias() {
+    return;
     Estaciones[0].nombre='Molina';
     Estaciones[1].nombre='Alameda';
     Estaciones[2].nombre='Gota fria';
@@ -293,3 +299,19 @@ function estacionesAleatorias(){
     Estaciones[4].lon=globalLon+b5;
 }
 
+function procesarEstaciones()
+{
+    for (var i = 0; i < Estaciones.length; i++) {
+        var latitud, longitud = 0;
+        latitud = Estaciones[i].lat;
+        longitud = Estaciones[i].lon;
+
+        latitud = latitud.replace(",", ".");
+        longitud = longitud.replace(",", ".");
+
+        Estaciones[i].lat = latitud;
+        Estaciones[i].lon = longitud;
+        Estaciones[i].tipo = Estaciones[i].tipo.toLowerCase();
+        Estaciones[i].distancia = '';
+    }
+}

@@ -121,10 +121,11 @@ function cargarPasos(myRoute){
 }
 
 function pasosImprimir(){
-    var html=$('div.lista').html();
+    var html = $('div.lista').html();
+    var htmlCompleto = "<html><head><title>AXION Buscador de EESS</title><style>body{ font-family: Arial, sans-serif; }</style></head><body>" + html + "</body></html>"
 
     var ventimp = window.open(' ','popimpr');
-    ventimp.document.write(html);
+    ventimp.document.write(htmlCompleto);
 
     $('.slimScrollDiv',ventimp.document).css('height','auto');
     $('.slimScrollDiv > div',ventimp.document).css('height','auto');
