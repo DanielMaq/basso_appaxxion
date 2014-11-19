@@ -8,7 +8,7 @@
 footer{
     position: relative ;
 }
-.seccion1, .seccion2, .seccion3{
+.seccion1, .seccion2, .seccion3, .seccion4{
     overflow: hidden;
     padding-top: 54px;
     padding-bottom: 50px;
@@ -20,7 +20,7 @@ footer{
     padding-right: 30px;
     box-sizing: border-box;
 }
-.seccion2{
+.seccion2, .seccion4 {
     background-color: #F2F2F2;
 }
 .main-image{

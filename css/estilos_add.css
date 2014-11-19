@@ -1,0 +1,45 @@
+.seccion1 .subtitle, .seccion2 .subtitle, .seccion3 .subtitle, .seccion4 .subtitle {
+  margin-top: 0; }
+.seccion1 .masinfo a, .seccion2 .masinfo a, .seccion3 .masinfo a, .seccion4 .masinfo a {
+  color: #A32C6C;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Arial; }
+
+.estaciones_servicio {
+  margin-bottom: 20px; }
+  .estaciones_servicio ul {
+    list-style: none;
+    margin: 0 0 0 0;
+    padding: 0; }
+    .estaciones_servicio ul li {
+      float: left;
+      list-style: none;
+      text-align: center;
+      width: 25%;
+      margin: 5px 0;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      color: #A32C6C; }
+  .estaciones_servicio .icon {
+    background: url("../img/icons.png") no-repeat top left;
+    display: inline-block;
+    height: 57px;
+    width: 67px; }
+    .estaciones_servicio .icon.icon-a {
+      background-position: 0 0; }
+    .estaciones_servicio .icon.icon-b {
+      background-position: -142px 0; }
+    .estaciones_servicio .icon.icon-c {
+      background-position: -269px 0; }
+    .estaciones_servicio .icon.icon-d {
+      background-position: -400px 0; }
+    .estaciones_servicio .icon.icon-e {
+      background-position: 0 -111px; }
+    .estaciones_servicio .icon.icon-f {
+      background-position: -142px -111px; }
+    .estaciones_servicio .icon.icon-g {
+      background-position: -269px -111px; }
+    .estaciones_servicio .icon.icon-h {
+      background-position: -400px -111px; }

@@ -1,4 +1,6 @@
 function showPromocionesInicial(ocultarChrome){
+    return;
+
     if (typeof ocultarChrome == "undefined") {
         ocultarChrome = false;
     }

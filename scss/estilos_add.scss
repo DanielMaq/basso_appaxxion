@@ -1,0 +1,86 @@
+.header-content {
+  .link-contacto {
+
+  }
+}
+
+.seccion1, .seccion2, .seccion3, .seccion4 {
+
+  .subtitle {
+    margin-top: 0;
+  }
+
+  .masinfo {
+
+    a {
+      color: #A32C6C;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: Arial;
+    }
+  }
+}
+
+.estaciones_servicio {
+
+  margin-bottom: 20px;
+
+  ul {
+    list-style: none;
+    margin: 0 0 0 0;
+    padding: 0;
+
+    li {
+      float: left;
+      list-style: none;
+      text-align: center;
+      width: 25%;
+      margin: 5px 0;
+
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      color: #A32C6C;
+    }
+
+  }
+
+  .icon {
+    background: url("../img/icons.png") no-repeat top left;
+    display: inline-block;
+    height: 57px;
+    width: 67px;
+
+    &.icon-a {
+      background-position: 0 0;
+    }
+
+    &.icon-b {
+      background-position: -142px 0;
+    }
+
+    &.icon-c {
+      background-position: -269px 0;
+    }
+
+    &.icon-d {
+      background-position: -400px 0;
+    }
+
+    &.icon-e {
+      background-position: 0 -111px;
+    }
+
+    &.icon-f {
+      background-position: -142px -111px;
+    }
+
+    &.icon-g {
+      background-position: -269px -111px;
+    }
+
+    &.icon-h {
+      background-position: -400px -111px;
+    }
+  }
+}
