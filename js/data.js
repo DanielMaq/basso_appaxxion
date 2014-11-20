@@ -263,7 +263,7 @@ var filtros = {
         valor: true,
         icon: 'img/f-tienda.png',
         icon2: 'img/dt-tienda.png',
-        nombre: 'Minimercado',
+        nombre: 'Tienda de Conv.',
         tipo: 'servicio'
     },
     'cajero': {
