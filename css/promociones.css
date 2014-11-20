@@ -35,14 +35,14 @@ footer{
 }
 
 .title{
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     font-size: 24px;
     color: #2C2C4E;
     text-shadow: 1px 1px #eee;
     padding-top: 29px;
 }
 .text{
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Light', Arial, sans-serif;
     font-size: 16px;
     color: #777;
     text-shadow: 1px 1px #ddd;
@@ -61,7 +61,7 @@ footer{
     text-decoration: none;
     font-size: 13px;
     font-weight: bold;
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
 }
 
 .imagen{
@@ -70,7 +70,7 @@ footer{
 }
 
 .titulo1{
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     font-size: 34px;
     color: #2A2C52;
     text-align: center;
@@ -78,7 +78,7 @@ footer{
 }
 
 .titulo2{
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Light', Arial, sans-serif;
     font-size: 15px;
     color: #727272;  text-align: center;
     padding-top: 4px;

@@ -1,3 +1,7 @@
+body {
+  font-family: 'HelveticaNeueLT-Medium';
+}
+
 .header-content {
   .link-contacto {
 
@@ -10,6 +14,8 @@
 
 .seccion1, .seccion2, .seccion3, .seccion4 {
 
+  font-family: 'HelveticaNeueLT-Medium';
+
   .subtitle {
     margin-top: 0;
   }
@@ -21,7 +27,7 @@
       text-decoration: none;
       font-size: 16px;
       font-weight: bold;
-      font-family: Arial;
+      font-family: 'HelveticaNeueLT-Medium';
     }
   }
 }

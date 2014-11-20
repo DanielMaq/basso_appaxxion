@@ -82,7 +82,7 @@ img{
 .menu li a{
     color: #ECD2E0;
     text-decoration: none;
-    font-family: "Arial";
+    font-family: 'HelveticaNeueLT-Light', Arial, sans-serif;
     font-size: 14px;
     display: block;
     padding-left: 20px;
@@ -102,7 +102,7 @@ footer{
     position: absolute;
     top: -19px;
     background-color: #F2F2F2;
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     font-size: 12px;
     padding: 6px 19px;
     border: 1px solid #B8B8B8;
@@ -134,7 +134,7 @@ footer .sec2{
 footer .sec2 span{
     display: block;
     float: left;
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     color: #939393;
     padding-top: 14px;
     padding-left: 82px;
@@ -175,7 +175,7 @@ div.social a.in img,div.social a.yt img{  margin-top: 10px }
     margin-left: 0px;
     width: 72px;
 
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     color: #D199B6;
     text-align: left;
 
@@ -263,7 +263,7 @@ div.social a.in img,div.social a.yt img{  margin-top: 10px }
 
 .sec1 .dir input{
 
-    font-family: "Arial";
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     color: #fff;
     font-size: 16px;
 
@@ -329,7 +329,7 @@ div.social a.in img,div.social a.yt img{  margin-top: 10px }
 }
 .menu-pais div{
     height: 59px;
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     color: #ddd;
     text-align: left;
     padding-top: 34px;
@@ -369,7 +369,7 @@ div.detail-bg{
     bottom: 0px;
     width: 990px;
     color: #fff;
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     font-size: 14px;
     box-sizing: border-box;
     padding-top: 32px;
@@ -507,7 +507,7 @@ div.detail-bg{
 .detail .titulo1{
 
     color: #fff;
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     font-size: 17px;
     position: absolute;
     left: 37px;
@@ -517,7 +517,7 @@ div.detail-bg{
 .detail .titulo2{
 
     color: #fff;
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     font-size: 17px;
     position: absolute;
     left: 37px;
@@ -549,7 +549,7 @@ div.detail-bg{
     top: 105px;
     left: 37px;
     color: #028B33;
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     font-size: 24px;
 
 }
@@ -557,7 +557,7 @@ div.detail-bg{
 
     position: absolute;
     top: 132px;  left: 37px;
-    color: #888;  font-family: Arial;
+    color: #888;  font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     font-size: 15px;
 
 }
@@ -565,14 +565,14 @@ div.detail-bg{
 
     position: absolute;
     top: 114px;
-    left: 213px;  color: #ABABAB;  font-family: Arial;  font-size: 15px;
+    left: 213px;  color: #ABABAB;  font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;  font-size: 15px;
 
 }
 .detail .web{
 
     position: absolute;
     top: 131px;
-    left: 213px;  color: #ABABAB;  font-family: Arial;  font-size: 15px;
+    left: 213px;  color: #ABABAB;  font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;  font-size: 15px;
     font-weight: bold;
 
 }
@@ -615,7 +615,7 @@ div.detail-bg{
     float: left;
 }
 .detail .group div span{
-    font-family: arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     font-size: 12px;
     color: #777;
     clear: both;
@@ -636,7 +636,7 @@ div.detail-bg{
 }
 .detail .comollegar{
     background-color: #9E1F64;
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     padding: 9px 34px;
     position: absolute;
     bottom: 26px;
@@ -685,14 +685,14 @@ div.detail-bg{
 
 .pasos .titulo{
     color: #9C1F63;
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     font-size: 17px;
     padding-right: 22px;
     padding-left: 22px;
 }
 .pasos .recorrido{
     color: #999;
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     font-size: 15px;
     padding-left: 22px;
     padding-top: 3px;
@@ -714,7 +714,7 @@ div.detail-bg{
 
 .pasos .item span{
     float: left;
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     font-size: 15px;
     color: #444;
     margin-left: 11px;
@@ -722,7 +722,7 @@ div.detail-bg{
 }
 
 .pasos .item > div{
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     font-size: 15px;
     color: #444;
     text-shadow: 1px 1px #eee;
@@ -795,7 +795,7 @@ div.detail-bg{
 }
 .promociones .titulo1{
     color: #fff;
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     font-size: 30px;
     position: absolute;
     left: 52px;
@@ -842,7 +842,7 @@ div.detail-bg{
 }
 
 .promociones .title{
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     font-size: 17px;
     color: #464765;
     text-shadow: 1px 1px #eee;
@@ -850,7 +850,7 @@ div.detail-bg{
     font-weight: bold;
 }
 .promociones .text{
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     font-size: 12px;
     color: #777;
     text-shadow: 1px 1px #ddd;
@@ -869,7 +869,7 @@ div.detail-bg{
     text-decoration: none;
     font-size: 13px;
     font-weight: bold;
-    font-family: Arial;
+    font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
 }
 
 .promociones .imagen{
