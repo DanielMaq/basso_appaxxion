@@ -10,6 +10,12 @@
   font-weight: bold;
   font-family: Arial; }
 
+.sec2 .footer-content span {
+  padding-top: 15px;
+  padding-bottom: 15px; }
+  .sec2 .footer-content span a {
+    color: #000; }
+
 .estaciones_servicio {
   margin-bottom: 20px; }
   .estaciones_servicio ul {

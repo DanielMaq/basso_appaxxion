@@ -26,9 +26,13 @@ function showDetail(idEstacion){
     $('.detail .estado').html(Estaciones[idEstacion].estado);
     $('.detail .distancia').html('Distancia: '+Estaciones[idEstacion].distancia);
     $('.detail .tel').html('Tel. '+Estaciones[idEstacion].telf);
-    $('.detail .web').html(Estaciones[idEstacion].web);
 
+    var web = Estaciones[idEstacion].web;
+    if (web == "#") {
+        web = "";
+    }
 
+    $('.detail .web').html(web);
 
     var resCombustibles="";
     var resServicios="";

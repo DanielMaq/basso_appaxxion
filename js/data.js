@@ -1,51 +1,51 @@
-var Paises={
-    0:{
-        nombre:'Argentina', abreviatura:'Arg.', lat:-34.639507, lon: -58.4910882, icon:'img/flag-arg.png'
+var Paises = {
+    0: {
+        nombre: 'Argentina', abreviatura: 'Arg.', lat: -34.639507, lon: -58.4910882, icon: 'img/flag-arg.png'
     },
-    1:{
-        nombre:'Paraguay', abreviatura:'Par.', lat:-25.3062274, lon: -57.5957806, icon:'img/flag-par.png'
+    1: {
+        nombre: 'Paraguay', abreviatura: 'Par.', lat: -25.3062274, lon: -57.5957806, icon: 'img/flag-par.png'
     },
-    2:{
-        nombre:'Uruguay', abreviatura:'Uru.', lat:-34.8767092, lon: -56.1424982, icon:'img/flag-uru.png'
+    2: {
+        nombre: 'Uruguay', abreviatura: 'Uru.', lat: -34.8767092, lon: -56.1424982, icon: 'img/flag-uru.png'
     }
 }
-var paisActual='Argentina';
-var paisCambiado=false;
-function cargarPaises(){
-    var res="";
-    var i=0;
+var paisActual = 'Argentina';
+var paisCambiado = false;
+function cargarPaises() {
+    var res = "";
+    var i = 0;
 
-    $.each(Paises, function(index, value) {
-        if(i==0)
+    $.each(Paises, function (index, value) {
+        if (i == 0)
 
-            res+= '<div class="selected" data-value="'+value.nombre+'"> <img src="'+value.icon+'" />'+value.nombre+'</div>';
+            res += '<div class="selected" data-value="' + value.nombre + '"> <img src="' + value.icon + '" />' + value.nombre + '</div>';
         else
-            res+= '<div data-value="'+value.nombre+'"> <img src="'+value.icon+'" />'+value.nombre+'</div>';
+            res += '<div data-value="' + value.nombre + '"> <img src="' + value.icon + '" />' + value.nombre + '</div>';
         i++;
     });
 
     $('.menu-pais').html(res)
-        .css('margin-top','-'+(i*59)+'px')
-        .css('height',(i*59)+'px');
+        .css('margin-top', '-' + (i * 59) + 'px')
+        .css('height', (i * 59) + 'px');
 
-    $('.menu-pais div').click(function(){
+    $('.menu-pais div').click(function () {
 
         paisActual = $(this).attr('data-value');
 
 
         $('.menu-pais div').removeClass('selected');
         $(this).addClass('selected');
-        $('.sec1 .pais img').attr('src',$('img',this).attr('src'));
+        $('.sec1 .pais img').attr('src', $('img', this).attr('src'));
 
 
         //Regirigir mapa
-        for (var i=0; i<4; i++){
-            if(Paises[i].nombre==paisActual){
-                var punto=new google.maps.LatLng(Paises[i].lat,Paises[i].lon);
+        for (var i = 0; i < 4; i++) {
+            if (Paises[i].nombre == paisActual) {
+                var punto = new google.maps.LatLng(Paises[i].lat, Paises[i].lon);
                 centerMap(punto);
                 paisCambiado = true;
 
-                PositionToDir(punto,function(dir,pais){
+                PositionToDir(punto, function (dir, pais) {
                     $('#txDesde,#txHasta').hide().val('');
                     $('#txBusqueda').show().val(dir);
                     globalModoBusqueda = 1;
@@ -61,13 +61,13 @@ function cargarPaises(){
 
 }
 
-function cambiarBandera(pais){
-    $('.menu-pais div').each(function(){
-        var p=$(this).attr('data-value');
-        if(p==pais){
+function cambiarBandera(pais) {
+    $('.menu-pais div').each(function () {
+        var p = $(this).attr('data-value');
+        if (p == pais) {
             $('.menu-pais div').removeClass('selected');
             $(this).addClass('selected');
-            $('.pais img').attr('src',$('img',this).attr('src'));
+            $('.pais img').attr('src', $('img', this).attr('src'));
             paisActual = pais;
 
         }
@@ -76,11 +76,10 @@ function cambiarBandera(pais){
 }
 
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
-var Estaciones = {
+ var Estaciones = {
     0:{
         nombre:'Estacion 1',
 
@@ -248,59 +247,80 @@ var Estaciones = {
     }
 
 };
-*/
+ */
 
 var Estaciones = [];
 
 var filtros = {
-    'abierto24hs' :{valor:true, icon:'img/f-24hs.png',icon2:'img/dt-24hs.png',nombre:'Abierto 24 hs.',tipo:'servicio'},
-    'tiendas':{valor:true, icon:'img/f-tienda.png',icon2:'img/dt-tienda.png',nombre:'Tiendas de Conv.',tipo:'servicio'},
-    'cajero':{valor:true, icon:'img/f-cajero.png',icon2:'img/dt-cajero.png',nombre:'Cajero Automático',tipo:'servicio'},
-    'tc' :{valor:true, icon:'img/f-tc.png',icon2:'img/dt-tc.png',nombre:'Tarjeta de Crédito',tipo:'servicio'},
-    'card' :{valor:true, icon:'img/f-card.png',icon2:'img/dt-card.png',nombre:'AXION card',tipo:'servicio'},
-    'wifi' :{valor:true, icon:'img/f-wifi.png',icon2:'img/dt-wifi.png',nombre:'Wi-Fi',tipo:'servicio'},
-    'premium' :{valor:true, icon:'img/f-combustible.png',icon2:'img/combustible.png',nombre:'Diesel Premium',tipo:'combustible'},
-    'oil' :{valor:true, icon:'img/f-oil.png',icon2:'img/dt-oil.png',nombre:'Mobil Oil Express',tipo:'servicio'},
-    'promociones' :{valor:true, icon:'img/f-promocion.png',icon2:'',nombre:'Promociones',tipo:''},
-    'gnc' :{valor:true, icon:'img/f-combustible.png',icon2:'img/combustible.png',nombre:'GNC',tipo:'combustible'}
+    'abierto24hs': {
+        valor: true,
+        icon: 'img/f-24hs.png',
+        icon2: 'img/dt-24hs.png',
+        nombre: 'Abierto 24 hs.',
+        tipo: 'servicio'
+    },
+    'tiendas': {
+        valor: true,
+        icon: 'img/f-tienda.png',
+        icon2: 'img/dt-tienda.png',
+        nombre: 'Minimercado',
+        tipo: 'servicio'
+    },
+    'cajero': {
+        valor: true,
+        icon: 'img/f-cajero.png',
+        icon2: 'img/dt-cajero.png',
+        nombre: 'Cajero Automático',
+        tipo: 'servicio'
+    },
+    'tc': {valor: true, icon: 'img/f-tc.png', icon2: 'img/dt-tc.png', nombre: 'Tarjetas de Crédito', tipo: 'servicio'},
+    'card': {valor: true, icon: 'img/f-card.png', icon2: 'img/dt-card.png', nombre: 'AXION card', tipo: 'servicio'},
+    'wifi': {valor: true, icon: 'img/f-wifi.png', icon2: 'img/dt-wifi.png', nombre: 'Wi-Fi', tipo: 'servicio'},
+    /*'premium' :{valor:true, icon:'img/f-combustible.png',icon2:'img/combustible.png',nombre:'Diesel Premium',tipo:'combustible'},*/
+    'oil': {valor: true, icon: 'img/f-oil.png', icon2: 'img/dt-oil.png', nombre: 'Mobil Oil Express', tipo: 'servicio'},
+    'promociones': {valor: true, icon: 'img/f-promocion.png', icon2: '', nombre: 'Promociones', tipo: ''},
+    'gnc': {
+        valor: true,
+        icon: 'img/f-combustible.png',
+        icon2: 'img/combustible.png',
+        nombre: 'GNC',
+        tipo: 'combustible'
+    }
 };
 
 
+var globalX, globalY;
 
+var globalLat, globalLon;
 
-var globalX,globalY;
-
-var globalLat,globalLon;
-
-var globalPositionStr="";
-var globalPais="";
-var globalModoBusqueda=1;
+var globalPositionStr = "";
+var globalPais = "";
+var globalModoBusqueda = 1;
 
 function estacionesAleatorias() {
     return;
-    Estaciones[0].nombre='Molina';
-    Estaciones[1].nombre='Alameda';
-    Estaciones[2].nombre='Gota fria';
-    Estaciones[3].nombre='Grigota';
-    Estaciones[4].nombre='Mataral';
+    Estaciones[0].nombre = 'Molina';
+    Estaciones[1].nombre = 'Alameda';
+    Estaciones[2].nombre = 'Gota fria';
+    Estaciones[3].nombre = 'Grigota';
+    Estaciones[4].nombre = 'Mataral';
 
-    var a1 = rnd(-0.015,0.015),a2 = rnd(-0.015,0.015),a3 = rnd(-0.015,0.015),a4 = rnd(-0.015,0.015),a5 = rnd(-0.01,0.01);
-    var b1 = rnd(-0.015,0.015),b2 = rnd(-0.015,0.015),b3 = rnd(-0.015,0.015),b4 = rnd(-0.015,0.015),b5 = rnd(-0.01,0.01);
+    var a1 = rnd(-0.015, 0.015), a2 = rnd(-0.015, 0.015), a3 = rnd(-0.015, 0.015), a4 = rnd(-0.015, 0.015), a5 = rnd(-0.01, 0.01);
+    var b1 = rnd(-0.015, 0.015), b2 = rnd(-0.015, 0.015), b3 = rnd(-0.015, 0.015), b4 = rnd(-0.015, 0.015), b5 = rnd(-0.01, 0.01);
 
-    Estaciones[0].lat=globalLat+a1;
-    Estaciones[0].lon=globalLon+b1;
-    Estaciones[1].lat=globalLat+a2;
-    Estaciones[1].lon=globalLon+b2;
-    Estaciones[2].lat=globalLat+a3;
-    Estaciones[2].lon=globalLon+b3;
-    Estaciones[3].lat=globalLat+a4;
-    Estaciones[3].lon=globalLon+b4;
-    Estaciones[4].lat=globalLat+a5;
-    Estaciones[4].lon=globalLon+b5;
+    Estaciones[0].lat = globalLat + a1;
+    Estaciones[0].lon = globalLon + b1;
+    Estaciones[1].lat = globalLat + a2;
+    Estaciones[1].lon = globalLon + b2;
+    Estaciones[2].lat = globalLat + a3;
+    Estaciones[2].lon = globalLon + b3;
+    Estaciones[3].lat = globalLat + a4;
+    Estaciones[3].lon = globalLon + b4;
+    Estaciones[4].lat = globalLat + a5;
+    Estaciones[4].lon = globalLon + b5;
 }
 
-function procesarEstaciones()
-{
+function procesarEstaciones() {
     for (var i = 0; i < Estaciones.length; i++) {
         var latitud, longitud = 0;
         latitud = Estaciones[i].lat;
