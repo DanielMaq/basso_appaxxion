@@ -44,16 +44,15 @@ function initializeMap() {
 
     });
 
-
-    $.getJSON("js/estaciones_servicio.txt", function (data) {
-        console.log("cargue las estaciones vamoooos");
+    //console.log("por cargar las estaciones de servicio");
+    var jqxhr = $.getJSON("js/estaciones_servicio.txt", function (data) {
+        //console.log("cargue las estaciones vamoooos");
         Estaciones = data;
-        console.log("por cargar las estaciones");
+        //console.log("por cargar las estaciones");
         procesarEstaciones();
-        console.log(Estaciones);
+        //console.log(Estaciones);
         dibujarEstaciones(Estaciones);
-
-    });
+    }).error(function (jqXHR, textStatus, errorThrown) { alert(errorThrown); });
 
 }
 
@@ -88,8 +87,8 @@ function newMarker(theid,nombre,Latitude,Longitude){
 }*/
 
 function dibujarEstaciones() {
-    console.log("por dibujar: " + Estaciones.length);
-    console.log(Estaciones);
+    //console.log("por dibujar: " + Estaciones.length);
+    //console.log(Estaciones);
 
     for(var i=0;i<Estaciones.length;i++){ //CantEstaciones
         //newMarker(i,Estaciones[i].nombre,Estaciones[i].lat,Estaciones[i].lon)
@@ -262,7 +261,7 @@ function routeFromGeoToStation(stationId){
 function PositionToDir(latlng,callback){
     geocoder.geocode({'latLng': latlng}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
-            console.log(results);
+            //console.log(results);
             if (results[0]) {
                 var address=results[0].formatted_address;
                 var country='';
