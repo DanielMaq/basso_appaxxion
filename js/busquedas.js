@@ -98,11 +98,12 @@ function miUbicacion(){
     $('#txHasta').hide();
     $('#txBusqueda').show().val(globalPositionStr);
     cambiarBandera(globalPais);
-    centerMapCurrentLoc();
-    globalModoBusqueda = 1;
-    paisCambiado=false;
-    hideDetail();
-    hidePromocionesInicial();
+    alert('aca!');
+    //centerMapCurrentLoc();
+    //globalModoBusqueda = 1;
+    //paisCambiado=false;
+    //hideDetail();
+    //hidePromocionesInicial();
 }
 
 
