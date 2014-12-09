@@ -99,7 +99,7 @@ function miUbicacion(){
     $('#txBusqueda').show().val(globalPositionStr);
     cambiarBandera(globalPais);
     alert('aca!');
-    //centerMapCurrentLoc();
+    centerMapCurrentLoc();
     //globalModoBusqueda = 1;
     //paisCambiado=false;
     //hideDetail();

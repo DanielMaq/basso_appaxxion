@@ -174,6 +174,7 @@ function actualizarGeolocMarker (pos/*latitude, longitude*/){
 }
 
 function centerMapCurrentLoc(){
+    alert(new google.maps.LatLng(globalLat,globalLon));
     actualizarGeolocMarker(new google.maps.LatLng(globalLat,globalLon));
     centerMap(new google.maps.LatLng(globalLat,globalLon));
     limpiarRuta();
