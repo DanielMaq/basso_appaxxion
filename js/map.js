@@ -190,7 +190,7 @@ function onError(error) {
 };
 
 function centerMapCurrentLoc(){
-    alert(navigator.geolocation.getCurrentPosition(onSuccess(), onError));
+    navigator.geolocation.getCurrentPosition(onSuccess(), onError);
     actualizarGeolocMarker(new google.maps.LatLng(globalLat,globalLon));
     centerMap(new google.maps.LatLng(globalLat,globalLon));
     limpiarRuta();
