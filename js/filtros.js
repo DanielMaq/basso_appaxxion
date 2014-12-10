@@ -51,6 +51,12 @@ function eventosFiltro(){
     cargarFiltros()
 
     $('.filtro').click(function(e){
+
+        var $inputsBar = $('.sec1 .dir:visible');
+        if ( $inputsBar.length && isMobile() ){
+            $inputsBar.fadeOut();
+        }
+
         ocultarMenu1();
         ocultarMenu2();
         hideDetail();

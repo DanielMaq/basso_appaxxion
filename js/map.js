@@ -166,33 +166,18 @@ function actualizarGeolocMarker (pos/*latitude, longitude*/){
     if(geoMarker==null){
         geoMarker = new google.maps.Marker({
             position: pos,
-            map: map, icon:myIconGeo
+            map: map,
+            icon:myIconGeo
         });
     }else{
         geoMarker.setPosition(pos);
     }
 }
 
-
-var onSuccess = function(position) {
-    alert('Latitude: '          + position.coords.latitude          + '\n' +
-    'Longitude: '         + position.coords.longitude         + '\n' +
-    'Altitude: '          + position.coords.altitude          + '\n' +
-    'Accuracy: '          + position.coords.accuracy          + '\n' +
-    'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-    'Heading: '           + position.coords.heading           + '\n' +
-    'Speed: '             + position.coords.speed             + '\n' +
-    'Timestamp: '         + position.timestamp                + '\n');
-};
-function onError(error) {
-    alert('code: '    + error.code    + '\n' +
-    'message: ' + error.message + '\n');
-};
-
 function centerMapCurrentLoc(){
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
-    actualizarGeolocMarker(new google.maps.LatLng(globalLat,globalLon));
-    centerMap(new google.maps.LatLng(globalLat,globalLon));
+    var punto = new google.maps.LatLng(globalLat,globalLon);
+    actualizarGeolocMarker(punto);
+    centerMap(punto);
     limpiarRuta();
 }
 
@@ -204,32 +189,28 @@ function centerMapCurrentLoc(){
 }*/
 
 function geoloc(){
+    navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy : true, maximumAge : 3000, timeout : 60000 });
+}
 
-        navigator.geolocation.getCurrentPosition(
-            function onSuccess(position) {
-                globalLat = position.coords.latitude;
-                globalLon = position.coords.longitude;
+function onSuccess(position) {
+    globalLat = position.coords.latitude;
+    globalLon = position.coords.longitude;
 
-                var punto=new google.maps.LatLng(globalLat,globalLon)
-                actualizarGeolocMarker(punto);
-                centerMap(punto);
+    var punto = new google.maps.LatLng(globalLat,globalLon);
+    actualizarGeolocMarker(punto);
+    centerMap(punto);
 
-                PositionToDir(punto,function(dir,pais){
-                    //estacionesAleatorias();
-                    globalPositionStr=dir;
-                    globalPais=pais;
-                    $('#txBusqueda').val(globalPositionStr);
-                    cambiarBandera(pais);
-                });
-
-
-
-            },function onError(error) {
-                //console.log(error)
-            }
-        );
-
-
+    PositionToDir(punto,function(dir,pais){
+        //estacionesAleatorias();
+        globalPositionStr=dir;
+        globalPais=pais;
+        $('#txBusqueda').val(globalPositionStr);
+        cambiarBandera(pais);
+    });
+}
+function onError(error) {
+    alert('No se pudo obtener la posicion.');
+    //console.log(error)
 }
 
 

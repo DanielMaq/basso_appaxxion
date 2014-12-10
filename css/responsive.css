@@ -47,11 +47,17 @@
         width: 20%;
     }
     .sec1 .dir{
-        display:none
+        bottom: 0;
+        display: none;
+        float: none;
+        left: 0;
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
     }
-        .sec1 .dir input{
+    .sec1 .dir input{
 
-        }
+    }
     .sec1 .lupa{
         width: 20%;
     }
@@ -328,4 +334,21 @@
         margin-bottom: 61px;
     }
 
+}
+/* Max Width 520px */
+@media only screen and (max-width : 520px){
+    .sec1 .dir{
+        text-align: center;
+        width: 100%;
+    }
+    .sec1 .dir input#txBusqueda{
+        display: block;
+        margin: 10px auto 0;
+        width: 80%;
+    }
+    .sec1 .dir input#txDesde,
+    .sec1 .dir input#txHasta{
+        margin: 10px 0 0;
+        width: 38%;
+    }
 }

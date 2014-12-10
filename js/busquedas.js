@@ -60,7 +60,7 @@ function buscar(){
                     //globalPositionStr = $('#txBusqueda').val();
                 }else{
                     /// mostrar mensaje
-                    alert('No se encontró la dirección')
+                    alert('No se encontró la dirección');
                 }
             })
         }
@@ -98,12 +98,11 @@ function miUbicacion(){
     $('#txHasta').hide();
     $('#txBusqueda').show().val(globalPositionStr);
     cambiarBandera(globalPais);
-    alert('aca!');
     centerMapCurrentLoc();
-    //globalModoBusqueda = 1;
-    //paisCambiado=false;
-    //hideDetail();
-    //hidePromocionesInicial();
+    globalModoBusqueda = 1;
+    paisCambiado=false;
+    hideDetail();
+    hidePromocionesInicial();
 }
 
 
@@ -123,11 +122,29 @@ function eventosBusqueda(){
         e.stopPropagation();
     });
 
-    $('.geo').click(miUbicacion);
+    $('.geo').on('click', function(){
+        var $inputsBar = $('.sec1 .dir:hidden');
+        if ( $inputsBar.length ){
+            $inputsBar.fadeIn();
+        }
+        miUbicacion();
+    });
 
-    $('.map').click(comoLlegar);
+    $('.map').on('click', function(){
+        var $inputsBar = $('.sec1 .dir:hidden');
+        if ( $inputsBar.length ){
+            $inputsBar.fadeIn();
+        }
+        comoLlegar();
+    });
 
-    $('.lupa').click(buscar);
+    $('.lupa').on('click', function(){
+        var $inputsBar = $('.sec1 .dir:hidden');
+        if ( $inputsBar.length ){
+            $inputsBar.fadeIn();
+        }
+        buscar();
+    });
 
     $('#txBusqueda, #txDesde, #txHasta').keypress(function(e){
         if (e.keyCode == 13) {
