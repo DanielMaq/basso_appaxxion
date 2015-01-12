@@ -207,7 +207,7 @@ function onSuccess(position) {
         $('#txBusqueda').val(globalPositionStr);
         cambiarBandera(pais);
     });
-    alert("success" + " :  " + position.coords.latitude + ",  position.coords.longitude")
+    console.log('GeoLocation success!')
 }
 function onError(error) {
     alert('No se pudo obtener la posicion.');
@@ -236,6 +236,12 @@ function calcRoute(start,end) {
     //var currentZoom=map.getZoom();
     directionsService.route(request, function(response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay = new google.maps.DirectionsRenderer({
+                suppressMarkers: true,
+                polylineOptions: {
+                    strokeColor: "#9E1F64"
+                }
+            });
             directionsDisplay.setMap(map);
             directionsDisplay.setDirections(response);
 

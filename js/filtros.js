@@ -3,7 +3,7 @@ function cargarFiltros(){
     var res="";
 
     $.each(filtros, function(index, filtro) {
-        res += '<div data-checked="1" data-filtro="'+index+'"><img src="'+filtro.icon+'" />'+filtro.nombre+'</div>';
+        res += '<div data-checked="0" data-filtro="'+index+'"><img src="'+filtro.icon+'" />'+filtro.nombre+'</div>';
     });
 
     $('.bf-items').html(res);

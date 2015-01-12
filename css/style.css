@@ -191,7 +191,7 @@ div.social a.in img,div.social a.yt img{  margin-top: 10px }
     background-image: url(../img/pais-sel.png);
     background-color:#861D55 ;
 }
-.sec1 .filtro.abierto{
+.sec1 .footer-content .abierto{
     background-color:#861D55 ;
 }
 
@@ -242,7 +242,6 @@ div.social a.in img,div.social a.yt img{  margin-top: 10px }
 
 .sec1 .dir{
     width: 522px;
-    height: 58px;
     float: left;
     position: relative;
 }
@@ -686,14 +685,16 @@ div.detail-bg{
 .pasos .titulo{
     color: #9C1F63;
     font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
-    font-size: 17px;
-    padding-right: 22px;
-    padding-left: 22px;
+    font-size: 15px;
+    margin-right: 22px;
+    margin-left: 22px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .pasos .recorrido{
     color: #999;
     font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     padding-left: 22px;
     padding-top: 3px;
 }
@@ -883,4 +884,19 @@ div.detail-bg{
 }
 #googleMap{
     margin-top: 74px;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #FFF;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #FFF;
+    opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #FFF;
+    opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #FFF;
 }

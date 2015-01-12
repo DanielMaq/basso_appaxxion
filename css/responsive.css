@@ -54,6 +54,7 @@
         margin: 0 auto;
         position: absolute;
         right: 0;
+        z-index: -1;
     }
     .sec1 .dir input{
 
@@ -118,6 +119,7 @@
         right: 0px;
         top: 0px;
         display: block;
+        max-height: 61px;
     }
     .header-content .menu {
         overflow: hidden;
@@ -343,12 +345,14 @@
     }
     .sec1 .dir input#txBusqueda{
         display: block;
-        margin: 10px auto 0;
-        width: 80%;
+        margin: 0;
+        width: 90%;
+        padding: 20px 5%;
     }
     .sec1 .dir input#txDesde,
     .sec1 .dir input#txHasta{
-        margin: 10px 0 0;
-        width: 38%;
+        margin: 0;
+        width: 90%;
+        padding: 20px 5%;
     }
 }

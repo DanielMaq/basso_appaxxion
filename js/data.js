@@ -253,34 +253,34 @@ var Estaciones = [];
 
 var filtros = {
     'abierto24hs': {
-        valor: true,
+        valor: false,
         icon: 'img/f-24hs.png',
         icon2: 'img/dt-24hs.png',
         nombre: 'Abierto 24 hs.',
         tipo: 'servicio'
     },
     'tiendas': {
-        valor: true,
+        valor: false,
         icon: 'img/f-tienda.png',
         icon2: 'img/dt-tienda.png',
         nombre: 'Tienda de Conv.',
         tipo: 'servicio'
     },
     'cajero': {
-        valor: true,
+        valor: false,
         icon: 'img/f-cajero.png',
         icon2: 'img/dt-cajero.png',
         nombre: 'Cajero Automático',
         tipo: 'servicio'
     },
-    'tc': {valor: true, icon: 'img/f-tc.png', icon2: 'img/dt-tc.png', nombre: 'Tarjetas de Crédito', tipo: 'servicio'},
-    'card': {valor: true, icon: 'img/f-card.png', icon2: 'img/dt-card.png', nombre: 'AXION card', tipo: 'servicio'},
-    'wifi': {valor: true, icon: 'img/f-wifi.png', icon2: 'img/dt-wifi.png', nombre: 'Wi-Fi', tipo: 'servicio'},
+    'tc': {valor: false, icon: 'img/f-tc.png', icon2: 'img/dt-tc.png', nombre: 'Tarjetas de Crédito', tipo: 'servicio'},
+    'card': {valor: false, icon: 'img/f-card.png', icon2: 'img/dt-card.png', nombre: 'AXION card', tipo: 'servicio'},
+    'wifi': {valor: false, icon: 'img/f-wifi.png', icon2: 'img/dt-wifi.png', nombre: 'Wi-Fi', tipo: 'servicio'},
     /*'premium' :{valor:true, icon:'img/f-combustible.png',icon2:'img/combustible.png',nombre:'Diesel Premium',tipo:'combustible'},*/
-    'oil': {valor: true, icon: 'img/f-oil.png', icon2: 'img/dt-oil.png', nombre: 'Mobil Oil Express', tipo: 'servicio'},
-    'promociones': {valor: true, icon: 'img/f-promocion.png', icon2: '', nombre: 'Promociones', tipo: ''},
+    'oil': {valor: false, icon: 'img/f-oil.png', icon2: 'img/dt-oil.png', nombre: 'Mobil Oil Express', tipo: 'servicio'},
+    'promociones': {valor: false, icon: 'img/f-promocion.png', icon2: '', nombre: 'Promociones', tipo: ''},
     'gnc': {
-        valor: true,
+        valor: false,
         icon: 'img/f-combustible.png',
         icon2: 'img/combustible.png',
         nombre: 'GNC',
