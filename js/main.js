@@ -14,9 +14,10 @@ $(document).ready(function(){
 
         eventosPromociones();
 
-        setTimeout(function(){
-            geoloc();
-        },1500);
+        document.addEventListener("deviceready", geoloc(), false);
+        //setTimeout(function(){
+        //
+        //},1500);
 
         var ocultarChrome = obtenerQueryString("ocultar_chrome", 0);
         resizeMap(ocultarChrome);

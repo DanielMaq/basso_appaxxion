@@ -59,7 +59,7 @@ function initializeMap() {
 google.maps.event.addDomListener(window, 'load', initializeMap);
 
 var myIconAxion = new google.maps.MarkerImage( 'img/marker_axion.png', null, null, null, new google.maps.Size(33,34));
-var myIconEsso = new google.maps.MarkerImage( 'img/marker_esso.png', null, null, null, new google.maps.Size(44,37));
+var myIconEsso = new google.maps.MarkerImage( 'img/marker_esso.png', null, null, null, new google.maps.Size(45,32));
 
 var myIconGeo = new google.maps.MarkerImage( 'img/geoloc.png', null, null,new google.maps.Point(57, 57), new google.maps.Size(114,114));
 
@@ -207,6 +207,7 @@ function onSuccess(position) {
         $('#txBusqueda').val(globalPositionStr);
         cambiarBandera(pais);
     });
+    alert("success" + " :  " + position.coords.latitude + ",  position.coords.longitude")
 }
 function onError(error) {
     alert('No se pudo obtener la posicion.');
