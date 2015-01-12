@@ -241,7 +241,7 @@ div.social a.in img,div.social a.yt img{  margin-top: 10px }
 .sec1 .map .tooltip{width:70px}
 
 .sec1 .dir{
-    width: 100%;
+    width: 522px;
     float: left;
     position: relative;
 }
@@ -270,21 +270,24 @@ div.social a.in img,div.social a.yt img{  margin-top: 10px }
 
     background-color: #861D55;
 
+    margin-top: 10px;
     height: 22px;
-    padding: 20px 5%;
-    width: 90%;
+    padding: 8px 16px;
+    margin-left: 9px;
+    width: 468px;
 
     border: 1px solid #79174A;
 
 
 }
 .sec1 .dir input#txDesde {
-    /*width: 215px;*/
+    width: 215px;
     display: none;
 }
 
 .sec1 .dir input#txHasta {
-    /*width: 215px;*/
+    width: 215px;
+    margin-left: 3px;
     display: none;
 }
 

@@ -55,9 +55,10 @@
         position: absolute;
         right: 0;
         z-index: -1;
+        width: 100%;
     }
     .sec1 .dir input{
-
+        margin: 0;
     }
     .sec1 .lupa{
         width: 20%;
@@ -336,9 +337,41 @@
         margin-bottom: 61px;
     }
 
+    .sec1 .dir input{
+
+        font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
+        color: #fff;
+        font-size: 16px;
+
+        outline: none;
+
+        background-color: #861D55;
+
+        height: 22px;
+        padding: 20px 5%;
+        width: 90%;
+
+        border: 1px solid #79174A;
+
+
+    }
+    .sec1 .dir input#txDesde {
+        width: 90%;
+    }
+
+    .sec1 .dir input#txHasta {
+        width: 90%;
+        margin: 0;
+    }
+
+    .sec1 div.abierto .tooltip {
+        display: none !important;
+    }
+
 }
 /* Max Width 520px */
 @media only screen and (max-width : 520px){
+
     .sec1 .dir{
         text-align: center;
         width: 100%;

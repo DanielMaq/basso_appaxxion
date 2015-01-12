@@ -121,7 +121,7 @@ function miUbicacion(){
 function eventosBusqueda(){
     $('.sec1 .footer-content div').not('.dir').on('click',function(){
         $('.sec1 .dir').hide();
-        setTimeout(function(){$('.sec1 .footer-content div .tooltip').fadeOut(700)},2000)
+        //setTimeout(function(e){$('.sec1 .footer-content div .tooltip').fadeOut(700);e.stopPropagation()},2000)
     })
 
    $('.sec1 .pais').click(function(e){

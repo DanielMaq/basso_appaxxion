@@ -52,6 +52,8 @@ function eventosFiltro(){
 
     $('.filtro').click(function(e){
 
+        $('.sec1 .abierto').removeClass('abierto');
+
         var $inputsBar = $('.sec1 .dir:visible');
         if ( $inputsBar.length && isMobile() ){
             $inputsBar.fadeOut();
