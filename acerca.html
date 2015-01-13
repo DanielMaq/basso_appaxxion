@@ -178,7 +178,7 @@
                         <div class="video-bg"><span class="sr-only">close</span></div>
                         <div class="video-wraper lg">
                             <button type="button" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            <embed id="youtubeVideo" width="846" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allowfullscreen="true" allowscriptaccess="always" quality="high" bgcolor="#000000" name="my-video" style="" src="http://www.youtube.com/v/A6DtaWDbX7g?enablejsapi=1&version=3&playerapiid=ytplayer" type="application/x-shockwave-flash">
+                            <!--<embed id="youtubeVideo" width="846" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allowfullscreen="true" allowscriptaccess="always" quality="high" bgcolor="#000000" name="my-video" style="" src="http://www.youtube.com/v/A6DtaWDbX7g?enablejsapi=1&version=3&playerapiid=ytplayer" type="application/x-shockwave-flash">-->
                         </div>
                     </div>
                 </aside>
@@ -217,12 +217,11 @@
 			$(document).on('click', '.play', function (e) {
 				e.preventDefault();
 				if(!isMobile()) {
+					var _h = (5*$(window).height())/10;
+					var _w = (5*$(window).width())/10;
+					var iframe = '<iframe id="mobileVideo" style="" width="'+_w+'px" height="'+_h+'px" src="http://www.youtube.com/embed/A6DtaWDbX7g?rel=0&amp;controls=1&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>';
+					$('.video-wraper').append(iframe);
 					videoEmbed.fadeIn('fast');
-					setTimeout(
-							function () {
-								video.playVideo();
-							}, 2000
-					);
 				}else{
 					var _h = $('.play').height();
 					console.log('Alto: '+_h)
@@ -244,7 +243,7 @@
             $(document).on('click','.video-bg, .close',function(e){
                 e.preventDefault();
                 videoEmbed.fadeOut('fast');
-                video.pauseVideo();
+                $('#mobileVideo').remove();
             });
         }
 
