@@ -419,9 +419,9 @@ function resizeMap(ocultarChrome){
     ///////////////////////////////////////////////////////////////////////////
 
 }
-//$(window).resize(function() {
-//    resizeMap()
-//});
+$(window).resize(function() {
+    resizeMap()
+});
 
 
 

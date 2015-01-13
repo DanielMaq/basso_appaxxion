@@ -14,10 +14,10 @@ $(document).ready(function(){
 
         eventosPromociones();
 
-        //document.addEventListener("deviceready", , false);
-        setTimeout(function(){
-            geoloc();
-        },1500);
+        document.addEventListener("deviceready", geoloc(), false);
+        //setTimeout(function(){
+        //    geoloc();
+        //},1500);
 
         var ocultarChrome = obtenerQueryString("ocultar_chrome", 0);
         resizeMap(ocultarChrome);
