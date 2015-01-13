@@ -14,10 +14,10 @@ $(document).ready(function(){
 
         eventosPromociones();
 
-        document.addEventListener("deviceready", geoloc(), false);
-        //setTimeout(function(){
-        //
-        //},1500);
+        //document.addEventListener("deviceready", , false);
+        setTimeout(function(){
+            geoloc();
+        },1500);
 
         var ocultarChrome = obtenerQueryString("ocultar_chrome", 0);
         resizeMap(ocultarChrome);
@@ -36,6 +36,12 @@ $(document).ready(function(){
             },2000);
         }
 
+        /* LINKS */
 
+    //$('div.masinfo a').on('click', function(e){
+    //    e.preventDefault();
+    //    var href = $(this).attr('href');
+    //    window.open(href, '_blank', 'location=yes');
+    //})
 
 });

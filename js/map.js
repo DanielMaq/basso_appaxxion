@@ -39,13 +39,12 @@ function initializeMap() {
     map=new google.maps.Map(document.getElementById("googleMap") ,mapProp);
     directionsDisplay.setMap(map);
 
-
     google.maps.event.addListener(map, 'click', function(event) {
 
     });
 
     //console.log("por cargar las estaciones de servicio");
-    var jqxhr = $.getJSON("js/estaciones_servicio.txt", function (data) {
+    var jqxhr = $.getJSON("js/estaciones_servicio.json", function (data) {
         //console.log("cargue las estaciones vamoooos");
         Estaciones = data;
         //console.log("por cargar las estaciones");
@@ -69,6 +68,9 @@ function centerMap(pos/*lat,lon*/){
     map.panTo(pos/*new google.maps.LatLng(lat,lon)*/);
 }
 
+$(window).on('resize',function(){
+    centerMapCurrentLoc();
+})
 
 /*var markers={};
 var cantMarkers=-1;
@@ -208,6 +210,8 @@ function onSuccess(position) {
         cambiarBandera(pais);
     });
     console.log('GeoLocation success!')
+    $('.preloadMap').fadeOut();
+    $('#googleMap').animate({opacity:1},500);
 }
 function onError(error) {
     alert('No se pudo obtener la posicion.');

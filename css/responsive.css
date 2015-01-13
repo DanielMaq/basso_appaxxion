@@ -219,10 +219,16 @@
         width: 100%;
         left: 0px;
         padding: 0px 34px;
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
     }
     .detail .combustibles div{
         width: 25%;
         text-align: center;
+        float: none;
+        display: inline-block;
+        vertical-align: middle;
     }
     .detail .group div span {
         width: 90%;

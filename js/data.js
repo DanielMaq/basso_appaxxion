@@ -17,7 +17,6 @@ function cargarPaises() {
 
     $.each(Paises, function (index, value) {
         if (i == 0)
-
             res += '<div class="selected" data-value="' + value.nombre + '"> <img src="' + value.icon + '" />' + value.nombre + '</div>';
         else
             res += '<div data-value="' + value.nombre + '"> <img src="' + value.icon + '" />' + value.nombre + '</div>';
@@ -25,13 +24,13 @@ function cargarPaises() {
     });
 
     $('.menu-pais').html(res)
-        .css('margin-top', '-' + (i * 59) + 'px')
-        .css('height', (i * 59) + 'px');
+        .css('margin-top', '-' + ((i-1) * 59) + 'px')
+        .css('height', ((i-1) * 59) + 'px');
 
     $('.menu-pais div').click(function () {
 
         paisActual = $(this).attr('data-value');
-
+        var paisActualAb = $(this).text();
 
         $('.menu-pais div').removeClass('selected');
         $(this).addClass('selected');
@@ -52,7 +51,8 @@ function cargarPaises() {
                 });
 
                 ///nuevaUbicacionActual(punto);
-
+                if(isMobile())
+                    $('div.pais').html(paisActualAb)
             }
 
         }
@@ -276,16 +276,10 @@ var filtros = {
     'tc': {valor: false, icon: 'img/f-tc.png', icon2: 'img/dt-tc.png', nombre: 'Tarjetas de Crédito', tipo: 'servicio'},
     'card': {valor: false, icon: 'img/f-card.png', icon2: 'img/dt-card.png', nombre: 'AXION card', tipo: 'servicio'},
     'wifi': {valor: false, icon: 'img/f-wifi.png', icon2: 'img/dt-wifi.png', nombre: 'Wi-Fi', tipo: 'servicio'},
-    /*'premium' :{valor:true, icon:'img/f-combustible.png',icon2:'img/combustible.png',nombre:'Diesel Premium',tipo:'combustible'},*/
+    'premium' :{valor:false, icon:'img/f-combustible.png',icon2:'img/combustible.png',nombre:'Diesel Premium',tipo:'combustible'},
+    'gnc': {valor: false,icon: 'img/f-combustible.png',icon2: 'img/combustible.png',nombre: 'GNC',tipo: 'combustible'},
     'oil': {valor: false, icon: 'img/f-oil.png', icon2: 'img/dt-oil.png', nombre: 'Mobil Oil Express', tipo: 'servicio'},
-    'promociones': {valor: false, icon: 'img/f-promocion.png', icon2: '', nombre: 'Promociones', tipo: ''},
-    'gnc': {
-        valor: false,
-        icon: 'img/f-combustible.png',
-        icon2: 'img/combustible.png',
-        nombre: 'GNC',
-        tipo: 'combustible'
-    }
+    'promociones': {valor: false, icon: 'img/f-promocion.png', icon2: '', nombre: 'Promociones', tipo: ''}
 };
 
 
@@ -332,6 +326,6 @@ function procesarEstaciones() {
         Estaciones[i].lat = latitud;
         Estaciones[i].lon = longitud;
         Estaciones[i].tipo = Estaciones[i].tipo.toLowerCase();
-        Estaciones[i].distancia = '';
+        //Estaciones[i].distancia = '';
     }
 }

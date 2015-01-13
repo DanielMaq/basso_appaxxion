@@ -30,6 +30,9 @@
 
     <div id="container" style="overflow: hidden">
 
+	<div class="preloadMap">Cargando contenido...</div>
+
+
         <header>
             <div class="header-content">
                 <a href="#" class="logo"><img src="img/logo.png" /></a>
@@ -63,6 +66,7 @@
                 <img class="tipo" />
                 <a href="#" class="cerrar"></a>
                 <div class="estado">Abierta</div>
+				<div class="distancia">Distancia: 1,0 km.</div>
                 <div class="tel">Tel. +54 114760-3547</div>
                 <div class="web">www.estacion.com.ar</div>
                 <div class="linea"></div>
@@ -272,12 +276,12 @@
                         <div class="tooltip ">Cómo llegar</div>
                     </div>
                     <div class="dir">
-                        <div class="tooltip ">Escriba una dirección</div>
+                        <!--<div class="tooltip ">Escriba una dirección</div>-->
                         <input id="txBusqueda" />
                         <input id="txDesde" placeholder="Desde"/>
                         <input id="txHasta" placeholder="Hasta" />
                     </div>
-                    <div class="lupa"></div>
+                    <div class="lupa"><div class="tooltip " style="text-align: center;width: 100px;">Buscar dirección</div></div>
                     <div class="filtro">
                         <div class="tooltip ">Filtro</div>
                     </div>

@@ -7,6 +7,7 @@
 </author>
 
 <gap:plugin name="com.mobileigniter.waa.cordova.geolocation" version="0.3.12" />
+<gap:plugin name="org.tt.inappbrowser" version="8" />
     
 <content src="index.html" />
 <access origin="*" />

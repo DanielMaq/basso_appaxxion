@@ -52,8 +52,6 @@ function eventosFiltro(){
 
     $('.filtro').click(function(e){
 
-        $('.sec1 .abierto').removeClass('abierto');
-
         var $inputsBar = $('.sec1 .dir:visible');
         if ( $inputsBar.length && isMobile() ){
             $inputsBar.fadeOut();
@@ -89,7 +87,15 @@ function eventosFiltro(){
     $(' .bloque-filtro a.ok').click( filtrar);
 
     $(' a.cancel').click(function(e){
-        ocultarMenu3()
+        ocultarMenu3();
+        var $this = $('.bf-todos')
+        $this.css('background-image','url(img/unchecked.png)');
+        $this.attr('data-checked','0');
+            $('.bf-items div')
+                .css('background-image','url(img/unchecked.png)')
+                .attr('data-checked','0');
+        filtrar();
+        e.preventDefault();
     } );
 
     $('.bf-todos').click(function(e){
@@ -106,7 +112,6 @@ function eventosFiltro(){
                 .css('background-image','url(img/checked.png)')
                 .attr('data-checked','1');
         }
-
         e.stopPropagation();
     });
 }

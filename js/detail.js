@@ -30,6 +30,8 @@ function showDetail(idEstacion){
     var web = Estaciones[idEstacion].web;
     if (web == "#") {
         web = "";
+    }else{
+        web = '<a href="'+web+'" target="_blank">'+web+'</a>';
     }
 
     $('.detail .web').html(web);
@@ -37,15 +39,20 @@ function showDetail(idEstacion){
     var resCombustibles="";
     var resServicios="";
     $.each(Estaciones[idEstacion].propiedades,function(index,value){
+        //console.log($(this));
         if(value){
-            if(filtros[index].tipo=='combustible'){
-                resCombustibles += '<div><img src="'+filtros[index].icon2+'" /><span>'+filtros[index].nombre+'</span></div>';
-            }
+            //if(filtros[index].tipo=='combustible'){
+            //    resCombustibles += '<div><img src="'+filtros[index].icon2+'" /><span>'+filtros[index].nombre+'</span></div>';
+            //}
             if(filtros[index].tipo=='servicio'){
                 resServicios += '<div><img src="'+filtros[index].icon2+'" /><span>'+filtros[index].nombre+'</span></div>';
             }
         }
     });
+    $.each(Estaciones[idEstacion].combustibles,function(index,value){
+        resCombustibles += '<div><img src="img/combustible.png" /><span>'+value+'</span></div>';
+    })
+
 
     $('.detail .combustibles').html(resCombustibles);
     $('.detail .servicios').html(resServicios);

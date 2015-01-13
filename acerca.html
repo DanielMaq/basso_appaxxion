@@ -89,7 +89,7 @@
                 <div class="title">Nuestros combustibles</div>
                 <div class="subtitle"></div>
                 <div class="text">Los combustibles <strong>AXION</strong> contienen múltiples componentes que ayudan a limpiar y mantener limpias las partes vitales del motor de tu vehículo. Y un motor limpio contribuye a tener un mejor desempeño, reducir las emisiones y mejorar tu experiencia de manejo.</div>
-                <div class="masinfo"><a href="http://www.axionenergy.com/combustibles.html">Conocer más &raquo;</a></div>
+                <div class="masinfo"><a href="http://www.axionenergy.com/combustibles.html" target="_blank">Conocer más &raquo;</a></div>
             </div>
             <div class="g50" style="padding-top: 30px;">
                 <img class="imgCombustible" src="img/combustible1.png"/>
@@ -113,7 +113,7 @@
                 <div class="text"><br><strong>AXION</strong> energy fabrica y distribuye lubricantes, grasas y refrigerantes marca
                     <strong>Mobil</strong>.</div>
                 <div class="text">La familia de productos <strong>Mobil</strong> es reconocida por su tecnología de avanzada, su desempeño y su innovación.</div>
-                <div class="masinfo"><a href="http://www.axionenergy.com/lubricantes.html">Conocer más &raquo;</a></div>
+                <div class="masinfo"><a href="http://www.axionenergy.com/lubricantes.html" target="_blank">Conocer más &raquo;</a></div>
             </div>
 
         </div>
@@ -172,7 +172,7 @@
                 <div class="masinfo"><a href="index.html">Buscador de Estaciones &raquo;</a></div>
             </div>
             <div class="g50">
-                <a class="play" href="#"><img class="imgVideo" src="img/about-video.jpg"/></a>
+                <a class="play" href="#" style="display: block"><img class="imgVideo" src="img/about-video.jpg"/></a>
                 <aside>
                     <div class="video-player" id="video_yotube">
                         <div class="video-bg"><span class="sr-only">close</span></div>
@@ -214,15 +214,26 @@
             var video =  document.getElementById('youtubeVideo');
 
             videoEmbed.css({display:'none'});
-            $(document).on('click','.play',function(e){
-                e.preventDefault();
-                videoEmbed.fadeIn('fast');
-                setTimeout(
-                        function(){
-                            video.playVideo();
-                        },2000
-                );
-            });
+			$(document).on('click', '.play', function (e) {
+				e.preventDefault();
+				if(!isMobile()) {
+					videoEmbed.fadeIn('fast');
+					setTimeout(
+							function () {
+								video.playVideo();
+							}, 2000
+					);
+				}else{
+					var _h = $('.play').height();
+					console.log('Alto: '+_h)
+					var iframe = '<iframe id="mobileVideo" style="opacity: 1;position: absolute;top: 0;z-index:99;left:0" width="100%" height="'+_h+'" src="http://www.youtube.com/embed/A6DtaWDbX7g?rel=0&amp;controls=1&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>'
+					$('a.play img').css({
+						display:'none'
+					});
+					$('a.play').parent('.g50').css('height',_h);
+					$('a.play').after(iframe);
+				}
+			});
 
             $(document).on('keyup',function(e){
                 if(e.which == 27){
@@ -238,6 +249,12 @@
         }
 
     })
+	$(window).on('resize',function(){
+		if(!isMobile() && $('.imgVideo').is(':hidden')){
+			$('#mobileVideo').remove();
+			$('.imgVideo').show();
+		}
+	})
 </script>
 
 </body>

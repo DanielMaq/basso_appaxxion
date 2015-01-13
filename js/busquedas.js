@@ -153,6 +153,7 @@ function eventosBusqueda(){
             }
             miUbicacion();
         }
+        directionsDisplay.setMap(null);
     });
 
     $('.map').on('click', function(){

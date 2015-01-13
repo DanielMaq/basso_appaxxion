@@ -11,7 +11,10 @@
         display:none;
     }
 
-    .seccion1, .seccion2, .seccion3{/*ok*/
+    .seccion1,
+    .seccion2,
+    .seccion3,
+    .seccion4{/*ok*/
         padding-top: 17px;
         padding-left: 16px;
         padding-right: 16px;
@@ -22,6 +25,7 @@
         width: 100%;
         padding-right: 0px;
         padding-top:0px !important;
+        position: relative;
     }
     .main-image{ /*   OK    */
         height: 245px;
@@ -56,6 +60,17 @@
     .imgVideo{
         width:100%;
         padding-top: 10px;
+    }
+
+    .estaciones_servicio ul {
+        display: inline-block;
+        text-align: center;
+    }
+    .estaciones_servicio ul li {
+        display: inline-block;
+        float: none !important;
+        width: 23% !important;
+        vertical-align: top;
     }
 
 }
