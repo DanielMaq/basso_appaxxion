@@ -189,6 +189,8 @@ function eventosBusqueda(){
 
     $('#txBusqueda, #txDesde, #txHasta').keypress(function(e){
         if (e.keyCode == 13) {
+            $('.sec1 div.abierto').removeClass('abierto');
+            $('.sec1 div .tooltip').hide();
             buscar();
             return false;
         }
