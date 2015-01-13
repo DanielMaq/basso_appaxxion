@@ -68,10 +68,6 @@ function centerMap(pos/*lat,lon*/){
     map.panTo(pos/*new google.maps.LatLng(lat,lon)*/);
 }
 
-$(window).on('resize',function(){
-    centerMapCurrentLoc();
-})
-
 /*var markers={};
 var cantMarkers=-1;
 
@@ -419,9 +415,11 @@ function resizeMap(ocultarChrome){
     ///////////////////////////////////////////////////////////////////////////
 
 }
-$(window).resize(function() {
-    resizeMap()
-});
+// Listen for orientation changes
+window.addEventListener("orientationchange", function() {
+    // Announce the new orientation number
+    resizeMap();
+}, false);
 
 
 
