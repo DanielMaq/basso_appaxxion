@@ -379,7 +379,15 @@
         padding: 0 !important;
         margin: 0 !important;
     }
-
+    .sec1 div:active .tooltip {
+        display: none !important;
+        height: 0 !important;
+        width: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
 }
 /* Max Width 520px */
 @media only screen and (max-width : 520px){

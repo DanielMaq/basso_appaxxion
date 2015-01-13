@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ff7429c-9f6d-4ae5-9ce4-401ff08932bc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/busquedas.js" afterPath="$PROJECT_DIR$/js/busquedas.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/responsive.css" afterPath="$PROJECT_DIR$/css/responsive.css" />
     </list>
     <ignored path="basso-appaxion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="busquedas.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="busquedas.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/busquedas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7879342" vertical-offset="5282" max-vertical-offset="5887">
+            <state vertical-scroll-proportion="-15.392858" vertical-offset="5282" max-vertical-offset="5887">
               <caret line="197" column="1" selection-start-line="197" selection-start-column="1" selection-end-line="197" selection-end-column="1" />
               <folding />
             </state>
@@ -49,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="responsive.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="responsive.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/responsive.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="10510" max-vertical-offset="11832">
-              <caret line="379" column="28" selection-start-line="379" selection-start-column="28" selection-end-line="379" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.89913046" vertical-offset="10735" max-vertical-offset="12064">
+              <caret line="388" column="29" selection-start-line="388" selection-start-column="29" selection-end-line="388" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -148,8 +148,8 @@
         <option value="$PROJECT_DIR$/js/map.js" />
         <option value="$PROJECT_DIR$/acerca.html" />
         <option value="$PROJECT_DIR$/js/estaciones_servicio.json" />
-        <option value="$PROJECT_DIR$/css/responsive.css" />
         <option value="$PROJECT_DIR$/js/busquedas.js" />
+        <option value="$PROJECT_DIR$/css/responsive.css" />
       </list>
     </option>
   </component>
@@ -593,14 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/responsive.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="10510" max-vertical-offset="11832">
-          <caret line="379" column="28" selection-start-line="379" selection-start-column="28" selection-end-line="379" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/filtros.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.5" vertical-offset="2747" max-vertical-offset="3538">
@@ -627,8 +619,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/busquedas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7879342" vertical-offset="5282" max-vertical-offset="5887">
+        <state vertical-scroll-proportion="-15.392858" vertical-offset="5282" max-vertical-offset="5887">
           <caret line="197" column="1" selection-start-line="197" selection-start-column="1" selection-end-line="197" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/responsive.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.89913046" vertical-offset="10735" max-vertical-offset="12064">
+          <caret line="388" column="29" selection-start-line="388" selection-start-column="29" selection-end-line="388" selection-end-column="29" />
           <folding />
         </state>
       </provider>
