@@ -75,7 +75,7 @@
             <div class="text">
                 (*) Esso es una marca registrada de Exxon Mobil Corporation y es usada bajo licencia.
             </div>
-            <div class="masinfo"><a href="http://www.axionenergy.com" target="_blank">Visitá nuestra página &raquo;</a></div>
+            <div class="masinfo ext"><a href="http://www.axionenergy.com" target="_blank">Visitá nuestra página &raquo;</a></div>
 
         </div>
 
@@ -89,7 +89,7 @@
                 <div class="title">Nuestros combustibles</div>
                 <div class="subtitle"></div>
                 <div class="text">Los combustibles <strong>AXION</strong> contienen múltiples componentes que ayudan a limpiar y mantener limpias las partes vitales del motor de tu vehículo. Y un motor limpio contribuye a tener un mejor desempeño, reducir las emisiones y mejorar tu experiencia de manejo.</div>
-                <div class="masinfo"><a href="http://www.axionenergy.com/combustibles.html" target="_blank">Conocer más &raquo;</a></div>
+                <div class="masinfo ext"><a href="http://www.axionenergy.com/combustibles.html" target="_blank">Conocer más &raquo;</a></div>
             </div>
             <div class="g50" style="padding-top: 30px;">
                 <img class="imgCombustible" src="img/combustible1.png"/>
@@ -113,7 +113,7 @@
                 <div class="text"><br><strong>AXION</strong> energy fabrica y distribuye lubricantes, grasas y refrigerantes marca
                     <strong>Mobil</strong>.</div>
                 <div class="text">La familia de productos <strong>Mobil</strong> es reconocida por su tecnología de avanzada, su desempeño y su innovación.</div>
-                <div class="masinfo"><a href="http://www.axionenergy.com/lubricantes.html" target="_blank">Conocer más &raquo;</a></div>
+                <div class="masinfo ext"><a href="http://www.axionenergy.com/lubricantes.html" target="_blank">Conocer más &raquo;</a></div>
             </div>
 
         </div>
@@ -247,7 +247,15 @@
             });
         }
 
-    })
+
+		/* LINKS */
+
+		$('.ext a').click(function(e){
+			e.preventDefault();
+			var href = $(this).attr('href');
+			window.open(href, '_blank', 'location=yes');
+		})
+	})
 	$(window).on('resize',function(){
 		if(!isMobile() && $('.imgVideo').is(':hidden')){
 			$('#mobileVideo').remove();

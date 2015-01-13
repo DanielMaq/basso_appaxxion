@@ -36,12 +36,4 @@ $(document).ready(function(){
             },2000);
         }
 
-        /* LINKS */
-
-    //$('div.masinfo a').on('click', function(e){
-    //    e.preventDefault();
-    //    var href = $(this).attr('href');
-    //    window.open(href, '_blank', 'location=yes');
-    //})
-
 });
