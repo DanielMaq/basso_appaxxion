@@ -217,8 +217,8 @@
 			$(document).on('click', '.play', function (e) {
 				e.preventDefault();
 				if(!isMobile()) {
-					var _h = (5*$(window).height())/10;
-					var _w = (5*$(window).width())/10;
+					var _h = (5*window.innerHeight)/10;
+					var _w = (5*window.innerWidth)/10;
 					var iframe = '<iframe id="mobileVideo" style="" width="'+_w+'px" height="'+_h+'px" src="http://www.youtube.com/embed/A6DtaWDbX7g?rel=0&amp;controls=1&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>';
 					$('.video-wraper').append(iframe);
 					videoEmbed.fadeIn('fast');
