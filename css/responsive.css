@@ -347,7 +347,7 @@
 
         font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
         color: #fff;
-        font-size: 16px;
+        font-size: 13px;
 
         outline: none;
 
@@ -388,6 +388,27 @@
         padding: 0 !important;
         margin: 0 !important;
     }
+
+    /* DETALLE PROMO INDEX */
+
+    .detail .promocion {
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+        margin: 20px 0 35px;
+    }
+    .detail .promocion .img img{
+        width: 100%;
+        max-width: 161px;
+    }
+    .detail .promocion .img, .detail .promocion .text{
+        display: inline-block;
+        text-align: center;
+        width: 49%;
+        vertical-align: middle;
+        color:#8f8f8f;
+    }
+
 }
 /* Max Width 520px */
 @media only screen and (max-width : 520px){

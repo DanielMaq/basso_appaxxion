@@ -1,8 +1,8 @@
-
 var map;
 var geocoder= new google.maps.Geocoder();
 var directionsDisplay;
 var directionsService;
+var direcciones = [];
 /*var currentMarkerId;*/
 
 function initializeMap() {
@@ -51,6 +51,9 @@ function initializeMap() {
         procesarEstaciones();
         //console.log(Estaciones);
         dibujarEstaciones(Estaciones);
+
+        //Cargar direcciones
+        cargarDirecciones(Estaciones);
     }).error(function (jqXHR, textStatus, errorThrown) { alert(errorThrown); });
 
 }
@@ -337,7 +340,14 @@ function routeFromDirToDir(dir1,dir2){
     })
 }
 
-
+function cargarDirecciones(estaciones){
+    $.each(estaciones,function(index,value){
+        var dir1 = estaciones[index].direccion1;
+        var dir2 = estaciones[index].direccion2;
+        direcciones[index] = dir1+', '+dir2;
+    })
+//    console.log(direcciones)
+}
 
 
 /////////////////////////////////////////////////////////////////////////////////

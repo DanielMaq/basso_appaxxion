@@ -11,10 +11,12 @@
             border: none;
         }
     </style>
+	<script src="js/cordova.js"></script>
+
     <script src="js/jquery-1.9.0.min.js"></script>
     <script src="js/jquery-ui-1.9.2.min.js"></script>
+    <script src="js/slimscroll.js"></script>
     <!--script src="js/slimscroll.js"></script>-->
-    <script src="http://maps.googleapis.com/maps/api/js?v=3.6&language=en&key=AIzaSyDfs88uaYQmu_fU2PMdDM90BqdMn5ZWeh8&sensor=false" ></script>
 
     <link rel="stylesheet" href="css/fuentes.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -25,7 +27,7 @@
 
 </head>
 
-<body>
+<body class="secPromociones">
 
 
 <div id="container" style="padding-bottom: 43px;">
@@ -51,43 +53,254 @@
     </header>
 
     <div class="titulo1">Promociones</div>
-    <div class="titulo2">Disfrutá todas las promociones vigentes que tenemos para vos.</div>
+    <div class="titulo2">Conozca las promociones que tenemos para ofrecerle en nuestras tiendas. Con solo visitarlas usted ya tiene los beneficios incluidos</div>
 
     <div class="seccion1">
 
         <div class="content">
             <div class="g50">
-                <div class="title">Promoción Me estás cargando?</div>
-                <div class="subtitle"></div>
-                <div class="text">La promo de Esso (*) con la que podés ganar 30 0km, merece un: Me estás cargando? Pasá por una Esso o AXION, cargá $300 o más y podés ganarte un RENAULT CLIO MÍO 0km.</div>
-                <div class="text">(*) Esso es una marca registrada de Exxon Mobil Corporation y es usada bajo licencia.</div>
-                <div class="masinfo"><a href="http://www.promomeestascargando.com" target="_blank">Conocer más &raquo;</a></div>
+				<div class="centerMobile">
+					<div class="img"><img src="img/promocion.png" /></div>
+					<div class="txtContent" style="text-align: left">
+						<div class="title">Desayuno Gratis</div>
+						<div class="text">Con tu carga de $100 o mas te podés llevar un delicioso desayuno gratis.</div>
+						<div class="masinfo desktop">
+							<a href="" target="_blank">Ver en el mapa</a>
+							<span>|</span>
+							<a href="#" onclick="openDetail();return false">Estaciones adheridas</a>
+						</div>
+					</div>
+				</div>
+				<div class="masinfo">
+					<a href="#" data-promocion="" onClick="showPromoInMap()">Ver en el mapa</a>
+					<span>|</span>
+					<a href="#" onclick="openDetail();return false">Estaciones adheridas</a>
+				</div>
             </div>
-            <div class="g50" style="padding-top: 30px;">
-                <img class="imgVideo" style="max-width: 100%;" src="img/spot-cafe.jpg"/>
-            </div>
+
+			<div class="g50">
+				<div class="centerMobile">
+					<div class="img"><img src="img/promocion.png" /></div>
+					<div class="txtContent" style="text-align: left">
+						<div class="title">Desayuno Gratis</div>
+						<div class="text">Con tu carga de $100 o mas te podés llevar un delicioso desayuno gratis.</div>
+						<div class="masinfo desktop">
+							<a href="" target="_blank">Ver en el mapa</a>
+							<span>|</span>
+							<a href="#" onclick="openDetail();return false">Estaciones adheridas</a>
+						</div>
+					</div>
+				</div>
+				<div class="masinfo">
+					<a href="#" data-promocion="" onClick="showPromoInMap()">Ver en el mapa</a>
+					<span>|</span>
+					<a href="#" onclick="openDetail();return false">Estaciones adheridas</a>
+				</div>
+			</div>
         </div>
     </div>
 
-    <div class="seccion2">
-        <div class="content">
+	<div class="seccion2">
 
-            <div class="g50">
-                <br/><br/>
-                <img class="imgVideo" style="max-width: 100%;" src="img/bbva.jpg"/>
-            </div>
+		<div class="content">
+			<div class="g50">
+				<div class="centerMobile">
+					<div class="img"><img src="img/promocion.png" /></div>
+					<div class="txtContent" style="text-align: left">
+						<div class="title">Desayuno Gratis</div>
+						<div class="text">Con tu carga de $100 o mas te podés llevar un delicioso desayuno gratis.</div>
+						<div class="masinfo desktop">
+							<a href="" target="_blank">Ver en el mapa</a>
+							<span>|</span>
+							<a href="#" onclick="openDetail();return false">Estaciones adheridas</a>
+						</div>
+					</div>
+				</div>
+				<div class="masinfo">
+					<a href="#" data-promocion="" onClick="showPromoInMap()">Ver en el mapa</a>
+					<span>|</span>
+					<a href="#" onclick="openDetail();return false">Estaciones adheridas</a>
+				</div>
+			</div>
 
-            <div class="g50">
-                <div class="title">Promoción Banco Francés</div>
+			<div class="g50">
+				<div class="centerMobile">
+					<div class="img"><img src="img/promocion.png" /></div>
+					<div class="txtContent" style="text-align: left">
+						<div class="title">Desayuno Gratis</div>
+						<div class="text">Con tu carga de $100 o mas te podés llevar un delicioso desayuno gratis.</div>
+						<div class="masinfo desktop">
+							<a href="" target="_blank">Ver en el mapa</a>
+							<span>|</span>
+							<a href="#" onclick="openDetail();return false">Estaciones adheridas</a>
+						</div>
+					</div>
+				</div>
+				<div class="masinfo">
+					<a href="#" data-promocion="" onClick="showPromoInMap()">Ver en el mapa</a>
+					<span>|</span>
+					<a href="#" onclick="openDetail();return false">Estaciones adheridas</a>
+				</div>
+			</div>
+		</div>
+	</div>
 
-                <div class="text">Disfrutá todos los domingos de un 10% de descuento en las estaciones de servicio Esso (*) o AXION de todo el país, con tus tarjetas de crédito BBVA Francés (**).
-                </div>
-                <div class="text">(*) Esso es una marca registrada de Exxon Mobil Corporation y es usada bajo licencia.</div>
-                <div class="text">(**) Para más información ingresá a www.bbvafrances.com.ar.</div>
-            </div>
+	<div class="seccion1">
 
-        </div>
-    </div>
+		<div class="content">
+			<div class="g50">
+				<div class="centerMobile">
+					<div class="img"><img src="img/promocion.png" /></div>
+					<div class="txtContent" style="text-align: left">
+						<div class="title">Desayuno Gratis</div>
+						<div class="text">Con tu carga de $100 o mas te podés llevar un delicioso desayuno gratis.</div>
+						<div class="masinfo desktop">
+							<a href="" target="_blank">Ver en el mapa</a>
+							<span>|</span>
+							<a href="#" onclick="openDetail();return false">Estaciones adheridas</a>
+						</div>
+					</div>
+				</div>
+				<div class="masinfo">
+					<a href="#" data-promocion="" onClick="showPromoInMap()">Ver en el mapa</a>
+					<span>|</span>
+					<a href="#" onclick="openDetail();return false">Estaciones adheridas</a>
+				</div>
+			</div>
+
+			<div class="g50">
+				<div class="centerMobile">
+					<div class="img"><img src="img/promocion.png" /></div>
+					<div class="txtContent" style="text-align: left">
+						<div class="title">Desayuno Gratis</div>
+						<div class="text">Con tu carga de $100 o mas te podés llevar un delicioso desayuno gratis.</div>
+						<div class="masinfo desktop">
+							<a href="" target="_blank">Ver en el mapa</a>
+							<span>|</span>
+							<a href="#" onclick="openDetail();return false">Estaciones adheridas</a>
+						</div>
+					</div>
+				</div>
+				<div class="masinfo">
+					<a href="#" data-promocion="" onClick="showPromoInMap()">Ver en el mapa</a>
+					<span>|</span>
+					<a href="#" onclick="openDetail();return false">Estaciones adheridas</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="seccion2">
+
+		<div class="content">
+			<div class="g50">
+				<div class="centerMobile">
+					<div class="img"><img src="img/promocion.png" /></div>
+					<div class="txtContent" style="text-align: left">
+						<div class="title">Desayuno Gratis</div>
+						<div class="text">Con tu carga de $100 o mas te podés llevar un delicioso desayuno gratis.</div>
+						<div class="masinfo desktop">
+							<a href="" target="_blank">Ver en el mapa</a>
+							<span>|</span>
+							<a href="#" onclick="openDetail();return false">Estaciones adheridas</a>
+						</div>
+					</div>
+				</div>
+				<div class="masinfo">
+					<a href="#" data-promocion="" onClick="showPromoInMap()">Ver en el mapa</a>
+					<span>|</span>
+					<a href="#" onclick="openDetail();return false">Estaciones adheridas</a>
+				</div>
+			</div>
+
+			<div class="g50">
+				<div class="centerMobile">
+					<div class="img"><img src="img/promocion.png" /></div>
+					<div class="txtContent" style="text-align: left">
+						<div class="title">Desayuno Gratis</div>
+						<div class="text">Con tu carga de $100 o mas te podés llevar un delicioso desayuno gratis.</div>
+						<div class="masinfo desktop">
+							<a href="" target="_blank">Ver en el mapa</a>
+							<span>|</span>
+							<a href="#" onclick="openDetail();return false">Estaciones adheridas</a>
+						</div>
+					</div>
+				</div>
+				<div class="masinfo">
+					<a href="#" data-promocion="" onClick="showPromoInMap()">Ver en el mapa</a>
+					<span>|</span>
+					<a href="#" onclick="openDetail();return false">Estaciones adheridas</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="masPromociones">
+		<a href=""></a>
+	</div>
+
+	<div class="overlay">
+
+	</div>
+
+	<div class="detail ">
+		<div class="d-header"></div>
+		<div class="titulo1">Desayuno Gratis</div>
+		<a href="#" class="cerrar"></a>
+		<div class="content">
+			<div class="scroll">
+				<div class="titulo desktop">Estaciones de Serivicio adheridas</div>
+				<div class="stationContent">
+					<div class="name">AXION Villa Devoto</div>
+					<div class="dir">Federico Lacroze 2559</div>
+					<div class="phone">Tel. 4760.3547</div>
+					<div class="mail">info@axionenergy.com.ar</div>
+					<a href="#" >Ver en el mapa &raquo;</a>
+				</div>
+
+				<div class="linea2"></div>
+
+				<div class="stationContent">
+					<div class="name">AXION Villa Devoto</div>
+					<div class="dir">Federico Lacroze 2559</div>
+					<div class="phone">Tel. 4760.3547</div>
+					<div class="mail">info@axionenergy.com.ar</div>
+					<a href="#" >Ver en el mapa &raquo;</a>
+				</div>
+
+				<div class="linea2"></div>
+
+				<div class="stationContent">
+					<div class="name">AXION Villa Devoto</div>
+					<div class="dir">Federico Lacroze 2559</div>
+					<div class="phone">Tel. 4760.3547</div>
+					<div class="mail">info@axionenergy.com.ar</div>
+					<a href="#" >Ver en el mapa &raquo;</a>
+				</div>
+
+				<div class="linea2"></div>
+
+				<div class="stationContent">
+					<div class="name">AXION Villa Devoto</div>
+					<div class="dir">Federico Lacroze 2559</div>
+					<div class="phone">Tel. 4760.3547</div>
+					<div class="mail">info@axionenergy.com.ar</div>
+					<a href="#" >Ver en el mapa &raquo;</a>
+				</div>
+
+				<div class="linea2"></div>
+
+				<div class="stationContent">
+					<div class="name">AXION Villa Devoto</div>
+					<div class="dir">Federico Lacroze 2559</div>
+					<div class="phone">Tel. 4760.3547</div>
+					<div class="mail">info@axionenergy.com.ar</div>
+					<a href="#" >Ver en el mapa &raquo;</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
 
     <footer>
         <div class="sec2">
@@ -109,7 +322,40 @@
 <script>
     $(document).ready(function(){
         eventosGenerales()
+
+		$('.detail .cerrar').click(function(){
+			hideDetail();
+		})
+
+		$('.secPromociones .detail .stationContent a').click(function(e){
+			e.preventDefault()
+			goToStation();
+		})
     })
+	function goToStation(){
+		window.open('index.html', '_self');
+	}
+	function openDetail(){
+		var _h = $('body').height() - 74
+		if(isMobile()){
+			$('div.detail').css({
+				height:_h
+			})
+			$('div.detail').show();
+		}else{
+			$('div.detail').show();
+		}
+		$('div.overlay').css({
+			height:_h
+		}).show();
+
+	}
+	function hideDetail(){
+		$('div.detail, div.overlay').hide();
+	}
+	function showPromoInMap(){
+		goToStation()
+	}
 </script>
 
 </body>

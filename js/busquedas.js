@@ -1,4 +1,3 @@
-
 function alertaDireccionVacia(hasta){
     var tt=$('.sec1 .dir .tooltip');
     tt.css('color','#fff');
@@ -182,7 +181,12 @@ function eventosBusqueda(){
             $inputsBar.fadeIn();
             $('#txDesde,#txHasta').hide();
             $('#txBusqueda').fadeIn();
-            $('#txBusqueda').val('').attr('placeholder','Ingrese ubicación a buscar').focus()
+            $('#txBusqueda').val('').attr('placeholder','Ingrese ubicación a buscar').focus().addClass('autocomplete')
+
+            $('#txBusqueda.autocomplete').autocomplete({
+                source: direcciones,
+                position: { my: "left bottom", at: "left top", collision: "flip" }
+            });
             //buscar();
         }
     });

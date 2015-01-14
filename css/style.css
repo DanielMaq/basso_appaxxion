@@ -1042,3 +1042,17 @@ div.detail-bg{
 .menu-pais .selected {
     display: none;
 }
+
+.masinfo.ext a{ cursor: pointer}
+
+@media only screen and (min-width : 1024px){
+    .detail .promocion .text,
+    .detail .promocion .img {
+        text-align: center;
+        color: #8f8f8f;
+        font-size: 14px;
+    }
+    .detail .promocion .img img {
+        width: 80%;
+    }
+}

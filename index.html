@@ -10,7 +10,29 @@
             padding: 0;
             border: none;
         }
+		.ui-autocomplete {
+			max-height: 100px;
+			overflow-y: hidden;
+			overflow-x: hidden;
+		}
+		.ui-autocomplete {
+			opacity: 0.8 !important;
+			background-color: #861D55 !important;
+			border: none !important;
+			border-radius: 0 !important;
+			padding: 0 !important;
+			outline: none;
+		}
+		.ui-autocomplete li {
+			background-color: #861D55 !important;
+		}
+		.ui-autocomplete li a {
+			font-size: 11px !important;
+			color: #ecd2e0 !important;
+		}
     </style>
+
+	<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.9.2.custom.min.css" />
 
     <script src="js/jquery-1.9.0.min.js"></script>
     <script src="js/jquery-ui-1.9.2.min.js"></script>
@@ -92,7 +114,13 @@
                 <div class="linea3"></div>
 
                 <div class="promocion">
-
+					<div class="img">
+						<img src="img/promocion.png">
+					</div>
+					<div class="text">
+						Promoción vigente<br/>
+						<span class="promoVigente">Desayuno Gratis</span>
+					</div>
                 </div>
 
 
@@ -307,7 +335,7 @@
 width: 262px;height: 53px;overflow: hidden;position: relative ;background-image:url('img/buble.png');background-size: 262px 53px;">
             <input id="stid" type="hidden" value="" />
             <h2 style="margin: 0;color: #fff; font-size: 14px; position: absolute;left: 14px;top: 6px;  width: 225px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">17 st</h2>
-            <h3 style="margin: 0;color: #fff; font-size: 12px;  position: absolute;left: 14px;top: 23px; width: 124px;font-weight: normal">13 bikes | 12 doc</h3>
+            <h3 style="margin: 0;color: #fff; sty  position: absolute;left: 14px;top: 23px; width: 124px;font-weight: normal">13 bikes | 12 doc</h3>
 
         </div>
     </div>-->

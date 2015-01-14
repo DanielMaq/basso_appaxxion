@@ -1,5 +1,7 @@
 @media only screen and (max-width : 1024px){
 
+    .secPromociones .desktop {display: none}
+    .secPromociones .mobile {display: block}
 
     .content{
         width: 100%;
@@ -92,4 +94,60 @@
         display: none;
     }
 
+    .secPromociones .masinfo a {
+        font-weight: normal !important;
+        font-size: 13px !important;
+        color: #727272 !important;
+    }
+    .secPromociones .masinfo a:hover {
+        color: #ffffff !important;
+        background-color: #aa3272 !important;
+        background-image: url("../img/arrow_withe.png") !important;
+    }
+    .secPromociones .overlay {
+        background-color: black;
+        display: none;
+        opacity: 0.4;
+        position: absolute;
+        top: 74px;
+        width: 100%;
+        z-index: 9995;
+    }
+    .secPromociones .detail .titulo1 {
+        font-size: 20px;
+        top: 20px;
+    }
+    .secPromociones .detail a {
+        color: #a82d6e;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: normal;
+        font-family: 'HelveticaNeueLT-Medium';
+    }
+    .secPromociones .detail .content{
+          padding: 15px 30px;
+      }
+    .secPromociones .detail .content .linea2{
+        margin: 20px 0;
+    }
+    .secPromociones .detail .name{
+        color: #2a2d4c;
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+    .secPromociones .detail .phone, .secPromociones .detail .mail, .secPromociones .detail .dir{
+        color: #7b7b7b;
+    }
+    .secPromociones .detail .mail {
+        margin-bottom: 20px;
+    }
+    .secPromociones .masinfo span {display: none}
+
+    .secPromociones .masinfo.desktop {display: none}
+    .secPromociones .masinfo {
+        display: block;
+    }
+    .secPromociones .centerMobile {
+        text-align: center;
+    }
 }

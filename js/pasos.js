@@ -79,14 +79,10 @@ function pasosDestino(destino){
 
     if($('.pasos').height()>418){
         if(!isMobile()){
-            $('.pasos .lista > div').slimScroll({
-                color: '#9E1F64',
-                size: '5px',
-                height: 218 ,
-                alwaysVisible: true /*,
-                 railVisible: true,
-                 railColor: '#222',
-                 railOpacity: 0.9*/
+            $('.pasos .lista > div').css({
+                height: 218,
+                overflowX:'hidden',
+                overflowY:'auto'
             });
         }
     }
