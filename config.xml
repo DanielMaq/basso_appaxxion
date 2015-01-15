@@ -14,5 +14,6 @@
 <content src="index.html" />
 <access origin="*" />
 
+<icon src="img/logo_axion.png" />
 
 </widget>
