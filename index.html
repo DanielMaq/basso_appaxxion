@@ -47,7 +47,7 @@
 
 </head>
 
-<body>
+<body class="mapSection" onload="">
 
 
     <div id="container" style="overflow: hidden">
@@ -66,11 +66,12 @@
 
 
                 </ul>
-                <div class="descargas">
-                    <a href="#" class="link-contacto"></a>
-                    <a href="#" class="link-linkedin"></a>
-                    <a href="#" class="link-youtube"></a>
-                </div>
+				<div class="descargas">
+					<a href="#" class="link-android"></a>
+					<a href="#" class="link-ios"></a>
+					<a href="#" class="link-linkedin"></a>
+					<a href="#" class="link-youtube"></a>
+				</div>
                 <a href="#" class="menu-btn"><img src="img/menu.png" /></a>
             </div>
 
@@ -353,6 +354,25 @@ width: 262px;height: 53px;overflow: hidden;position: relative ;background-image:
     <script src="js/promociones.js"></script>
 
     <script src="js/main.js"></script>
+
+	<script>
+		var ScrrenOrientation;
+		document.addEventListener("deviceready", function(e){
+			deviceBackBtn();
+		},false);
+
+		function doOnOrientationChange()
+		{
+			ScrrenOrientation="portrait";
+			if(window.orientation == -90 || window.orientation == 90) ScrrenOrientation = "landscape";
+			resizeMap();
+		}
+
+		window.addEventListener('orientationchange', doOnOrientationChange);
+
+		// Initial execution if needed
+		doOnOrientationChange();
+	</script>
 
 </body>
 </html>

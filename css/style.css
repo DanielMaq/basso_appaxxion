@@ -49,7 +49,7 @@ img{
     margin: 0;
 }
 .header-content .descargas{
-    background-image: url('../img/header-icons.png');
+    background-image: url('../img/header-icons2.png');
 
     position: absolute;
     right: 0px;
@@ -58,10 +58,10 @@ img{
 
 }
 .descargas a{ position: absolute; width: 28px; height: 28px;top: 23px;}
-.descargas .link-android{right: 136px;}
-.descargas .link-ios{ right: 103px; }
-.descargas .link-linkedin{ right: 43px;}
-.descargas .link-youtube{ right: 7px; }
+.descargas .link-android{right: 149px;}
+.descargas .link-ios{ right: 117px; }
+.descargas .link-linkedin{ right: 56px;}
+.descargas .link-youtube{ right: 17px; }
 
 .menu li{
     float: left;
@@ -900,6 +900,9 @@ div.detail-bg{
     width: 100%;
     height: 100%;
 }
+body.mapSection #container {
+    background-color: #861d55 !important;
+}
 
 ::-webkit-input-placeholder { /* WebKit browsers */
     color:    #FFF;
@@ -1044,6 +1047,25 @@ div.detail-bg{
 }
 
 .masinfo.ext a{ cursor: pointer}
+
+.sec1 div.abierto .tooltip {
+    display: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.sec1 div:active .tooltip {
+    display: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
 
 @media only screen and (min-width : 1024px){
     .detail .promocion .text,

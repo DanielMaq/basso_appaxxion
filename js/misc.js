@@ -69,4 +69,31 @@ function eventosGenerales(){
 }
 
 
+//Script que pregunta si quieres cerrar la app cuando están en la primer pantalla
+function deviceBackBtn(){
 
+    document.addEventListener("backbutton", function(e){
+        e.preventDefault();
+        var exitApp = 1;
+        //if( $(".mapSection").length > 0 ){
+        //    exitApp = 1;
+        //}
+
+        if( exitApp ){
+            navigator.notification.confirm(
+                '¿Seguro deseas salir?', // message
+                onConfirm, // callback to invoke with index of button pressed
+                'Cerrar Aplicación', // title
+                ['Cancelar','Salir'] // buttonLabels
+            );
+        }else{
+            navigator.app.backHistory();
+        }
+    }, false);
+}
+
+function onConfirm(buttonIndex) {
+    if(buttonIndex == 2){
+        navigator.app.exitApp();
+    }
+}
