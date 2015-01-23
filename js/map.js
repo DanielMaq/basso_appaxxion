@@ -196,7 +196,7 @@ function centerMapCurrentLoc(){
 }*/
 
 function geoloc(){
-    navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy : true, maximumAge : 3000, timeout : 60000 });
+    navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy : true, maximumAge : 3000, timeout : 6000 });
 }
 
 function onSuccess(position) {
