@@ -3,6 +3,8 @@ var geocoder= new google.maps.Geocoder();
 var directionsDisplay;
 var directionsService;
 var direcciones = [];
+var currentPositionToCenter;
+var currentDirText;
 /*var currentMarkerId;*/
 
 function initializeMap() {
@@ -31,6 +33,7 @@ function initializeMap() {
         center: pos1,
         zoom:14,
         zoomControl:true,
+        disableDefaultUI: true,
         /* streetViewControl:false,*/
         /*mapTypeControlOptions: { mapTypeIds: []},*/
         mapTypeId:google.maps.MapTypeId.ROADMAP  /*,
@@ -173,8 +176,11 @@ function actualizarGeolocMarker (pos/*latitude, longitude*/){
     }else{
         geoMarker.setPosition(pos);
     }
+
+    var mistic = new google.maps.Geocoder()
 }
 
+//Centra el mapa en la posición según GPS
 function centerMapCurrentLoc(){
     var punto = new google.maps.LatLng(globalLat,globalLon);
     actualizarGeolocMarker(punto);
@@ -205,7 +211,7 @@ function onSuccess(position) {
         //estacionesAleatorias();
         globalPositionStr=dir;
         globalPais=pais;
-        $('#txBusqueda').val(globalPositionStr);
+        $('#txBusqueda, #txDesde').val(globalPositionStr);
         cambiarBandera(pais);
     });
     console.log('GeoLocation success!')
@@ -213,8 +219,31 @@ function onSuccess(position) {
     $('#googleMap').animate({opacity:1},500);
 }
 function onError(error) {
-    alert('No se pudo obtener la posicion.');
-    //console.log(error)
+    try{
+    navigator.notification.alert(
+        'No hemos encontrado su ubicación. Activele el GPS para una mejor experiencia con la aplicación.', // message
+        function(){}, // callback to invoke with index of button pressed
+        'GPS desactivado',            // title
+        'Continuar'                  // buttonName
+    );
+    }catch(err){
+        alert('No hemos encontrado su ubicación. Activele el GPS para una mejor experiencia con la aplicación.')
+    }
+    var punto = new google.maps.LatLng(-38.4192641,-63.5989206);
+    actualizarGeolocMarker(punto);
+    centerMap(punto);
+
+    PositionToDir(punto,function(dir,pais){
+        //estacionesAleatorias();
+        globalPositionStr=dir;
+        globalPais=pais;
+        $('#txBusqueda, #txDesde').val(globalPositionStr);
+        cambiarBandera(pais);
+    });
+    console.log('GeoLocation success!')
+    $('.preloadMap').fadeOut();
+    $('#googleMap').animate({opacity:1},500);
+    map.setZoom(7)
 }
 
 
@@ -260,6 +289,7 @@ function limpiarRuta(){
     mostrandoRuta=false;
     pasosOcultar();
 }
+
 function routeFromGeoToStation(stationId){
     var directionFrom =geoMarker.getPosition() ; // new google.maps.LatLng(p[2],p[3]);
     var directionTo = Estaciones[stationId].marker.getPosition(); //getMarker(stationId).getPosition();
@@ -279,11 +309,7 @@ function PositionToDir(latlng,callback){
                     }
                 }
                 callback(address,country);
-            } else {
-                alert('No se encuentra');
             }
-        } else {
-            alert('Error: ' + status);
         }
     });
 }
@@ -292,8 +318,7 @@ function DirToPosition(dir,callBack){
     var address = paisActual + ', ' + dir;
     geocoder.geocode( {"address":address}, function(results, status){
         if (status == google.maps.GeocoderStatus.OK){
-
-            callBack(results[0].geometry.location);
+            callBack(results[0].geometry.location, results[0].formatted_address);
         } else {
             callBack(null);
         }
@@ -389,9 +414,6 @@ function resizeMap(ocultarChrome){
         $('div.detail-bg').height(nuevaAlturaDetailBg);
         $('div.detail').height(442);
         $('#googleMap').show();
-    }else{
-        //$('div.detail-bg').height(0);
-       $('div.detail').height(window.innerHeight-61);
     }
 
 
@@ -425,11 +447,35 @@ function resizeMap(ocultarChrome){
     ///////////////////////////////////////////////////////////////////////////
 
 }
+
 // Listen for orientation changes
 window.addEventListener("orientationchange", function() {
     // Announce the new orientation number
-    resizeMap();
+    setTimeout(function(){
+        if (currentPositionToCenter){
+            resizeMap();
+            centerMap(currentPositionToCenter)
+        }else{
+            resizeMap();
+            centerMapCurrentLoc();
+        }
+    },300)
 }, false);
 
-
+function getAddressTxt(pos) {
+    ////pos = pos.trim()
+    //var $url = "http://maps.google.com/maps/api/geocode/json?latlng="+pos+','+pos+"&sensor=false";
+    //$url = $.trim($url)
+    //console.log('pos= '+$url)
+    //$.ajax({
+    //    dataType: "json",
+    //    url: $url,
+    //    success: function(result){
+    //        console.log(result)
+    //    },
+    //    error: function(){
+    //        console.log('ERROR!')
+    //    }
+    //});
+}
 

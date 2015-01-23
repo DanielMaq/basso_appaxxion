@@ -153,6 +153,7 @@
         margin-left: 0;
         top: 61px;
         background-image:none;
+        height: auto !important;
 
     }
     .detail > div.d-header{

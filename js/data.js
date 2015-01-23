@@ -45,7 +45,7 @@ function cargarPaises() {
                 paisCambiado = true;
 
                 PositionToDir(punto, function (dir, pais) {
-                    $('#txDesde,#txHasta').hide().val('');
+                    $('#txHasta').hide().val('');
                     $('#txBusqueda').show().val(dir);
                     globalModoBusqueda = 1;
                 });
