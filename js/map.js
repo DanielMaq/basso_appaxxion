@@ -221,6 +221,7 @@ function onSuccess(position) {
 }
 function onError(error) {
     gpsEnabled = false;
+    currentPositionToCenter= '-38.4192641,-63.5989206'
     try{
     navigator.notification.alert(
         'No hemos encontrado su ubicación. Activele el GPS para una mejor experiencia con la aplicación.', // message
@@ -320,6 +321,7 @@ function DirToPosition(dir,callBack){
     var address = paisActual + ', ' + dir;
     geocoder.geocode( {"address":address}, function(results, status){
         if (status == google.maps.GeocoderStatus.OK){
+
             callBack(results[0].geometry.location, results[0].formatted_address);
         } else {
             callBack(null);

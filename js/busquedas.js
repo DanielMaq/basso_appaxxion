@@ -189,6 +189,7 @@ function eventosBusqueda(){
             $inputsBar.fadeIn();
             var map = true
             comoLlegar(map);
+            pasosOcultar();
         }
     });
 
@@ -221,11 +222,15 @@ function eventosBusqueda(){
                 $('#txDesde, #txHasta').val('');
                 $('.pasos').hide();
                 globalModoBusqueda=1;
+                buscar(zoom);
+                pasosOcultar();
+                return false;
+            }else{
+                buscar(zoom);
+                return false;
             }
             $('.sec1 div.abierto').removeClass('abierto');
             $('.sec1 div .tooltip').hide();
-            buscar(zoom);
-            return false;
         }
     });
 
