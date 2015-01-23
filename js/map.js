@@ -221,7 +221,6 @@ function onSuccess(position) {
 }
 function onError(error) {
     gpsEnabled = false;
-    currentPositionToCenter= '-38.4192641,-63.5989206'
     try{
     navigator.notification.alert(
         'No hemos encontrado su ubicación. Activele el GPS para una mejor experiencia con la aplicación.', // message
@@ -233,6 +232,7 @@ function onError(error) {
         alert('No hemos encontrado su ubicación. Activele el GPS para una mejor experiencia con la aplicación.')
     }
     var punto = new google.maps.LatLng(-38.4192641,-63.5989206);
+    currentPositionToCenter = punto;
     actualizarGeolocMarker(punto);
     centerMap(punto);
 

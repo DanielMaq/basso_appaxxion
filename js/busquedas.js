@@ -143,7 +143,6 @@ function eventosBusqueda(){
 
     $('.geo').on('click', function(){
         if (gpsEnabled){
-
             currentDirText = '';
             $('#txDesde').val(globalPositionStr);
 
