@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ff7429c-9f6d-4ae5-9ce4-401ff08932bc" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/busquedas.js" afterPath="$PROJECT_DIR$/js/busquedas.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/map.js" afterPath="$PROJECT_DIR$/js/map.js" />
     </list>
     <ignored path="basso-appaxion.iws" />
@@ -43,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="map.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25754884" vertical-offset="5597" max-vertical-offset="14123">
-              <caret line="198" column="127" selection-start-line="198" selection-start-column="127" selection-end-line="198" selection-end-column="127" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="6351" max-vertical-offset="14181">
+              <caret line="232" column="5" selection-start-line="223" selection-start-column="3" selection-end-line="232" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -73,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="busquedas.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="busquedas.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/busquedas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.275862" vertical-offset="1674" max-vertical-offset="6902">
-              <caret line="64" column="33" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.714032" vertical-offset="4528" max-vertical-offset="7308">
+              <caret line="170" column="95" selection-start-line="170" selection-start-column="95" selection-end-line="170" selection-end-column="95" />
               <folding />
             </state>
           </provider>
@@ -162,8 +163,8 @@
         <option value="$PROJECT_DIR$/promociones.html" />
         <option value="$PROJECT_DIR$/css/responsive.css" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/busquedas.js" />
         <option value="$PROJECT_DIR$/js/map.js" />
+        <option value="$PROJECT_DIR$/js/busquedas.js" />
       </list>
     </option>
   </component>
@@ -753,14 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/busquedas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.275862" vertical-offset="1674" max-vertical-offset="6902">
-          <caret line="64" column="33" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/misc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2295" max-vertical-offset="3045">
@@ -771,8 +764,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25754884" vertical-offset="5597" max-vertical-offset="14123">
-          <caret line="198" column="127" selection-start-line="198" selection-start-column="127" selection-end-line="198" selection-end-column="127" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="6351" max-vertical-offset="14181">
+          <caret line="232" column="5" selection-start-line="223" selection-start-column="3" selection-end-line="232" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/busquedas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.714032" vertical-offset="4528" max-vertical-offset="7308">
+          <caret line="170" column="95" selection-start-line="170" selection-start-column="95" selection-end-line="170" selection-end-column="95" />
           <folding />
         </state>
       </provider>

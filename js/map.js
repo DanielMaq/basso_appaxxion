@@ -5,6 +5,7 @@ var directionsService;
 var direcciones = [];
 var currentPositionToCenter;
 var currentDirText;
+var gpsEnabled = true;
 /*var currentMarkerId;*/
 
 function initializeMap() {
@@ -219,6 +220,7 @@ function onSuccess(position) {
     $('#googleMap').animate({opacity:1},500);
 }
 function onError(error) {
+    gpsEnabled = false;
     try{
     navigator.notification.alert(
         'No hemos encontrado su ubicación. Activele el GPS para una mejor experiencia con la aplicación.', // message
