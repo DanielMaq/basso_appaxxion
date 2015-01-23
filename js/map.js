@@ -229,7 +229,7 @@ function onError(error) {
         'Continuar'                  // buttonName
     );
     }catch(err){
-        alert('No hemos encontrado su ubicación. Activele el GPS para una mejor experiencia con la aplicación.')
+        alert('No hemos encontrado su ubicación. Active el GPS para una mejor experiencia con la aplicación.')
     }
     var punto = new google.maps.LatLng(-38.4192641,-63.5989206);
     currentPositionToCenter = punto;
