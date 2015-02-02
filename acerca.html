@@ -227,7 +227,7 @@
 			$(document).on('click', '.play', function (e) {
 				e.preventDefault();
                 try{
-                    VideoPlayer.play("https://www.youtube.com/watch?v=A6DtaWDbX7g");
+                    window.plugins.videoPlayer.play("https://www.youtube.com/watch?v=A6DtaWDbX7g");
                 }catch(err){
                     if(!isMobile()) {
                         var _h = (5*window.innerHeight)/10;
