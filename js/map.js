@@ -197,7 +197,7 @@ function centerMapCurrentLoc(){
 }*/
 
 function geoloc(){
-    navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy : true, maximumAge : 3000, timeout : 6000 });
+    navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy : true, maximumAge : 3000, timeout : 8000 });
 }
 
 function onSuccess(position) {
@@ -223,7 +223,7 @@ function onError(error) {
     gpsEnabled = false;
     try{
     navigator.notification.alert(
-        'No hemos encontrado su ubicación. Activele el GPS para una mejor experiencia con la aplicación.', // message
+        'No hemos encontrado su ubicación. Active el GPS para una mejor experiencia con la aplicación.', // message
         function(){}, // callback to invoke with index of button pressed
         'GPS desactivado',            // title
         'Continuar'                  // buttonName
