@@ -6,7 +6,11 @@ var direcciones = [];
 var currentPositionToCenter;
 var currentDirText;
 var gpsEnabled = true;
+var routeShow = false
 /*var currentMarkerId;*/
+
+var geoMarkerStart;
+var geoMarkerEnd;
 
 function initializeMap() {
 
@@ -168,15 +172,11 @@ function getMarkerByNombre(nombre){
 function actualizarGeolocMarker (pos/*latitude, longitude*/){
     //var pos = new google.maps.LatLng(latitude, longitude);
 
-    if(geoMarker==null){
-        geoMarker = new google.maps.Marker({
-            position: pos,
-            map: map,
-            icon:myIconGeo
-        });
-    }else{
-        geoMarker.setPosition(pos);
-    }
+    geoMarker = new google.maps.Marker({
+        position: pos,
+        map: map,
+        icon:myIconGeo
+    });
 
     var mistic = new google.maps.Geocoder()
 }
@@ -257,6 +257,24 @@ function onError(error) {
 var mostrandoRuta=false;
 
 function calcRoute(start,end) {
+    try{
+        directionsDisplay.setMap(null);
+        geoMarker.setMap(null);
+        geoMarkerStart.setMap(null);
+        geoMarkerEnd.setMap(null);
+    }catch(err){}
+
+    geoMarkerStart = new google.maps.Marker({
+        position: start,
+        map: map,
+        icon:myIconGeo
+    });
+
+    geoMarkerEnd = new google.maps.Marker({
+        position: end,
+        map: map,
+        icon:myIconGeo
+    });
 
     var request = {
         origin: start,

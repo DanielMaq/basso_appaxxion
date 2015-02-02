@@ -97,3 +97,4 @@ function onConfirm(buttonIndex) {
         navigator.app.exitApp();
     }
 }
+

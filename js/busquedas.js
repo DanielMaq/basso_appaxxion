@@ -54,6 +54,12 @@ function buscar(zoom){
                 if(pos!=null){
                     //globalLat=pos.k;
                     //globalLon=pos.A;
+                    try{
+                        directionsDisplay.setMap(null);
+                        geoMarker.setMap(null);
+                        geoMarkerStart.setMap(null);
+                        geoMarkerEnd.setMap(null);
+                    }catch(err){}
                     currentDirText = formatedAddress;
                     currentPositionToCenter = pos;
                     actualizarGeolocMarker(pos);
@@ -120,7 +126,7 @@ function miUbicacion(){
 
 
 function eventosBusqueda(){
-    $('.sec1 .footer-content div').not('.dir').on('click',function(){
+    $('.sec1 .footer-content div').not('.dir').not('.buscarBtn').on('click',function(){
         $('.sec1 .dir').hide();
         //setTimeout(function(e){$('.sec1 .footer-content div .tooltip').fadeOut(700);e.stopPropagation()},2000)
     })
@@ -141,7 +147,10 @@ function eventosBusqueda(){
         e.stopPropagation();
     });
 
-    $('.geo').on('click', function(){
+    $('.geo').on('click', function(e){
+        e.preventDefault();
+        $('.dir').removeClass('searchIsOpen').css('height','auto');
+        $('.goToBtn').remove();
         if (gpsEnabled){
             currentDirText = '';
             $('#txDesde').val(globalPositionStr);
@@ -150,6 +159,13 @@ function eventosBusqueda(){
                 $('.sec1 .dir').hide();
                 $(this).removeClass('abierto');
             }else{
+                try{
+                    directionsDisplay.setMap(null);
+                    geoMarker.setMap(null);
+                    geoMarkerStart.setMap(null);
+                    geoMarkerEnd.setMap(null);
+                }catch(err){}
+                $('#txBusqueda').attr('disabled','disabled');
                 $('.sec1 .footer-content div').removeClass('abierto');
                 $(this).addClass('abierto');
                 var $inputsBar = $('.sec1 .dir:hidden');
@@ -172,11 +188,18 @@ function eventosBusqueda(){
         }
     });
 
-    $('.map').on('click', function(){
+    $('.map').on('click', function(e){
+
+        $('.dir').removeClass('searchIsOpen').css('height','auto');
+        $('#txDesde').addClass('x');
+        $('#txBusqueda').removeAttr('disabled');
+        $('.goToBtn').remove();
         if($(this).hasClass('abierto')){
             $('.sec1 .dir').hide();
             $(this).removeClass('abierto');
         }else{
+            var gotobtn_html = '<div class="goToBtn"><a href="#" title="ir">Ir</a></div>';
+            $('.dir').append(gotobtn_html);
             $('.sec1 .footer-content div').removeClass('abierto');
             $(this).addClass('abierto');
             if (currentDirText)
@@ -193,10 +216,16 @@ function eventosBusqueda(){
     });
 
     $('.lupa').on('click', function(){
+        $('.goToBtn').remove();
+        $('#txBusqueda').removeAttr('disabled');
         if($(this).hasClass('abierto')){
             $(this).removeClass('abierto');
             $('.sec1 .dir').hide();
+            $('.searchOverlay').remove();
         }else{
+            var $_calc = $(window).height() - $('.sec1').height() - $('.header-content').height()
+            $('.dir').addClass('searchIsOpen').css('height',$_calc);
+
             $('.sec1 .footer-content div').removeClass('abierto');
             $(this).addClass('abierto')
             var $inputsBar = $('.sec1 .dir:hidden');
@@ -209,13 +238,25 @@ function eventosBusqueda(){
                 source: direcciones,
                 position: { my: "left bottom", at: "left top", collision: "flip" }
             });
+            $('#ui-id-1').css('height',$_calc-120);
             //buscar();
         }
     });
 
     $('#txBusqueda, #txDesde, #txHasta').keypress(function(e){
-
         if (e.keyCode == 13) {
+
+            try{
+                directionsDisplay.setMap(null);
+                geoMarker.setMap(null);
+                geoMarkerStart.setMap(null);
+                geoMarkerEnd.setMap(null);
+            }catch(err){}
+
+            if($('.goToBtn').length > 0){
+                $('.goToBtn').remove();
+            }
+
             if ($(this).attr('id') == 'txBusqueda'){
                 var zoom = 18;
                 $('#txDesde, #txHasta').val('');
@@ -234,18 +275,60 @@ function eventosBusqueda(){
     });
 
     $('.closeRuta a').click(function(e){
-        e.preventDefault()
-        directionsDisplay.setMap(null);
-        pasosOcultar();
-        setTimeout(function(){
-            if (currentPositionToCenter){
-                resizeMap();
-                centerMap(currentPositionToCenter)
-            }else{
-                resizeMap();
-                centerMapCurrentLoc();
-            }
-            map.setZoom(14)
-        },300)
+        closeRuta(e);
     })
+
+    $(document).on('click','.goToBtn a',function(e){
+        e.preventDefault();
+        if($('#txHasta').val() == '' || $('#txDesde').val() == ''){
+            if($('#txDesde').val() == ''){
+                $('#txDesde').attr('placeholder','Complete este campo');
+            }
+            if($('#txHasta').val() == ''){
+                $('#txHasta').attr('placeholder','Complete este campo');
+            }
+            setTimeout(function(){
+                $('#txDesde').attr('placeholder','Desde');
+                $('#txHasta').attr('placeholder','Hasta');
+                $('#txHasta').focus();
+            },1000)
+        }else{
+            $('.goToBtn').remove();
+            buscar();
+            $('.sec1 div.abierto').removeClass('abierto');
+            $('.sec1 div .tooltip').hide();
+        }
+    })
+
+    $('.buscarBtn').click(function(e){
+        e.preventDefault()
+        if(!$('#txBusqueda').val()){
+            $('#txBusqueda').attr('placeholder','Complete este campo')
+            setTimeout(function(){
+                $('#txBusqueda').attr('placeholder','Ingrese ubicación a buscar');
+                $('#txBusqueda').focus();
+            },1000)
+        }else{
+            var zoom = 18;
+            $('#txDesde, #txHasta').val('');
+            $('.pasos').hide();
+            globalModoBusqueda=1;
+            buscar(zoom);
+            pasosOcultar();
+        }
+    })
+
+
+    function closeRuta(e){
+        e.preventDefault();
+        try{
+            directionsDisplay.setMap(null);
+            geoMarker.setMap(null);
+            geoMarkerStart.setMap(null);
+            geoMarkerEnd.setMap(null);
+        }catch(err){}
+        pasosOcultar();
+        centerMapCurrentLoc();
+        map.setZoom(14);
+    }
 }

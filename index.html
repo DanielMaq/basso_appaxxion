@@ -301,20 +301,25 @@
 
                     <div class="pais"><img src="img/flag-arg.png" /></div>
                     <div class="geo">
-                        <div class="tooltip ">Mi Ubicación</div>
+                        <!--<div class="tooltip ">Mi Ubicación</div>-->
                     </div>
                     <div class="map">
-                        <div class="tooltip ">Cómo llegar</div>
+                        <!--<div class="tooltip ">Cómo llegar</div>-->
                     </div>
                     <div class="dir">
                         <!--<div class="tooltip ">Escriba una dirección</div>-->
                         <input id="txBusqueda" />
-                        <input id="txDesde" placeholder="Desde"/>
+                        <input id="txDesde" placeholder="Desde" class="clearable x"/>
                         <input id="txHasta" placeholder="Hasta" />
+                        <div class="buscarBtn">
+                            <a href="#" title="Buscar">Buscar</a>
+                        </div>
                     </div>
-                    <div class="lupa"><div class="tooltip " style="text-align: center;width: 100px;">Buscar dirección</div></div>
+                    <div class="lupa">
+                        <!--<div class="tooltip " style="text-align: center;width: 100px;">Buscar dirección</div>-->
+                    </div>
                     <div class="filtro">
-                        <div class="tooltip ">Filtro</div>
+                        <!--<div class="tooltip ">Filtro</div>-->
                     </div>
 
                     <!-- Bloque filtro -->
@@ -358,6 +363,19 @@ width: 262px;height: 53px;overflow: hidden;position: relative ;background-image:
     <script src="js/main.js"></script>
 
 	<script>
+        $(document).ready(function(){
+            // /////
+            // CLEARABLE INPUT
+            function tog(v){return v?'addClass':'removeClass';}
+            $(document).on('input', '.clearable', function(){
+                $(this)[tog(this.value)]('x');
+            }).on('mousemove', '.x', function( e ){
+                $(this)[tog(this.offsetWidth-18 < e.clientX-this.getBoundingClientRect().left)]('onX');
+            }).on('click', '.onX', function(){
+                $(this).removeClass('x onX').val('').change();
+            });
+        })
+
 		var ScrrenOrientation;
 		document.addEventListener("deviceready", function(e){
 			deviceBackBtn();
