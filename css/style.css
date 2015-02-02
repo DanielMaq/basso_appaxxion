@@ -1015,14 +1015,14 @@ body.mapSection #container {
 }
 
 
-.clearable{
-    background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAOCAYAAAD0f5bSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoyM0JEOTM0MEFBRDExMUU0OUYxQ0IzQTRFREIwMTU1MSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoyM0JEOTM0MUFBRDExMUU0OUYxQ0IzQTRFREIwMTU1MSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjIzQkQ5MzNFQUFEMTExRTQ5RjFDQjNBNEVEQjAxNTUxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjIzQkQ5MzNGQUFEMTExRTQ5RjFDQjNBNEVEQjAxNTUxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+PM3i4AAAAKRJREFUeNqEUlEVgCAM3IcFqGAFK1jBClSggkYwCxWoYAWMMPHJfCcM3HuHvO1u3gBi5om/sSRQAZMQhCBJB6Ijk1DkoW6xEKDgGw33O4eiMSECwWWrEkG4pXdbzBc1y6QMvXMdM3I0EeXOla2eyCl/cj3RrMwj+1ETGbAlJP93ep8LVBpV94RzrB3L74uwjZfQOpw4ENGZsNET8i1D8uZeLgEGABdsSg54ap1UAAAAAElFTkSuQmCC) no-repeat right -15px center;
-    border: none;
-    padding: 3px 18px 3px 4px; /* Use the same right padding (18) in jQ! */
-    transition: background 0.4s;
-}
-.clearable.x  { background-position: right 5px center; }
-.clearable.onX{ cursor: pointer; }
+/*.clearable{*/
+    /*background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAOCAYAAAD0f5bSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoyM0JEOTM0MEFBRDExMUU0OUYxQ0IzQTRFREIwMTU1MSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoyM0JEOTM0MUFBRDExMUU0OUYxQ0IzQTRFREIwMTU1MSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjIzQkQ5MzNFQUFEMTExRTQ5RjFDQjNBNEVEQjAxNTUxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjIzQkQ5MzNGQUFEMTExRTQ5RjFDQjNBNEVEQjAxNTUxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+PM3i4AAAAKRJREFUeNqEUlEVgCAM3IcFqGAFK1jBClSggkYwCxWoYAWMMPHJfCcM3HuHvO1u3gBi5om/sSRQAZMQhCBJB6Ijk1DkoW6xEKDgGw33O4eiMSECwWWrEkG4pXdbzBc1y6QMvXMdM3I0EeXOla2eyCl/cj3RrMwj+1ETGbAlJP93ep8LVBpV94RzrB3L74uwjZfQOpw4ENGZsNET8i1D8uZeLgEGABdsSg54ap1UAAAAAElFTkSuQmCC) no-repeat right -15px center;*/
+    /*border: none;*/
+    /*padding: 3px 18px 3px 4px; *//* Use the same right padding (18) in jQ! */
+    /*transition: background 0.4s;*/
+/*}*/
+/*.clearable.x  { background-position: right 5px center; }*/
+/*.clearable.onX{ cursor: pointer; }*/
 
 .goToBtn a{
     display: block;
@@ -1053,17 +1053,21 @@ body.mapSection #container {
 
 #ui-id-1 {
     z-index: 99999 !important;
-    max-height: none !important;
+    max-height: 150px !important;
+    background-color: #9e1f63;
+}
+.searchIsOpen {
+    position: fixed !important;
+    top: 61px;
 }
 .buscarBtn{
     display: none;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
 }
 .searchIsOpen .buscarBtn {
     display: block;
+    position: fixed;
+    bottom: 58px;
+    width: 100%;
 }
 .searchIsOpen .buscarBtn a {
     display: block;
@@ -1075,4 +1079,5 @@ body.mapSection #container {
     text-decoration: none;
     text-transform: uppercase;
     color: #FFFFFF;
+    text-align: center;
 }

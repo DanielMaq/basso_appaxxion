@@ -4,7 +4,7 @@ var directionsDisplay;
 var directionsService;
 var direcciones = [];
 var currentPositionToCenter;
-var currentDirText;
+var currentDirText = '';
 var gpsEnabled = true;
 var routeShow = false
 /*var currentMarkerId;*/
@@ -500,4 +500,3 @@ function getAddressTxt(pos) {
     //    }
     //});
 }
-

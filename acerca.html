@@ -224,30 +224,14 @@
             var video =  document.getElementById('youtubeVideo');
 
             videoEmbed.css({display:'none'});
-			$(document).on('click', '.play', function (e) {
-				e.preventDefault();
-                try{
-                    window.plugins.videoPlayer.play("https://www.youtube.com/watch?v=A6DtaWDbX7g");
-                }catch(err){
-                    if(!isMobile()) {
-                        var _h = (5*window.innerHeight)/10;
-                        var _w = (5*window.innerWidth)/10;
-                        var iframe = '<iframe id="mobileVideo" style="" width="'+_w+'px" height="'+_h+'px" src="http://www.youtube.com/embed/A6DtaWDbX7g?rel=0&amp;controls=1&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>';
-                        $('.video-wraper').append(iframe);
-                        $('.video-player .video-wraper.lg').css('margin-left','-'+(_w/2)+'px').css('margin-top','-'+(_h/2)+'px')
-                        videoEmbed.fadeIn('fast');
-                    }else{
-                        var _h = $('.play').height();
-                        console.log('Alto: '+_h)
-                        var iframe = '<iframe id="mobileVideo" style="opacity: 1;position: absolute;top: 0;z-index:99;left:0" width="100%" height="'+_h+'" src="http://www.youtube.com/embed/A6DtaWDbX7g?rel=0&amp;controls=1&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>'
-                        $('a.play img').css({
-                            display:'none'
-                        });
-                        $('a.play').parent('.g50').css('height',_h);
-                        $('a.play').after(iframe);
-                    }
-                }
-			});
+
+            var _h = $('.play').height();
+            var iframe = '<iframe id="mobileVideo" style="opacity: 1;position: absolute;top: 0;z-index:99;left:0" width="100%" height="'+_h+'" src="http://www.youtube.com/embed/A6DtaWDbX7g?rel=0&amp;controls=1&amp;showinfo=0&amp;autoplay=0" frameborder="0" allowfullscreen></iframe>'
+            $('a.play img').css({
+                display:'none'
+            });
+            $('a.play').parent('.g50').css('height',_h);
+            $('a.play').after(iframe);
 
             $(document).on('keyup',function(e){
                 if(e.which == 27){

@@ -223,8 +223,8 @@ function eventosBusqueda(){
             $('.sec1 .dir').hide();
             $('.searchOverlay').remove();
         }else{
-            var $_calc = $(window).height() - $('.sec1').height() - $('.header-content').height()
-            $('.dir').addClass('searchIsOpen').css('height',$_calc);
+            var $_calc = $(document).height() - $('.sec1').height() - $('.header-content').height()
+            $('.dir').addClass('searchIsOpen');
 
             $('.sec1 .footer-content div').removeClass('abierto');
             $(this).addClass('abierto')
