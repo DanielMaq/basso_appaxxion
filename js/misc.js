@@ -98,11 +98,11 @@ function onConfirm(buttonIndex) {
     }
 }
 
-setInterval(function(){
-    document.addEventListener("offline",conectionStatus, false);
+var checkOffline = setInterval(function(){
+    document.addEventListener("offline",isOffLine, false);
 },5000)
 
-function conectionStatus(){
+function isOffLine(){
     try{
         navigator.notification.alert(
             'La aplicación no puede conectarse a internet. Se intentará reconectarse.', // message
@@ -115,5 +115,16 @@ function conectionStatus(){
     }
 };
 function showLoadingConection(){
-    
+    clearInterval(checkOffline);
+    $('#googleMap').hide();
+    $('.preloadMap').show()
+    $('.noConectionPreload').show();
+    var myInterval = setInterval(function(){
+        document.addEventListener("online", onOnline, false);
+    },5000)
+}
+
+function onOnline() {
+    //Cargar el mapa nuevamente...
+    location.reload();
 }

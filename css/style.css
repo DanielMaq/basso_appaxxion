@@ -1051,3 +1051,13 @@ body.mapSection #container {
 .buscarBtn{
     display: none;
 }
+.noConectionPreload {
+    display: none;
+    top:45%;
+    left:50%;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    color: #ffffff;
+    text-transform: uppercase;
+}
