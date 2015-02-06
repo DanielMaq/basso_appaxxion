@@ -1,3 +1,5 @@
+var ScrrenOrientation;
+
 function rnd(min,max){
     p = max - min;
     aleat = Math.random() * p;

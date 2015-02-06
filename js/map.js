@@ -422,34 +422,6 @@ function resizeMap(ocultarChrome){
     $('#container').width(document.body.clientWidth);
     $('#googleMap').width(document.body.clientWidth);
 
-
-    ////////////////////////////////////////////////////////////////////////////
-
-    if(!isMobile()){
-
-        var nuevaAlturaDetailBg = window.innerHeight-175;
-        if (ocultarChrome) {
-            nuevaAlturaDetailBg = window.innerHeight;
-            $('div.detail-bg').css("top", "0");
-        }
-
-        $('div.detail-bg').height(nuevaAlturaDetailBg);
-        $('div.detail').height(442);
-        $('#googleMap').show();
-    }
-
-
-     /* $('div.detail').height(document.body.clientHeight-303);
-    var h=$('div.detail').height();
-    if(h>480){
-        $('div.detail').css('top',75+((h-480)/2)+'px');
-        $('div.detail').height(480);
-    }else{
-        $('div.detail').css('top','75px');
-    }*/
-
-    //////////////////////////////////////////////
-
     if(!isMobile()){
         $.each(Paises, function(index, value) {
 
@@ -462,26 +434,15 @@ function resizeMap(ocultarChrome){
             $($('.menu-pais').children()[index]).html(value.abreviatura)
         });
         $('.sec1 .pais').html($('.menu-pais div.selected').html());
-
     };
 
-    //$('.sec1 .pais img').attr('src',$('img',this).attr('src'));
-    ///////////////////////////////////////////////////////////////////////////
-
+    google.maps.event.trigger(map, "resize");
 }
 
 // Listen for orientation changes
 window.addEventListener("orientationchange", function() {
     // Announce the new orientation number
-    setTimeout(function(){
-        if (currentPositionToCenter){
-            resizeMap();
-            centerMap(currentPositionToCenter)
-        }else{
-            resizeMap();
-            centerMapCurrentLoc();
-        }
-    },300)
+        resizeMap();
 }, false);
 
 function getAddressTxt(pos) {

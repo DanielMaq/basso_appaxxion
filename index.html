@@ -396,7 +396,7 @@ width: 262px;height: 53px;overflow: hidden;position: relative ;background-image:
             });
         })
 
-		var ScrrenOrientation;
+
 		document.addEventListener("deviceready", function(e){
 			deviceBackBtn();
 		},false);
@@ -405,13 +405,12 @@ width: 262px;height: 53px;overflow: hidden;position: relative ;background-image:
 		{
 			ScrrenOrientation="portrait";
 			if(window.orientation == -90 || window.orientation == 90) ScrrenOrientation = "landscape";
-			resizeMap();
 		}
 
 		window.addEventListener('orientationchange', doOnOrientationChange);
 
 		// Initial execution if needed
-		doOnOrientationChange();
+		//doOnOrientationChange();
 	</script>
 
 </body>

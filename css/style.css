@@ -1054,7 +1054,6 @@ body.mapSection #container {
 .noConectionPreload {
     display: none;
     top:45%;
-    left:50%;
     text-align: center;
     width: 100%;
     position: absolute;

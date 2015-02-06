@@ -151,7 +151,7 @@
         width: 100%;
         left: 0%;
         margin-left: 0;
-        top: 61px;
+        top: 60px;
         background-image:none;
         height: auto !important;
 
@@ -182,19 +182,19 @@
     }
 
     .detail .estado{
-        top: 204px;
+        top: 164px;
         left: 0px;
         width: 100%;
         text-align: center;
     }
     .detail .distancia{
-        top: 233px;
+        top: 193px;
         left: 0px;
         width: 100%;
         text-align: center;
     }
     .detail .tel{
-        top: 263px;
+        top: 223px;
         left: 0px;
         width: 100%;
         text-align: center;
@@ -207,7 +207,7 @@
         text-align: center;
     }
     .detail .linea{
-        margin-top: 213px;
+        margin-top: 163px;
         position: static;
     }
     .detail .linea2{
@@ -278,7 +278,6 @@
         margin-left: 5%;
         width: 90%;
         box-sizing: border-box;
-        margin-bottom: 30px;
         height: 49px;
         text-align: center;
         font-size: 17px;
@@ -365,6 +364,8 @@
     }
     .sec1 .dir input#txDesde {
         width: 90%;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     .sec1 .dir input#txHasta {
