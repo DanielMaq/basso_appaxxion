@@ -506,24 +506,26 @@ div.detail-bg{
     height: 442px;
     top: 88px;
 }
-.detail .titulo1{
+.detail .titulo1,
+.detail .titulo2{
 
     color: #fff;
     font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
     font-size: 17px;
-    position: absolute;
-    left: 37px;
-    top: 26px;
+    /*position: absolute;*/
+    /*left: 37px;*/
+    /*top: 26px;*/
+    line-height: 17px;
 
 }
 .detail .titulo2{
 
     color: #fff;
     font-family: 'HelveticaNeueLT-Medium', Arial, sans-serif;
-    font-size: 17px;
-    position: absolute;
-    left: 37px;
-    top: 45px;
+    font-size: 17px
+    /*position: absolute;*/
+    /*left: 37px;*/
+    /*top: 45px;*/
 
 }
 .detail .tipo{
@@ -536,7 +538,7 @@ div.detail-bg{
     height: 82px;
 }
 .detail .cerrar{
-
+    z-index: 100;
     position: absolute;
     right: 11px;
     top: 13px;
@@ -1046,38 +1048,6 @@ body.mapSection #container {
     border: 1px solid #861d55;
     background: none repeat scroll 0 0 #79174a;
 }
-
-.dir.searchIsOpen {
-    background-color: #9e1f63;
-}
-
-#ui-id-1 {
-    z-index: 99999 !important;
-    max-height: 150px !important;
-    background-color: #9e1f63;
-}
-.searchIsOpen {
-    position: fixed !important;
-    top: 61px;
-}
 .buscarBtn{
     display: none;
-}
-.searchIsOpen .buscarBtn {
-    display: block;
-    position: fixed;
-    bottom: 58px;
-    width: 100%;
-}
-.searchIsOpen .buscarBtn a {
-    display: block;
-    height: 56px;
-    width: 100%;
-    line-height: 56px;
-    font-size: 13px;
-    background-color: #861D55;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    text-align: center;
 }

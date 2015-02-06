@@ -159,10 +159,11 @@
     .detail > div.d-header{
         background-image: url(../img/detail-header-mobile.png);
         background-size: 100% 103px;
-        height: 103px;
+        min-height: 103px;
+        position: relative;
     }
     .detail .tipo{
-        top: 92px;
+        top: 15px;
         right: 50%;
         margin-right: -32px;
     }
@@ -170,7 +171,7 @@
         background-image: url(../img/close.png);
     }
     .detail .img-background{
-        position: absolute;
+        position: relative;
         width: 106px;
         height: 100px;
         background-color: #fff;
@@ -390,6 +391,47 @@
         vertical-align: middle;
         color:#8f8f8f;
     }
+
+    .titleContainer {
+
+    }
+    .titleContainer {
+        position: relative;
+        padding: 26px 16px 43px 37px;
+    }
+
+    .dir.searchIsOpen {
+        background-color: #9e1f63;
+    }
+
+    #ui-id-1 {
+        z-index: 99999 !important;
+        max-height: 150px !important;
+        background-color: #9e1f63;
+    }
+    .searchIsOpen {
+        position: fixed !important;
+        top: 61px;
+    }
+    .searchIsOpen .buscarBtn {
+        display: block;
+        position: fixed;
+        bottom: 58px;
+        width: 100%;
+    }
+    .searchIsOpen .buscarBtn a {
+        display: block;
+        height: 56px;
+        width: 100%;
+        line-height: 56px;
+        font-size: 13px;
+        background-color: #861D55;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        text-align: center;
+    }
+
 
 }
 /* Max Width 520px */

@@ -98,3 +98,22 @@ function onConfirm(buttonIndex) {
     }
 }
 
+setInterval(function(){
+    document.addEventListener("offline",conectionStatus, false);
+},5000)
+
+function conectionStatus(){
+    try{
+        navigator.notification.alert(
+            'La aplicación no puede conectarse a internet. Se intentará reconectarse.', // message
+            showLoadingConection(), // callback to invoke with index of button pressed
+            'Sin conexión',            // title
+            'Cerrar'                  // buttonName
+        );
+    }catch(err){
+        alert('La aplicación no puede conectarse a internet.')
+    }
+};
+function showLoadingConection(){
+    
+}

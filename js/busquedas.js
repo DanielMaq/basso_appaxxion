@@ -225,7 +225,6 @@ function eventosBusqueda(){
         }else{
             var $_calc = $(document).height() - $('.sec1').height() - $('.header-content').height()
             $('.dir').addClass('searchIsOpen');
-
             $('.sec1 .footer-content div').removeClass('abierto');
             $(this).addClass('abierto')
             var $inputsBar = $('.sec1 .dir:hidden');
@@ -233,7 +232,7 @@ function eventosBusqueda(){
             $('#txDesde,#txHasta').hide();
             $('#txBusqueda').fadeIn();
             $('#txBusqueda').val('').attr('placeholder','Ingrese ubicación a buscar').focus().addClass('autocomplete')
-
+            $('#txBusqueda').val(currentDirText);
             $('#txBusqueda.autocomplete').autocomplete({
                 source: direcciones,
                 position: { my: "left bottom", at: "left top", collision: "flip" }
