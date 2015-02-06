@@ -9,7 +9,7 @@
 <gap:plugin name="org.apache.cordova.geolocation" />
 <gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
 <gap:plugin name="org.apache.cordova.dialogs" />
-<gap:plugin name="com.phonegap.plugins.video.VideoPlayer" />
+<gap:plugin name="com.moust.cordova.videoplayer" />
 <gap:plugin name="org.apache.cordova.network-information" />
 
 
