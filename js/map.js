@@ -23,6 +23,7 @@ function initializeMap() {
     directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true});
     directionsService = new google.maps.DirectionsService();
     var pos1 = new google.maps.LatLng(-34.639507,-58.4910882 );
+
     var myStyles =[
         {
             featureType: "poi",
@@ -235,6 +236,7 @@ function onError(error) {
     }
     var punto = new google.maps.LatLng(-38.4192641,-63.5989206);
     currentPositionToCenter = punto;
+    globalLat = '-38.4192641';globalLon = '-63.5989206';
     actualizarGeolocMarker(punto);
     centerMap(punto);
 
@@ -248,7 +250,7 @@ function onError(error) {
     console.log('GeoLocation success!')
     $('.preloadMap').fadeOut();
     $('#googleMap').animate({opacity:1},500);
-    map.setZoom(7)
+    //map.setZoom(7)
 }
 
 
@@ -308,9 +310,17 @@ function calcRoute(start,end) {
 
 }
 function limpiarRuta(){
-    directionsDisplay.setMap(null);
-    mostrandoRuta=false;
+    //directionsDisplay.setMap(null);
+    //geoMarkerStart.setMap(null);
+    //geoMarkerEnd.setMap(null);
     pasosOcultar();
+    //mostrandoRuta=false;
+    //centerMap(currentPositionToCenter)
+    //actualizarGeolocMarker(currentPositionToCenter)
+    initializeMap();
+    var lastPosition = new google.maps.LatLng(globalLat,globalLon)
+    centerMap(lastPosition);
+    actualizarGeolocMarker(lastPosition)
 }
 
 function routeFromGeoToStation(stationId){

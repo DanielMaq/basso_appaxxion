@@ -37,14 +37,12 @@ function alertaDireccionVacia(hasta){
 }
 
 function buscar(zoom){
-    /*var est=getMarkerByNombre($('#txBusqueda').val());
-     if(est!=null){
-     routeFromGeoToStation(est.theid)
-     }else{
-     routeFromGeoToDir($('#txBusqueda').val(),function(){
-     alert('No encontrado')
-     })
-     }*/
+    try{directionsDisplay.setMap(null)}catch(err){}
+    try{geoMarker.setMap(null)}catch(err){}
+    try{
+        geoMarkerStart.setMap(null);
+        geoMarkerEnd.setMap(null);
+    }catch(err){}
     zoom = zoom || 14;
     if(globalModoBusqueda==1){
         if($('#txBusqueda').val()==''){
@@ -53,6 +51,7 @@ function buscar(zoom){
             DirToPosition($('#txBusqueda').val(),function(pos, formatedAddress){
                 if(pos!=null){
                     currentDirText = formatedAddress;
+                    currentPositionToCenter = pos;
                     actualizarGeolocMarker(pos);
                     centerMap(pos);
                     map.setZoom(zoom)
@@ -141,33 +140,13 @@ function eventosBusqueda(){
         $('.dir').removeClass('searchIsOpen').css('height','auto');
         $('.goToBtn').remove();
         if (gpsEnabled){
-            currentDirText = '';
-            $('#txDesde').val(globalPositionStr);
-
-            if($(this).hasClass('abierto')){
-                $('.sec1 .dir').hide();
-                $(this).removeClass('abierto');
-            }else{
-                try{
-                    directionsDisplay.setMap(null);
-                    geoMarker.setMap(null);
-                    geoMarkerStart.setMap(null);
-                    geoMarkerEnd.setMap(null);
-                }catch(err){}
-                $('#txBusqueda').attr('disabled','disabled');
-                $('.sec1 .footer-content div').removeClass('abierto');
-                $(this).addClass('abierto');
-                var $inputsBar = $('.sec1 .dir:hidden');
-                if ( $inputsBar.length ){
-                    $inputsBar.fadeIn();
-                }
-                miUbicacion();
-            }
+            initializeMap()
+            miUbicacion();
         }else{
             try{
                 navigator.notification.alert(
                     'Imposible obtener su ubicación. Active el GPS para activar esta función.', // message
-                    function(){}, // callback to invoke with index of button pressed
+                    function(){initializeMap()}, // callback to invoke with index of button pressed
                     'GPS desactivado',            // title
                     'Continuar'                  // buttonName
                 );
@@ -234,12 +213,7 @@ function eventosBusqueda(){
     $('#txBusqueda, #txDesde, #txHasta').keypress(function(e){
         if (e.keyCode == 13) {
 
-            try{
-                directionsDisplay.setMap(null);
-                geoMarker.setMap(null);
-                geoMarkerStart.setMap(null);
-                geoMarkerEnd.setMap(null);
-            }catch(err){}
+            try{limpiarRuta();}catch(err){}
 
             if($('.goToBtn').length > 0){
                 $('.goToBtn').remove();
@@ -263,7 +237,8 @@ function eventosBusqueda(){
     });
 
     $('.closeRuta a').click(function(e){
-        closeRuta(e);
+        e.preventDefault();
+        limpiarRuta();
     })
 
     $(document).on('click','.goToBtn a',function(e){
@@ -307,17 +282,17 @@ function eventosBusqueda(){
     })
 
 
-    function closeRuta(e){
-        e.preventDefault();
-        try{
-            directionsDisplay.setMap(null);
-            geoMarker.setMap(null);
-            geoMarkerStart.setMap(null);
-            geoMarkerEnd.setMap(null);
-        }catch(err){}
-        pasosOcultar();
-        centerMapCurrentLoc();
-        map.setZoom(14);
-        mostrandoRuta = false;
-    }
+    //function closeRuta(e){
+    //    e.preventDefault();
+    //    try{
+    //        directionsDisplay.setMap(null);
+    //        geoMarker.setMap(null);
+    //        geoMarkerStart.setMap(null);
+    //        geoMarkerEnd.setMap(null);
+    //    }catch(err){}
+    //    pasosOcultar();
+    //    centerMapCurrentLoc();
+    //    map.setZoom(14);
+    //    mostrandoRuta = false;
+    //}
 }
