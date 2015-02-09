@@ -215,6 +215,8 @@ div.social a.in img,div.social a.yt img{  margin-top: 10px }
     background-position: 50%;
     cursor: pointer;
     position: relative;
+
+    display: none;
 }
 
 
@@ -771,6 +773,8 @@ div.detail-bg{
     right: 14px;
     top: 15px;
     cursor: pointer;
+
+    display: none;
 }
 
 .slimScrollDiv{

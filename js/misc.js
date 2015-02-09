@@ -105,6 +105,7 @@ var checkOffline = setInterval(function(){
 },5000)
 
 function isOffLine(){
+    clearInterval(checkOffline);
     try{
         navigator.notification.alert(
             'La aplicación no puede conectarse a internet. Se intentará reconectarse.', // message
@@ -117,7 +118,6 @@ function isOffLine(){
     }
 };
 function showLoadingConection(){
-    clearInterval(checkOffline);
     $('#googleMap').hide();
     $('.preloadMap').show()
     $('.noConectionPreload').show();
