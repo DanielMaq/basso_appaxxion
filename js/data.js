@@ -38,10 +38,15 @@ function cargarPaises() {
 
 
         //Regirigir mapa
-        for (var i = 0; i < 4; i++) {
+        for (var i = 0; i < 3; i++) {
             if (Paises[i].nombre == paisActual) {
+                console.log(Paises)
                 var punto = new google.maps.LatLng(Paises[i].lat, Paises[i].lon);
                 centerMap(punto);
+                try{geoMarkerStart.setMap(null);geoMarkerEnd.setMap(null)}catch(err){}
+                try{directionsService.setMap(null)}catch(err){}
+                try{geoMarker.setMap(null)}catch(err){}
+                actualizarGeolocMarker(punto)
                 paisCambiado = true;
 
                 PositionToDir(punto, function (dir, pais) {

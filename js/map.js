@@ -234,7 +234,7 @@ function onError(error) {
     }catch(err){
         alert('No hemos encontrado su ubicación. Active el GPS para una mejor experiencia con la aplicación.')
     }
-    var punto = new google.maps.LatLng(-38.4192641,-63.5989206);
+    var punto = new google.maps.LatLng(-34.639507,-58.4910882);
     currentPositionToCenter = punto;
     globalLat = '-38.4192641';globalLon = '-63.5989206';
     actualizarGeolocMarker(punto);
