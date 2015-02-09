@@ -250,7 +250,7 @@ function onError(error) {
     console.log('GeoLocation success!')
     $('.preloadMap').fadeOut();
     $('#googleMap').animate({opacity:1},500);
-    //map.setZoom(7)
+    map.setZoom(7)
 }
 
 
@@ -321,6 +321,7 @@ function limpiarRuta(){
     var lastPosition = new google.maps.LatLng(globalLat,globalLon)
     centerMap(lastPosition);
     actualizarGeolocMarker(lastPosition)
+
 }
 
 function routeFromGeoToStation(stationId){

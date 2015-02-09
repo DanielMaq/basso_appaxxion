@@ -140,13 +140,33 @@ function eventosBusqueda(){
         $('.dir').removeClass('searchIsOpen').css('height','auto');
         $('.goToBtn').remove();
         if (gpsEnabled){
-            initializeMap()
-            miUbicacion();
+            currentDirText = '';
+            $('#txDesde').val(globalPositionStr);
+
+            if($(this).hasClass('abierto')){
+                $('.sec1 .dir').hide();
+                $(this).removeClass('abierto');
+            }else{
+                try{
+                    directionsDisplay.setMap(null);
+                    geoMarker.setMap(null);
+                    geoMarkerStart.setMap(null);
+                    geoMarkerEnd.setMap(null);
+                }catch(err){}
+                $('#txBusqueda').attr('disabled','disabled');
+                $('.sec1 .footer-content div').removeClass('abierto');
+                $(this).addClass('abierto');
+                var $inputsBar = $('.sec1 .dir:hidden');
+                if ( $inputsBar.length ){
+                    $inputsBar.fadeIn();
+                }
+                miUbicacion();
+            }
         }else{
             try{
                 navigator.notification.alert(
                     'Imposible obtener su ubicación. Active el GPS para activar esta función.', // message
-                    function(){initializeMap()}, // callback to invoke with index of button pressed
+                    function(){}, // callback to invoke with index of button pressed
                     'GPS desactivado',            // title
                     'Continuar'                  // buttonName
                 );
@@ -154,6 +174,7 @@ function eventosBusqueda(){
                 alert('Imposible obtener su ubicación. Active el GPS para activar esta función.')
             }
         }
+        pasosOcultar();
     });
 
     $('.map').on('click', function(e){
