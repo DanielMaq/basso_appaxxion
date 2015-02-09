@@ -1,7 +1,7 @@
 var currentMarkerId;
 function showDetail(idEstacion){
     //pasosCerrar();
-    $('div.detail-bg').show();
+    $('div.detail-bg').css('height',$(window).height()).show();
 
     pasosOcultar();
     /*if(globalX>350){

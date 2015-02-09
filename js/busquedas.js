@@ -52,22 +52,11 @@ function buscar(zoom){
         }else{
             DirToPosition($('#txBusqueda').val(),function(pos, formatedAddress){
                 if(pos!=null){
-                    //globalLat=pos.k;
-                    //globalLon=pos.A;
-                    try{
-                        directionsDisplay.setMap(null);
-                        geoMarker.setMap(null);
-                        geoMarkerStart.setMap(null);
-                        geoMarkerEnd.setMap(null);
-                    }catch(err){}
                     currentDirText = formatedAddress;
-                    currentPositionToCenter = pos;
                     actualizarGeolocMarker(pos);
                     centerMap(pos);
                     map.setZoom(zoom)
-                    //globalPositionStr = $('#txBusqueda').val();
                 }else{
-                    /// mostrar mensaje
                     alert('No se encontró la dirección');
                 }
             })
@@ -329,5 +318,6 @@ function eventosBusqueda(){
         pasosOcultar();
         centerMapCurrentLoc();
         map.setZoom(14);
+        mostrandoRuta = false;
     }
 }

@@ -433,6 +433,10 @@
         text-align: center;
     }
 
+    .detailContainer {
+        position: relative;top: -110px;
+    }
+
 
 }
 /* Max Width 520px */

@@ -178,7 +178,7 @@ function actualizarGeolocMarker (pos/*latitude, longitude*/){
         icon:myIconGeo
     });
 
-    var mistic = new google.maps.Geocoder()
+    var mistic = new google.maps.Geocoder();
 }
 
 //Centra el mapa en la posición según GPS
@@ -203,6 +203,8 @@ function geoloc(){
 function onSuccess(position) {
     globalLat = position.coords.latitude;
     globalLon = position.coords.longitude;
+
+    currentPositionToCenter = position;
 
     var punto = new google.maps.LatLng(globalLat,globalLon);
     actualizarGeolocMarker(punto);
@@ -400,27 +402,22 @@ function cargarDirecciones(estaciones){
 /////////////////////////////////////////////////////////////////////////////////
 
 function resizeMap(ocultarChrome){
+    var alturaScreen = $(window).height();
+    var anchoScreen = $(window).width();
 
-    if (typeof ocultarChrome == "undefined") {
-        ocultarChrome = false;
+    if(isMobile()){
+        var alturaHeader = 61;
+        var alturaFoot = 58;
+    }else{
+        var alturaHeader = 74;
+        var alturaFoot = 101;
     }
 
-    var alturaContenedor = 61;
-    var alturaMapa = 174;
-    if (isMobile()) {
-        alturaMapa = 120;
-    }
+    $('#container').height(alturaScreen-alturaHeader);
+    $('#googleMap').height(alturaScreen-alturaHeader-alturaFoot);
 
-    if (ocultarChrome) {
-        alturaContenedor = 0;
-        alturaMapa = 0;
-    }
-
-    $('#container').height(window.innerHeight-alturaContenedor);
-    $('#googleMap').height(window.innerHeight-alturaMapa);
-
-    $('#container').width(document.body.clientWidth);
-    $('#googleMap').width(document.body.clientWidth);
+    $('#container').width($(window).width());
+    $('#googleMap').width($(window).width());
 
     if(!isMobile()){
         $.each(Paises, function(index, value) {
@@ -435,29 +432,19 @@ function resizeMap(ocultarChrome){
         });
         $('.sec1 .pais').html($('.menu-pais div.selected').html());
     };
-
-    google.maps.event.trigger(map, "resize");
+    if (!mostrandoRuta){
+        try{google.maps.event.trigger(map, "resize");map.panTo(geoMarker.getPosition());}catch(err){}
+    }
 }
 
 // Listen for orientation changes
-window.addEventListener("orientationchange", function() {
+window.addEventListener("resize", function() {
     // Announce the new orientation number
-        resizeMap();
+        if(mostrandoRuta){
+            directionsDisplay.setMap(map);
+            resizeMap();
+        }else{
+            resizeMap();
+            try{map.setCenter(currentPositionToCenter)}catch(err){}
+        }
 }, false);
-
-function getAddressTxt(pos) {
-    ////pos = pos.trim()
-    //var $url = "http://maps.google.com/maps/api/geocode/json?latlng="+pos+','+pos+"&sensor=false";
-    //$url = $.trim($url)
-    //console.log('pos= '+$url)
-    //$.ajax({
-    //    dataType: "json",
-    //    url: $url,
-    //    success: function(result){
-    //        console.log(result)
-    //    },
-    //    error: function(){
-    //        console.log('ERROR!')
-    //    }
-    //});
-}

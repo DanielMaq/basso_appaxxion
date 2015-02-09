@@ -35,5 +35,4 @@ $(document).ready(function(){
                 showPromocionesInicial(ocultarChrome);
             },2000);
         }
-
 });
