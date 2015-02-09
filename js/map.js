@@ -310,17 +310,13 @@ function calcRoute(start,end) {
 
 }
 function limpiarRuta(){
-    //directionsDisplay.setMap(null);
-    //geoMarkerStart.setMap(null);
-    //geoMarkerEnd.setMap(null);
     pasosOcultar();
-    //mostrandoRuta=false;
-    //centerMap(currentPositionToCenter)
-    //actualizarGeolocMarker(currentPositionToCenter)
+    mostrandoRuta=false;
     initializeMap();
     var lastPosition = new google.maps.LatLng(globalLat,globalLon)
     centerMap(lastPosition);
     actualizarGeolocMarker(lastPosition)
+    currentPositionToCenter = lastPosition;
 
 }
 
@@ -456,6 +452,7 @@ window.addEventListener("resize", function() {
             resizeMap();
         }else{
             resizeMap();
+
             try{map.setCenter(currentPositionToCenter)}catch(err){}
         }
 }, false);
