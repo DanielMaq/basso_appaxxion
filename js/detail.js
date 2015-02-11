@@ -75,14 +75,14 @@ function hideDetail(){
 
 function eventosDetail(){
 
-    $('div.detail-bg').click(function(){
+    $('div.detail-bg').on('touchstart',function(){
         hideDetail()
         hidePromocionesInicial()
     });
 
-    $('.detail a.cerrar').click(function(){ hideDetail() })
+    $('.detail a.cerrar').on('touchstart',function(){ hideDetail() })
 
-    $('.detail a.comollegar').click(function(){
+    $('.detail a.comollegar').on('touchstart',function(){
         routeFromGeoToStation(currentMarkerId)
         hideDetail();
     })

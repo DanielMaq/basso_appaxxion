@@ -1,4 +1,5 @@
 $(document).ready(function(){
+        $('input').blur();
 
         eventosGenerales()
 
@@ -36,7 +37,5 @@ $(document).ready(function(){
             },2000);
         }
 
-        setTimeout(function(){
-            $('body,html').animate({opacity:1},700)
-        })
+        $('body,html').animate({opacity:1},700)
 });

@@ -182,15 +182,8 @@
                 <div class="masinfo"><a href="index.html">Buscador de Estaciones &raquo;</a></div>
             </div>
             <div class="g50">
-                <a class="play" href="#" style="display: block"><img class="imgVideo" src="img/about-video.jpg"/></a>
                 <aside>
-                    <div class="video-player" id="video_yotube">
-                        <div class="video-bg"><span class="sr-only">close</span></div>
-                        <div class="video-wraper lg">
-                            <button type="button" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            <!--<embed id="youtubeVideo" width="846" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allowfullscreen="true" allowscriptaccess="always" quality="high" bgcolor="#000000" name="my-video" style="" src="http://www.youtube.com/v/A6DtaWDbX7g?enablejsapi=1&version=3&playerapiid=ytplayer" type="application/x-shockwave-flash">-->
-                        </div>
-                    </div>
+                    <embed id="youtubeVideo" width="100%" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allowfullscreen="true" allowscriptaccess="always" quality="high" bgcolor="#000000" name="my-video" style="" src="http://www.youtube.com/v/A6DtaWDbX7g?enablejsapi=1&version=3&playerapiid=ytplayer" type="application/x-shockwave-flash">
                 </aside>
             </div>
         </div>
@@ -216,41 +209,11 @@
 
 <script>
     $(document).ready(function(){
+        $('body,html').animate({opacity:1},700)
         eventosGenerales();
-
-        var videoEmbed =$('#video_yotube');
-
-        if(videoEmbed.length>0){
-            var video =  document.getElementById('youtubeVideo');
-
-            videoEmbed.css({display:'none'});
-
-            var _h = $('.play').height();
-            var iframe = '<iframe id="mobileVideo" style="opacity: 1;position: absolute;top: 0;z-index:99;left:0" width="100%" height="'+_h+'" src="http://www.youtube.com/embed/A6DtaWDbX7g?rel=0&amp;controls=1&amp;showinfo=0&amp;autoplay=0" frameborder="0" allowfullscreen></iframe>'
-            $('a.play img').css({
-                display:'none'
-            });
-            $('a.play').parent('.g50').css('height',_h);
-            $('a.play').after(iframe);
-
-            $(document).on('keyup',function(e){
-                if(e.which == 27){
-                    $('.video-bg').trigger('click');
-                }
-            });
-
-            $(document).on('click','.video-bg, .close',function(e){
-                e.preventDefault();
-                videoEmbed.fadeOut('fast');
-                $('#mobileVideo').remove();
-            });
-        }
+        $(window).resize();
 	})
 	$(window).on('resize',function(){
-//		if(!isMobile() && $('.imgVideo').is(':hidden')){
-//			$('#mobileVideo').remove();
-//			$('.imgVideo').show();
-//		}
 	})
 
 	document.addEventListener("deviceready", function(){
@@ -259,7 +222,7 @@
 
 	/* LINKS */
 	function openExternalUrl(){
-		$('.masinfo.ext a').click(function(e){
+		$('.masinfo.ext a').on('touchstart',function(e){
 			var href = $(this).attr('data-href');
 			window.open(href, '_system', 'location=no');
 		})

@@ -8,7 +8,7 @@ function cargarFiltros(){
 
     $('.bf-items').html(res);
 
-    $('.bf-items div').click(function(e){
+    $('.bf-items div').on('touchstart',function(e){
         if($(this).attr('data-checked')=="1"){
             $(this).css('background-image','url(img/unchecked.png)');
             $(this).attr('data-checked','0');
@@ -50,7 +50,7 @@ function filtrar(){
 function eventosFiltro(){
     cargarFiltros()
 
-    $('.filtro').click(function(e){
+    $('.filtro').on('touchstart',function(e){
 
         var $inputsBar = $('.sec1 .dir:visible');
         if ( $inputsBar.length && isMobile() ){
@@ -82,11 +82,11 @@ function eventosFiltro(){
         e.stopPropagation();
     });
 
-    $('.bloque-filtro').click(function(e){ e.stopPropagation() } );
+    $('.bloque-filtro').on('touchstart',function(e){ e.stopPropagation() } );
 
-    $(' .bloque-filtro a.ok').click( filtrar);
+    $(' .bloque-filtro a.ok').on('touchstart', filtrar);
 
-    $(' a.cancel').click(function(e){
+    $(' a.cancel').on('touchstart',function(e){
         ocultarMenu3();
         var $this = $('.bf-todos')
         $this.css('background-image','url(img/unchecked.png)');
@@ -98,7 +98,7 @@ function eventosFiltro(){
         e.preventDefault();
     } );
 
-    $('.bf-todos').click(function(e){
+    $('.bf-todos').on('touchstart',function(e){
         if($(this).attr('data-checked')=="1"){
             $(this).css('background-image','url(img/unchecked.png)');
             $(this).attr('data-checked','0');

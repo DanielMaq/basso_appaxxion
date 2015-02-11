@@ -27,7 +27,7 @@ function cargarPaises() {
         .css('margin-top', '-' + ((i-1) * 59) + 'px')
         .css('height', ((i-1) * 59) + 'px');
 
-    $('.menu-pais div').click(function () {
+    $('.menu-pais div').on('touchstart',function () {
 
         paisActual = $(this).attr('data-value');
         var paisActualAb = $(this).text();

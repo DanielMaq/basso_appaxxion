@@ -43,7 +43,7 @@ function eventosGenerales(){
         globalY = e.pageY;
     });
 
-    $('.menu-btn').click(function(e){
+    $('.menu-btn').on('touchstart',function(e){
         //hideDetail();
         ocultarMenu2();
         ocultarMenu3();
@@ -57,7 +57,7 @@ function eventosGenerales(){
         e.stopPropagation();
     });
 
-    $(document).click(function(){
+    $(document).on('touchstart',function(){
         ocultarMenu1();
         ocultarMenu2();
         ocultarMenu3();

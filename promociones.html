@@ -322,9 +322,10 @@
 <script>
 	var lasPositionScroll;
     $(document).ready(function(){
+		$('body,html').animate({opacity:1},700)
         eventosGenerales()
 
-		$('.detail .cerrar').click(function(){
+		$('.detail .cerrar').on('touchstart',function(){
 			setTimeout(function(){
 				var body = $("html, body");
 				body.animate({scrollTop:lasPositionScroll}, '500', 'swing')
@@ -332,7 +333,7 @@
 			hideDetail();
 		})
 
-		$('.secPromociones .detail .stationContent a').click(function(e){
+		$('.secPromociones .detail .stationContent a').on('touchstart',function(e){
 			e.preventDefault()
 			goToStation();
 		})

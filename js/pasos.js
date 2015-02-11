@@ -2,7 +2,7 @@
 var alturaModalPasos;
 
 function eventosPasos(){
-    $('.pasos .encabezado').click(function(){
+    $('.pasos .encabezado').on('touchstart',function(){
         if($(this).hasClass('closed')){
             $('.pasos').animate({height:alturaModalPasos},function(){/*$('#googleMap').hide();*/});
             $(this).removeClass('closed');
@@ -16,7 +16,7 @@ function eventosPasos(){
         }
     });
 
-    $('.printer').click(pasosImprimir);
+    $('.printer').on('touchstart',pasosImprimir);
 }
 function pasosMostrar(){
     if(mostrandoRuta){

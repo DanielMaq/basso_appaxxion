@@ -19,5 +19,5 @@ function hidePromocionesInicial(){
 }
 
 function eventosPromociones(){
-    $('.promociones a.cerrar').click(function(){ hidePromocionesInicial() })
+    $('.promociones a.cerrar').on('touchstart',function(){ hidePromocionesInicial() })
 }

@@ -1,3 +1,4 @@
+'use strict';
 function alertaDireccionVacia(hasta){
     var tt=$('.sec1 .dir .tooltip');
     tt.css('color','#fff');
@@ -114,12 +115,12 @@ function miUbicacion(){
 
 
 function eventosBusqueda(){
-    $('.sec1 .footer-content div').not('.dir').not('.buscarBtn').on('click',function(){
+    $('.sec1 .footer-content div').not('.dir').not('.buscarBtn').on('touchstart',function(){
         $('.sec1 .dir').hide();
         //setTimeout(function(e){$('.sec1 .footer-content div .tooltip').fadeOut(700);e.stopPropagation()},2000)
     })
 
-   $('.sec1 .pais').click(function(e){
+   $('.sec1 .pais').on('touchstart',function(e){
        $('.sec1 .footer-content div').removeClass('abierto');
        $('.sec1 .pais').addClass('abierto');
         ocultarMenu1();
@@ -135,7 +136,7 @@ function eventosBusqueda(){
         e.stopPropagation();
     });
 
-    $('.geo').on('click', function(e){
+    $('.geo').on('touchstart', function(e){
         e.preventDefault();
         $('.dir').removeClass('searchIsOpen').css('height','auto');
         $('.goToBtn').remove();
@@ -177,7 +178,7 @@ function eventosBusqueda(){
         pasosOcultar();
     });
 
-    $('.map').on('click', function(e){
+    $('.map').on('touchstart', function(e){
 
         $('.dir').removeClass('searchIsOpen').css('height','auto');
         $('#txDesde').addClass('x');
@@ -204,7 +205,7 @@ function eventosBusqueda(){
         }
     });
 
-    $('.lupa').on('click', function(){
+    $('.lupa').on('touchstart', function(){
         $('.goToBtn').remove();
         $('#txBusqueda').removeAttr('disabled');
         if($(this).hasClass('abierto')){
@@ -257,12 +258,12 @@ function eventosBusqueda(){
         }
     });
 
-    $('.closeRuta a').click(function(e){
+    $('.closeRuta a').on('touchstart',function(e){
         e.preventDefault();
         limpiarRuta();
     })
 
-    $(document).on('click','.goToBtn a',function(e){
+    $(document).on('touchstart','.goToBtn a',function(e){
         e.preventDefault();
         if($('#txHasta').val() == '' || $('#txDesde').val() == ''){
             if($('#txDesde').val() == ''){
@@ -284,7 +285,7 @@ function eventosBusqueda(){
         }
     })
 
-    $('.buscarBtn').click(function(e){
+    $('.buscarBtn').on('touchstart',function(e){
         e.preventDefault()
         if(!$('#txBusqueda').val()){
             $('#txBusqueda').attr('placeholder','Complete este campo')
