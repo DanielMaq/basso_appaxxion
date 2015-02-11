@@ -386,9 +386,13 @@ width: 262px;height: 53px;overflow: hidden;position: relative ;background-image:
             });
         })
 
-
 		document.addEventListener("deviceready", function(e){
 			deviceBackBtn();
+            navigator.splashscreen.show();
+
+            setTimeout(function(){
+                navigator.splashscreen.hide();
+            },5000)
 		},false);
 
 		function doOnOrientationChange()
@@ -401,6 +405,9 @@ width: 262px;height: 53px;overflow: hidden;position: relative ;background-image:
 
 		// Initial execution if needed
 		//doOnOrientationChange();
+
+
+
 	</script>
 
 </body>
