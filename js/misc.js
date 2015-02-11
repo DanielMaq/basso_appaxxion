@@ -127,12 +127,3 @@ function onOnline() {
     //Cargar el mapa nuevamente...
     location.reload();
 }
-
-/* LINKS */
-function openExternalUrl(){
-    $('.masinfo.ext a').on('touchstart',function(e){
-        e.preventDefault();
-        var href = $(this).attr('data-href');
-        window.open(href, '_system', 'location=no');
-    })
-}

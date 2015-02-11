@@ -11,7 +11,7 @@
             border: none;
         }
     </style>
-	<script src="js/cordova.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
 
     <script src="js/jquery-1.9.0.min.js"></script>
     <script src="js/jquery-ui-1.9.2.min.js"></script>
@@ -335,6 +335,12 @@
 		$('.secPromociones .detail .stationContent a').on('touchstart',function(e){
 			e.preventDefault()
 			goToStation();
+		})
+
+		$('.descargas a.masinfo.ext').on('touchstart',function(e){
+			e.preventDefault();
+			var href = $(this).attr('data-href');
+			window.open(href, '_system', 'location=no');
 		})
     })
 	function goToStation(){
