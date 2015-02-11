@@ -57,7 +57,7 @@
 
         <header>
             <div class="header-content">
-                <a href="#" class="logo"><img src="img/logo.png" /></a>
+                <a href="index.html" class="logo"><img src="img/logo.png" /></a>
 
                 <ul class="menu">
                     <li class="selected"><a href="#">Estaciones de Servicio</a></li>
@@ -370,7 +370,10 @@ width: 262px;height: 53px;overflow: hidden;position: relative ;background-image:
 
 	<script>
 
-        navigator.splashscreen.show();
+        try {
+            navigator.splashscreen.show();
+        }
+        catch (e) {}
 
         $(document).ready(function(){
 
@@ -396,9 +399,7 @@ width: 262px;height: 53px;overflow: hidden;position: relative ;background-image:
                 try {
                     navigator.splashscreen.hide();
                 }
-                catch (e) {
-                    alert(e); // This might be object, though, so maybe not showing the cause
-                }
+                catch (e) {}
             },3000)
 		},false);
 

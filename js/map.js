@@ -5,6 +5,7 @@ var directionsService;
 var direcciones = [];
 var currentPositionToCenter;
 var currentDirText = '';
+var currentDirText2 = '';
 var gpsEnabled = true;
 var routeShow = false
 /*var currentMarkerId;*/
@@ -376,8 +377,8 @@ function routeFromDirToDir(dir1,dir2){
         if(pos1!=null){
             /*globalLat=pos1.k;
             globalLon=pos1.A;
-            updateGeolocMarker(globalLat, globalLon);
-            globalPositionStr = $('#txDesde').val();*/
+            updateGeolocMarker(globalLat, globalLon);*/
+            currentDirText2 = $('#txHasta').val();
 
             DirToPosition(dir2,function(pos2){
                 if(pos2!=null){

@@ -83,14 +83,14 @@ function comoLlegar(map){
     map = map || false
     if(paisCambiado){
         $('#txDesde').show();
-        $('#txHasta').show().val('').focus();
+        $('#txHasta').show().focus();
     }else{
         if (map == true){
             $('#txDesde').show();
-            $('#txHasta').show().val('').focus();
+            $('#txHasta').show().focus();
         }else{
             $('#txDesde').show().val(globalPositionStr);
-            $('#txHasta').show().val('').focus();
+            $('#txHasta').show().focus();
         }
     }
 
@@ -195,7 +195,7 @@ function eventosBusqueda(){
                 $('#txDesde').val(currentDirText);
             else
                 $('#txDesde').val(globalPositionStr);
-            //$('#txDesde').val('');
+            if (currentDirText2) {console.log(currentDirText2);$('#txHasta').val(currentDirText2)};
             var $inputsBar = $('.sec1 .dir');
             $inputsBar.fadeIn();
             var map = true

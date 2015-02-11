@@ -9,6 +9,8 @@ body{
     user-select: none; */
 
     /*padding-top:74px;*/
+
+    opacity: 0;
 }
 
 header{
