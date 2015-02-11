@@ -369,6 +369,9 @@ width: 262px;height: 53px;overflow: hidden;position: relative ;background-image:
     <script src="js/main.js"></script>
 
 	<script>
+
+        navigator.splashscreen.show();
+
         $(document).ready(function(){
 
             var Input = $('#txDesde');
@@ -388,11 +391,15 @@ width: 262px;height: 53px;overflow: hidden;position: relative ;background-image:
 
 		document.addEventListener("deviceready", function(e){
 			deviceBackBtn();
-            navigator.splashscreen.show();
 
             setTimeout(function(){
-                navigator.splashscreen.hide();
-            },5000)
+                try {
+                    navigator.splashscreen.hide();
+                }
+                catch (e) {
+                    alert(e); // This might be object, though, so maybe not showing the cause
+                }
+            },3000)
 		},false);
 
 		function doOnOrientationChange()
