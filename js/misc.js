@@ -100,12 +100,9 @@ function onConfirm(buttonIndex) {
     }
 }
 
-var checkOffline = setInterval(function(){
-    document.addEventListener("offline",isOffLine, false);
-},5000)
+document.addEventListener("offline",isOffLine, false);
 
 function isOffLine(){
-    clearInterval(checkOffline);
     try{
         navigator.notification.alert(
             'La aplicación no puede conectarse a internet. Se intentará reconectarse.', // message
@@ -121,9 +118,7 @@ function showLoadingConection(){
     $('#googleMap').hide();
     $('.preloadMap').show()
     $('.noConectionPreload').show();
-    var myInterval = setInterval(function(){
-        document.addEventListener("online", onOnline, false);
-    },5000)
+    document.addEventListener("online", onOnline, false);
 }
 
 function onOnline() {
