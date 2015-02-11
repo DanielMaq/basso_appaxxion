@@ -210,7 +210,6 @@
 
 <script>
     $(document).ready(function(){
-        $('body,html').animate({opacity:1},700)
         eventosGenerales();
         $(window).resize();
 	})
@@ -220,15 +219,6 @@
 	document.addEventListener("deviceready", function(){
 		openExternalUrl();
 	},true);
-
-	/* LINKS */
-	function openExternalUrl(){
-		$('.masinfo.ext a').on('touchstart',function(e){
-			var href = $(this).attr('data-href');
-			window.open(href, '_system', 'location=no');
-		})
-	}
-
 
 </script>
 

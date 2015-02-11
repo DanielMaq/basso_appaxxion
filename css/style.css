@@ -10,7 +10,7 @@ body{
 
     /*padding-top:74px;*/
 
-    opacity: 0;
+    /*opacity: 0;*/
 }
 
 header{
@@ -1105,7 +1105,7 @@ body.mapSection #container {
     display: block !important;
 }
 
-.fixfixed header,
-.fixfixed .footer {
-    position: absolute !important;
-}
+/*.fixfixed header,*/
+/*.fixfixed .footer {*/
+    /*position: absolute !important;*/
+/*}*/
