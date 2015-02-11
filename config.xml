@@ -35,32 +35,8 @@
     <preference name="show-splash-screen-spinner" value="false" />
     <preference name="auto-hide-splash-screen" value="false" />
 
-    <gap:splash src="assets/android/iphone/Default-568h@2x.png"     gap:platform="ios"     width="640" height="1136" />
-
-<platform name="android">
-    <splash src="assets/android/images/res-long-land-hdpi/default.png" density="land-hdpi"/>
-    <splash src="assets/android/images/res-long-land-ldpi/default.png" density="land-ldpi"/>
-    <splash src="assets/android/images/res-long-land-mdpi/default.png" density="land-mdpi"/>
-    <splash src="assets/android/images/res-long-land-xhdpi/default.png" density="land-xhdpi"/>
-
-    <splash src="assets/android/images/res-long-port-hdpi/default.png" density="port-hdpi"/>
-    <splash src="assets/android/images/res-long-port-ldpi/default.png" density="port-ldpi"/>
-    <splash src="assets/android/images/res-long-port-mdpi/default.png" density="port-mdpi"/>
-    <splash src="assets/android/images/res-long-port-xhdpi/default.png" density="port-xhdpi"/>
-</platform>
-
-<platform name="ios">
-    <!-- images are determined by width and height. The following are supported -->
-    <splash src="assets/android/iphone/Default.png" width="320" height="480"/>
-    <splash src="assets/android/iphone/Default@2x.png" width="640" height="960"/>
-    <splash src="assets/android/iphone/Default-Portrait.png" width="768" height="1024"/>
-    <splash src="assets/android/iphone/Default-Portrait@2x.png" width="1536" height="2048"/>
-    <splash src="assets/android/iphone/Default-Landscape.png" width="1024" height="768"/>
-    <splash src="assets/android/iphone/Default-Landscape@2x.png" width="2048" height="1536"/>
-    <splash src="assets/android/iphone/Default-568h@2x.png" width="640" height="1136"/>
-    <splash src="assets/android/iphone/Default-667h@2x.png" width="750" height="1334"/>
-    <splash src="assets/android/iphone/Default-Landscape-736h.png@3x" width="2208" height="1242"/>
-</platform>
+    <gap:splash src="splash.png"     gap:platform="ios"     width="640" height="1136" />
+    <gap:splash src="splash.png"     gap:platform="android" />
 
 <gap:plugin name="org.apache.cordova.geolocation" />
 <gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
@@ -91,7 +67,7 @@
     
 <content src="index.html" />
 <access origin="*" />
-    <preference name="KeyboardShrinksView" value="false" />
+    <preference name="KeyboardShrinksView" value="true" />
 <icon src="img/marker_axion.png" />
 
 </widget>
