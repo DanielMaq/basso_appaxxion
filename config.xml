@@ -57,7 +57,6 @@
     
 <content src="index.html" />
 <access origin="*" />
-    <preference name="KeyboardShrinksView" value="false" />
 <icon src="img/marker_axion.png" />
 
 </widget>
