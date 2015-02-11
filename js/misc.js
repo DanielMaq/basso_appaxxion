@@ -57,10 +57,12 @@ function eventosGenerales(){
         e.stopPropagation();
     });
 
-    $(document).on('touchstart',function(){
-        ocultarMenu1();
-        ocultarMenu2();
-        ocultarMenu3();
+    $(document).not('ul.menu').on('touchstart',function(){
+        setTimeout(function(){
+            ocultarMenu1();
+            ocultarMenu2();
+            ocultarMenu3();
+        },300)
     });
 
 

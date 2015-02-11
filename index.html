@@ -376,7 +376,7 @@ width: 262px;height: 53px;overflow: hidden;position: relative ;background-image:
         catch (e) {}
 
         $(document).ready(function(){
-
+            $('body,html').animate({opacity:1},700)
             var Input = $('#txDesde');
             var text;
 
@@ -390,6 +390,17 @@ width: 262px;height: 53px;overflow: hidden;position: relative ;background-image:
             }).blur(function(){
                 if(Input.val().length == 0) Input.val(text);
             });
+
+            var $body = $('body,html');
+
+            /* bind events */
+            $(document)
+                    .on('focus', 'input', function(e) {
+                        $body.addClass('fixfixed');
+                    })
+                    .on('blur', 'input', function(e) {
+                        $body.removeClass('fixfixed');
+                    });
         })
 
 		document.addEventListener("deviceready", function(e){
@@ -413,9 +424,6 @@ width: 262px;height: 53px;overflow: hidden;position: relative ;background-image:
 
 		// Initial execution if needed
 		//doOnOrientationChange();
-
-
-
 	</script>
 
 </body>

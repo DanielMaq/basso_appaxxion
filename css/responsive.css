@@ -124,7 +124,7 @@
     }
     .header-content .menu {
         overflow: hidden;
-        height: 0px;
+        display: none;
     }
 
     .menu-pais{

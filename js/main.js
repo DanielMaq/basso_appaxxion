@@ -36,6 +36,4 @@ $(document).ready(function(){
                 showPromocionesInicial(ocultarChrome);
             },2000);
         }
-
-        $('body,html').animate({opacity:1},700)
 });
