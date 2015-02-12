@@ -9,7 +9,7 @@
     <!-- PREFERENCES/CONFIGS -->
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="5000" />
-    <preference name="LoadingDialog" value="Cargando aplicación, por favor espere..."/>
+    <!--<preference name="LoadingDialog" value="Cargando aplicación, por favor espere..."/>-->
     <preference name="permissions"                value="none"/>
     <preference name="orientation"                value="all" />       <!-- all: default means both landscape and portrait are enabled -->
     <preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
