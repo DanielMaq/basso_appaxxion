@@ -30,7 +30,8 @@
     <!-- SPLASH SCREEN IMAGE -->
 
     <!--<splash src="splash_port.png"  density="hdpi" qualifier="port-hdpi" />-->
-    <gap:splash src="splash_land.png" />
+    <gap:splash src="splash_land.png" gap:platform="android"/>
+    <gap:splash src="splash_land.png" gap:platform="ios" width="1024" height="768"/>
 
 
     <!-- PLUGINS -->
