@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ff7429c-9f6d-4ae5-9ce4-401ff08932bc" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\wamp\www\basso_appaxxion\AXIONAPP.xdk" afterPath="" />
-      <change type="DELETED" beforePath="D:\wamp\www\basso_appaxxion\AXIONAPP.xdke" afterPath="" />
-      <change type="DELETED" beforePath="D:\wamp\www\basso_appaxxion\splash_land.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\wamp\www\basso_appaxxion\splash_port.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -87,8 +83,8 @@
       <file leaf-file-name="config.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42329872" vertical-offset="648" max-vertical-offset="1972">
-              <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.43137255" vertical-offset="119" max-vertical-offset="1943">
+              <caret line="17" column="61" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -277,12 +273,12 @@
       <workItem from="1423655431098" duration="17661000" />
       <workItem from="1423679943809" duration="4938000" />
       <workItem from="1423743860414" duration="6050000" />
-      <workItem from="1423751010027" duration="690000" />
+      <workItem from="1423751010027" duration="1337000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31204000" />
+    <option name="totallyTimeSpent" value="31851000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1918" height="1039" extended-state="0" />
@@ -706,8 +702,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42329872" vertical-offset="648" max-vertical-offset="1972">
-          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.43137255" vertical-offset="119" max-vertical-offset="1943">
+          <caret line="17" column="61" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
           <folding />
         </state>
       </provider>
