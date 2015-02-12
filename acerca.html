@@ -45,9 +45,9 @@
             <a href="#" class="logo"><img src="img/logo.png" /></a>
 
             <ul class="menu">
-                <li><a href="index.html">Estaciones de Servicio</a></li>
-                <li class="selected"><a href="acerca.html">Acerca de AXION</a></li>
-                <li><a href="promociones.html">Promociones</a></li>
+                <!--<li><a href="index.html">Estaciones de Servicio</a></li>-->
+                <!--<li class="selected"><a href="acerca.html">Acerca de AXION</a></li>-->
+                <!--<li><a href="promociones.html">Promociones</a></li>-->
                 <!--<li class="mobileApps" style="color: #ecd2e0;font-size: 12px;">Descargar en-->
 					<!--<a href="android">AD</a>&nbsp;&nbsp;-->
 					<!--<a href="ios">IOS</a></li>-->
@@ -58,7 +58,7 @@
                 <a href="https://ar.linkedin.com/company/axion-energy" target="_blank" class="link-linkedin"></a>
                 <a href="https://www.youtube.com/user/AXIONenergy" target="_blank" class="link-youtube"></a>
             </div>
-            <a href="#" class="menu-btn"><img src="img/menu.png" /></a>
+            <!--<a href="#" class="menu-btn"><img src="img/menu.png" /></a>-->
         </div>
 
     </header>
@@ -211,15 +211,12 @@
 <script>
     $(document).ready(function(){
         eventosGenerales();
-        $(window).resize();
 
         $('.descargas a.masinfo.ext').on('touchstart',function(e){
             e.preventDefault();
             var href = $(this).attr('data-href');
             window.open(href, '_system', 'location=no');
         })
-	})
-	$(window).on('resize',function(){
 	})
 
 	document.addEventListener("deviceready", function(){

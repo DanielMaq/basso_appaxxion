@@ -44,7 +44,6 @@ function eventosGenerales(){
     });
 
     $('.menu-btn').on('touchstart',function(e){
-        //hideDetail();
         ocultarMenu2();
         ocultarMenu3();
 
@@ -79,9 +78,6 @@ function deviceBackBtn(){
     document.addEventListener("backbutton", function(e){
         e.preventDefault();
         var exitApp = 1;
-        //if( $(".mapSection").length > 0 ){
-        //    exitApp = 1;
-        //}
 
         if( exitApp ){
             navigator.notification.confirm(
