@@ -43,8 +43,11 @@ function initializeMap() {
         disableDefaultUI: true,
         /* streetViewControl:false,*/
         /*mapTypeControlOptions: { mapTypeIds: []},*/
-        mapTypeId:google.maps.MapTypeId.ROADMAP  /*,
+        mapTypeId:google.maps.MapTypeId.ROADMAP,  /*,
         styles: myStyles*/
+        zoomControlOptions: {
+            position: google.maps.ControlPosition.LEFT_TOP
+        }
     };
     map=new google.maps.Map(document.getElementById("googleMap") ,mapProp);
     directionsDisplay.setMap(map);
@@ -414,11 +417,11 @@ function resizeMap(ocultarChrome){
     var anchoScreen = $(window).width();
 
     if(isMobile()){
-        var alturaHeader = 61;
+        var alturaHeader = 95;
         var alturaFoot = 58;
     }else{
-        var alturaHeader = 74;
-        var alturaFoot = 101;
+        var alturaHeader = 50;
+        var alturaFoot = 38;
     }
 
     $('#container').height(alturaScreen-alturaHeader);
