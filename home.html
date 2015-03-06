@@ -56,7 +56,7 @@
 
         <header>
             <div class="header-content">
-                <a href="index.html" class="logo"><img src="img/logo.png" /></a>
+                <a href="home.html" class="logo"><img src="img/logo.png" /></a>
 
                 <!--<ul class="menu">-->
                     <!--<li class="selected"><a href="#">Estaciones de Servicio</a></li>-->
@@ -188,7 +188,6 @@
 
 
         <div class="pasos" style="">
-            <div class="closeRuta" style="position: absolute;right: 20px;top: 40px;"><a style="color: #9C1F63;font-size: 12px;text-decoration: underline" href="" title="Eliminar ruta marcada">Borrar ruta</a></div>
             <div class="encabezado">
                 <img src="img/p1.png"/>
                 <div class="titulo">Paraguay 4271</div>
@@ -370,6 +369,14 @@
                     .on('blur', 'input', function(e) {
                         $body.removeClass('fixfixed');
                     });
+
+			$(document).on('touchstart','#removeRuta',function(e){
+				e.preventDefault();
+				$('.geo').trigger('touchstart');
+				$('.closeRuta').remove();
+				mostrandoRuta = false;
+				$('.geo').trigger('touchstart');
+			})
         })
 
 		document.addEventListener("deviceready", function(e){

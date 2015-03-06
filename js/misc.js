@@ -76,19 +76,19 @@ function eventosGenerales(){
 function deviceBackBtn(){
 
     document.addEventListener("backbutton", function(e){
-        e.preventDefault();
-        var exitApp = 1;
-
-        if( exitApp ){
-            navigator.notification.confirm(
-                '¿Seguro deseas salir?', // message
-                onConfirm, // callback to invoke with index of button pressed
-                'Cerrar Aplicación', // title
-                ['Cancelar','Salir'] // buttonLabels
-            );
-        }else{
-            navigator.app.backHistory();
-        }
+        //e.preventDefault();
+        //var exitApp = 1;
+        //
+        //if( exitApp ){
+        //    navigator.notification.confirm(
+        //        '¿Seguro deseas salir?', // message
+        //        onConfirm, // callback to invoke with index of button pressed
+        //        'Cerrar Aplicación', // title
+        //        ['Cancelar','Salir'] // buttonLabels
+        //    );
+        //}else{
+        //    navigator.app.backHistory();
+        //}
     }, false);
 }
 

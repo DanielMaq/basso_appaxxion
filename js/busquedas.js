@@ -1,3 +1,4 @@
+var showRute;
 'use strict';
 function alertaDireccionVacia(hasta){
     var tt=$('.sec1 .dir .tooltip');
@@ -189,6 +190,10 @@ function eventosBusqueda(){
             $(this).removeClass('abierto');
         }else{
             var gotobtn_html = '<div class="goToBtn"><a href="#" title="ir">Ir</a></div>';
+            if(mostrandoRuta){
+                mostrandoRuta = false;
+                gotobtn_html += '<div class="closeRuta"><a href="javascript:void(0);" id="removeRuta" title="Eliminar ruta marcada">Borrar ruta</a></div>';
+            }
             $('.dir').append(gotobtn_html);
             $('.sec1 .footer-content div').removeClass('abierto');
             $(this).addClass('abierto');
@@ -196,12 +201,29 @@ function eventosBusqueda(){
                 $('#txDesde').val(currentDirText);
             else
                 $('#txDesde').val(globalPositionStr);
-            if (currentDirText2) {console.log(currentDirText2);$('#txHasta').val(currentDirText2)};
+            if (currentDirText2) {$('#txHasta').val(currentDirText2)};
             var $inputsBar = $('.sec1 .dir');
             $inputsBar.fadeIn();
             var map = true
             comoLlegar(map);
             pasosOcultar();
+            if (!isMobile()){
+                $('#txHasta').autocomplete({
+                    source: direcciones,
+                    position: { collision: "flip" },
+                    open: function () {
+                        $(this).data("uiAutocomplete").menu.element.addClass("newAutoComplete");
+                    }
+                })
+            }else{
+                $('#txHasta').autocomplete({
+                    source: direcciones,
+                    position: { offset:'0 62',collision: "flip" },
+                    open: function () {
+                        $(this).data("uiAutocomplete").menu.element.addClass("newAutoComplete");
+                    }
+                })
+            }
         }
     });
 
@@ -257,11 +279,6 @@ function eventosBusqueda(){
             $('.sec1 div .tooltip').hide();
         }
     });
-
-    $('.closeRuta a').on('touchstart',function(e){
-        e.preventDefault();
-        limpiarRuta();
-    })
 
     $(document).on('touchstart','.goToBtn a',function(e){
         e.preventDefault();
