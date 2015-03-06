@@ -37,7 +37,7 @@ html, body, #splashScreen {
     border-radius: 0 !important;
     /*width: 100% !important;*/
     /*max-width: 468px;*/
-    z-index: 9999;
+    z-index: 9999 !important;
 }
 .ui-widget-content {
     background: none !important;
