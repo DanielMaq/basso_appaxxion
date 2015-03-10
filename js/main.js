@@ -41,7 +41,9 @@ $(document).ready(function(){
 });
 
 $(window).on('resize',function(){
-    $('input, textarea').blur();
+    if($('.ui-autocomplete').length > 0){
+        $('.ui-autocomplete').hide();
+    }
 
     if (isMobile()){
         $('#txHasta').autocomplete({
