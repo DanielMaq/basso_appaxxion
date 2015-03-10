@@ -30,7 +30,6 @@ html, body, #splashScreen {
     width: 100% !important;
 }
 .ui-autocomplete {
-    padding: 10px 0 !important;
     overflow-y: scroll !important;
     overflow-x: hidden !important;
     background-color: #861d55 !important;
