@@ -59,7 +59,7 @@ $(document).ready(function(){
             source: direcciones,
             minLength: 3,
             appendTo: ".dir",
-            position: { collision: "fit" }
+            position: { collision: "flip" }
         });
     }else{
         $('#txHasta').autocomplete({
