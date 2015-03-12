@@ -52,7 +52,7 @@ $(window).on('resize',function(){
             source: direcciones,
             appendTo: ".dir",
             minLength: 3,
-            position: { my: "left top",at: "left bottom", offset:'0 62',collision: "flip" },
+            position: { my: "left top",at: "left bottom", offset:'0 -278' },
             open: function () {
                 $(this).data("uiAutocomplete").menu.element.addClass("newAutoComplete");
             }
@@ -61,14 +61,14 @@ $(window).on('resize',function(){
             source: direcciones,
             minLength: 3,
             appendTo: ".dir",
-            position: { my: "left bottom",at: "left top",collision: "flip flip" }
+            position: { collision: "fit" }
         });
     }else{
         $('#txHasta').autocomplete({
             source: direcciones,
             minLength: 3,
             appendTo: ".dir",
-            position: { my: "left top",at: "left bottom", collision: "flip flip" },
+            position: { my: "left top",at: "left bottom", collision: "flip" },
             open: function () {
                 $(this).data("uiAutocomplete").menu.element.addClass("newAutoComplete");
             }
@@ -77,7 +77,7 @@ $(window).on('resize',function(){
             source: direcciones,
             minLength: 3,
             appendTo: ".dir",
-            position: { my: "left top",at: "left bottom",collision: "flip flip" }
+            position: { my: "left top",at: "left bottom", collision: "flip" }
         });
     }
 
