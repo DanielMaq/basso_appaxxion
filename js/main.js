@@ -1,3 +1,5 @@
+
+
 $(document).ready(function(){
         $('input').blur();
 
@@ -48,6 +50,7 @@ $(window).on('resize',function(){
     if (isMobile()){
         $('#txHasta').autocomplete({
             source: direcciones,
+            appendTo: ".dir",
             position: { my: "left top",at: "left bottom", offset:'0 62',collision: "flip" },
             open: function () {
                 $(this).data("uiAutocomplete").menu.element.addClass("newAutoComplete");
@@ -55,11 +58,13 @@ $(window).on('resize',function(){
         })
         $('#txBusqueda').autocomplete({
             source: direcciones,
+            appendTo: ".dir",
             position: { my: "left bottom",at: "left top",collision: "flip flip" }
         });
     }else{
         $('#txHasta').autocomplete({
             source: direcciones,
+            appendTo: ".dir",
             position: { my: "left top",at: "left bottom", collision: "flip flip" },
             open: function () {
                 $(this).data("uiAutocomplete").menu.element.addClass("newAutoComplete");
@@ -67,6 +72,7 @@ $(window).on('resize',function(){
         })
         $('#txBusqueda').autocomplete({
             source: direcciones,
+            appendTo: ".dir",
             position: { my: "left top",at: "left bottom",collision: "flip flip" }
         });
     }
