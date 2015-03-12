@@ -89,8 +89,6 @@ function onConfirm(buttonIndex) {
 document.addEventListener("offline",isOffLine, false);
 
 function isOffLine(){
-    if (deviceInfo != 'iPad' || deviceInfo != 'iPhone') {
-        console.log('Android')
         try{
             navigator.notification.alert(
                 'La aplicación no puede conectarse a internet. Se intentará reconectarse.', // message
@@ -101,9 +99,6 @@ function isOffLine(){
         }catch(err){
             alert('La aplicación no puede conectarse a internet.')
         }
-    }else{
-        console.log('IOS')
-    }
 };
 function showLoadingConection(){
     $('#googleMap').hide();

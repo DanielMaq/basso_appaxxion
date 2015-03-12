@@ -227,16 +227,21 @@ function onSuccess(position) {
     $('#googleMap').animate({opacity:1},500);
 }
 function onError(error) {
-    gpsEnabled = false;
-    try{
-    navigator.notification.alert(
-        'No hemos encontrado su ubicación. Active el GPS para una mejor experiencia con la aplicación.', // message
-        function(){}, // callback to invoke with index of button pressed
-        'GPS desactivado',            // title
-        'Continuar'                  // buttonName
-    );
-    }catch(err){
-        alert('No hemos encontrado su ubicación. Active el GPS para una mejor experiencia con la aplicación.')
+    alert(deviceInfo)
+    if (!(deviceInfo == 'iPad' || deviceInfo == 'iPhone')) {
+        gpsEnabled = false;
+        try{
+            navigator.notification.alert(
+                'No hemos encontrado su ubicación. Active el GPS para una mejor experiencia con la aplicación.', // message
+                function(){}, // callback to invoke with index of button pressed
+                'GPS desactivado',            // title
+                'Continuar'                  // buttonName
+            );
+        }catch(err){
+            alert('No hemos encontrado su ubicación. Active el GPS para una mejor experiencia con la aplicación.')
+        }
+    }else{
+        console.log('IOS')
     }
     var punto = new google.maps.LatLng(-34.639507,-58.4910882);
     currentPositionToCenter = punto;
