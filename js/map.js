@@ -227,7 +227,6 @@ function onSuccess(position) {
     $('#googleMap').animate({opacity:1},500);
 }
 function onError(error) {
-    alert(deviceInfo)
     if (!(deviceInfo == 'iPad' || deviceInfo == 'iPhone')) {
         gpsEnabled = false;
         try{
