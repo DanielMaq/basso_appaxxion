@@ -36,6 +36,7 @@
 
 	<script src="js/jquery-1.9.0.min.js"></script>
 	<script src="js/jquery-ui-1.9.2.min.js"></script>
+	<script src="js/jquery.mobile.js"></script>
 	<script src="js/slimscroll.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js?v=3.6&language=es&key=AIzaSyDfs88uaYQmu_fU2PMdDM90BqdMn5ZWeh8&sensor=false" ></script>
 
@@ -47,7 +48,7 @@
 
 </head>
 
-<body class="splashSection" onload="" style="margin:0;padding:0;overflow:hidden;">
+<body class="splashSection" onload="" style="">
     <div id="splashScreen" style="">
         <img src="img/logoSplash.png" />
 		<div class="band" style="height:15px;background-color: rgba(158,31,99,1);width: 100%;position: absolute;bottom: 0;left: 0;right: 0;"></div>
@@ -59,13 +60,17 @@
 	<script src="js/misc.js"></script>
 
 	<script>
-		document.addEventListener('deviceready',show(),false)
+		$(document).on('pageshow',function(){
+			show();
+		})
 
 		function show(){
 			var scH = $(window).height();
 			$('#splashScreen').height(scH);
 			setTimeout(function(){
-				location.href = 'home.html'
+				$('body').empty();
+				window.location.href = 'home.html'
+				//$.mobile.changePage( "home.html" )
 			}, 3000);
 		}
 
