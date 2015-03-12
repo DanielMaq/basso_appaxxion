@@ -4,9 +4,10 @@
     <title>AXION</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
 
+	<script type="text/javascript" src="cordova.js"></script>
 	<script src="js/jquery-1.9.0.min.js"></script>
+	<!--<script src="js/jquery.mobile.js"></script>-->
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -16,13 +17,9 @@
 		<div class="band" style="height:15px;background-color: rgba(158,31,99,1);width: 100%;position: absolute;bottom: 0;left: 0;right: 0;"></div>
     </div>
 
-    <script type="text/javascript" src="cordova.js"></script>
-
 	<script>
 
-		document.addEventListener('ondeviceready', all(), false)
-
-		function all(){
+		$(document).on("ready", function(event) {
 			$('#splashScreen').height($(window).height());
 			setTimeout(function(){
 				location.href = 'home.html'
@@ -30,7 +27,7 @@
 			$(window).on('resize',function(){
 				$('#splashScreen').height($(window).height());
 			});
-		}
+		})
 	</script>
 
 </body>
