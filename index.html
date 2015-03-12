@@ -20,20 +20,17 @@
 
 	<script>
 
-        $(document).ready(function(){
-            showSplash();
+		document.addEventListener('ondeviceready', all(), false)
+
+		function all(){
+			$('#splashScreen').height($(window).height());
+			setTimeout(function(){
+				location.href = 'home.html'
+			}, 3000);
 			$(window).on('resize',function(){
 				$('#splashScreen').height($(window).height());
 			});
-        })
-
-
-        function showSplash(){
-			 $('#splashScreen').height($(window).height());
-            setTimeout(function(){
-					location.href = 'home.html'
-            }, 3000);
-        }
+		}
 	</script>
 
 </body>
