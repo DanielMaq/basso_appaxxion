@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+
+<head>
+	<title>AXION</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<style>
+		html, body{
+			margin: 0;
+			padding: 0;
+			border: none;
+		}
+		.ui-autocomplete {
+			max-height: 100px;
+			overflow-y: hidden;
+			overflow-x: hidden;
+		}
+		.ui-autocomplete {
+			opacity: 0.8 !important;
+			background-color: #861D55 !important;
+			border: none !important;
+			border-radius: 0 !important;
+			padding: 0 !important;
+			outline: none;
+		}
+		.ui-autocomplete li {
+			background-color: #861D55 !important;
+		}
+		.ui-autocomplete li a {
+			font-size: 11px !important;
+			color: #ecd2e0 !important;
+		}
+	</style>
+
+	<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.9.2.custom.min.css" />
+
+	<script src="js/jquery-1.9.0.min.js"></script>
+	<script src="js/jquery-ui-1.9.2.min.js"></script>
+	<script src="js/jquery.mobile.js"></script>
+	<script src="js/slimscroll.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?v=3.6&language=es&key=AIzaSyDfs88uaYQmu_fU2PMdDM90BqdMn5ZWeh8&sensor=false" ></script>
+
+	<link rel="stylesheet" href="css/fuentes.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/responsive.css" />
+	<link rel="stylesheet" href="css/estilos_add.css" />
+
+
+</head>
+
+<body class="splashSection" onload="" style="">
+    <div id="splashScreen" style="">
+        <img src="img/logoSplash.png" />
+		<div class="band" style="height:15px;background-color: rgba(158,31,99,1);width: 100%;position: absolute;bottom: 0;left: 0;right: 0;"></div>
+    </div>
+
+	<script type="text/javascript" src="cordova.js"></script>
+	<script src="js/utils.js"></script>
+
+	<script src="js/misc.js"></script>
+
+	<script>
+		$(document).on('pageshow',function(){
+			show();
+		})
+
+		function show(){
+			var scH = $(window).height();
+			$('#splashScreen').height(scH);
+			setTimeout(function(){
+				$('body').empty();
+				window.location.href = 'home.html'
+				//$.mobile.changePage( "home.html" )
+			}, 3000);
+		}
+
+		$(window).on('resize',function(){
+			$('#splashScreen').height($(window).height());
+		});
+	</script>
+
+</body>
+</html>
